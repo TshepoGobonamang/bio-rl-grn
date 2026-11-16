@@ -42,12 +42,21 @@ def execute(raw_dir: Path, processed_dir: Path, results_dir: Path,
     chosen = set(zip(path.source, path.target))
     reverse_chosen = set(zip(reverse_path.source, reverse_path.target))
     # Test is assessed only after *both* graphs have been selected.
-    test_diagnostics = {
-        "greedy": independent_expression_loss(fit, untouched, chosen, alpha),
-        "reciprocal_ablation": independent_expression_loss(
-            fit, untouched, reverse_chosen, alpha
-        ),
-    }
+    # Compare all four fixed top-K graphs on exactly the same untouched cells.
+    # No method is allowed to use this partition during graph selection.
+    test_diagnostics = {}
+    for name, ranked in ranks.items():
+        if name == "greedy":
+            selected = chosen
+        elif name == "reciprocal_ablation":
+            selected = reverse_chosen
+        else:
+            selected = set(zip(
+                ranked.head(max_edges).source, ranked.head(max_edges).target
+            ))
+        test_diagnostics[name] = independent_expression_loss(
+            fit, untouched, selected, alpha
+        )
     # No reference gold is consulted until all ranks have been generated and saved.
     eligible, raw_audit, provenance = audit_reference(gold_path, list(X.columns), tfs)
     raw_audit.to_csv(results_dir / "reference_row_audit.csv", index=False)
