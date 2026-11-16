@@ -19,7 +19,7 @@ Download BEELINE-data.zip (~262 MB) into your local checkout or Downloads.
 
 ```bash
 python scripts/extract_beeline_v4.py --archive BEELINE-data.zip --run dyn-LL-500-1 --output data/raw/beeline/dyn-LL-500-1
-python scripts/run_e1.py --raw-dir data/raw/beeline/dyn-LL-500-1 --processed-dir data/processed/dyn_LL_500_1 --results-dir results/dyn_LL_500_1 --max-edges 19
+python scripts/run_e1.py --raw-dir data/raw/beeline/dyn-LL-500-1 --processed-dir data/processed/dyn_LL_500_1 --results-dir results/dyn_LL_500_1 --max-edges 20
 ```
 
 The extraction checks the official v4 archive MD5. The runner converts genes-by-cells into cells-by-genes, fits expression-only Pearson, Spearman and graph-dependent greedy-ridge baselines, writes complete ranked edge lists, **then** reads the gold-reference GRN for final scoring.

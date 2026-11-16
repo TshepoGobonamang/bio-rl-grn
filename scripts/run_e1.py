@@ -9,23 +9,37 @@ from pathlib import Path
 import pandas as pd
 from biorlgrn.cli import run_experiment
 from biorlgrn.evaluate import score_predictions
-from biorlgrn.io import prepare_dataset, sha256
+from biorlgrn.io import prepare_dataset, sha256, load_gold, read_prepared
 
 
 def execute(raw_dir: Path, processed_dir: Path, results_dir: Path,
-            tf_list: Path | None = None, seed: int = 42, max_edges: int = 19,
+            tf_list: Path | None = None, seed: int = 42, max_edges: int = 20,
             alpha: float = 1.0, penalty: float = 0.0, holdout: float = 0.25) -> dict:
     raw_dir = Path(raw_dir)
     expression = raw_dir / "ExpressionData.csv"
     gold = raw_dir / "GroundTruthNetwork.csv"
     if not expression.is_file() or not gold.is_file():
         raise FileNotFoundError(f"Missing BEELINE input files in {raw_dir}")
-    dataset = prepare_dataset(expression, processed_dir, gold, tf_list, gene_axis="rows")
+    processed_dir = Path(processed_dir)
+    # Remove any stale gold reference from an earlier experiment.
+    (processed_dir / "gold_edges.csv").unlink(missing_ok=True)
+    dataset = prepare_dataset(expression, processed_dir, None, tf_list, gene_axis="rows")
     run = run_experiment(processed_dir, results_dir, seed=seed,
                          max_edges=max_edges, alpha=alpha,
                          sparsity_penalty=penalty, holdout=holdout)
+    # Read and filter gold edges strictly AFTER saving all predictions.
+    X, tfs = read_prepared(processed_dir)
+    gold_df = load_gold(gold)
+    allowed_genes, allowed_tfs = set(X.columns), set(tfs)
+    gold_df = gold_df[
+        gold_df.source.isin(allowed_tfs) & gold_df.target.isin(allowed_genes)
+        & (gold_df.source != gold_df.target)
+    ]
+    gold_df.to_csv(processed_dir / "gold_edges.csv", index=False)
+    dataset["gold_source_sha256"] = sha256(gold)
+    dataset["gold_edges_in_candidate_universe"] = len(gold_df)
+    (processed_dir / "manifest.json").write_text(json.dumps(dataset, indent=2), encoding="utf-8")
     rows = []
-    # The only stage that opens the evaluation reference network.
     for method in ("pearson", "spearman", "greedy"):
         rows.append({"method": method, **score_predictions(
             processed_dir, results_dir / f"ranked_{method}.csv", k=max_edges)})
@@ -53,7 +67,7 @@ def main() -> None:
     parser.add_argument("--results-dir", default="results/dyn_LL_500_1", type=Path)
     parser.add_argument("--tf-list", type=Path, default=None)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--max-edges", type=int, default=19)
+    parser.add_argument("--max-edges", type=int, default=20)
     parser.add_argument("--alpha", type=float, default=1.0)
     parser.add_argument("--penalty", type=float, default=0.0)
     parser.add_argument("--holdout", type=float, default=0.25)
