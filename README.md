@@ -1,6 +1,6 @@
 # Bio-RL-GRN — Reproducible GRN Inference Experiments
 
-**Status:** E1 expression-only baseline implemented and CI-tested (Python 3.10–3.12). The official BEELINE replicate has not yet been executed. Adaptive evidence learning and reinforcement learning are future milestones.
+**Status:** E1 expression-only baseline has run on BEELINE dyn-LL-500-1. M1.1 held-out expression and directionality improvements have been merged and CI-tested. The new M1.1 real-data workflow has not yet run; RL and adaptive evidence learning remain future milestones.
 
 Bio-RL-GRN investigates whether **graph-dependent regulatory network construction** and **adaptive weighting of heterogeneous biological evidence** can improve directed TF-target network reconstruction compared with fully matched static, greedy, and reinforcement-learning controls.
 
@@ -31,6 +31,8 @@ Bio-RL-GRN investigates whether **graph-dependent regulatory network constructio
 - Record RNG seeds, environment versions, TF-universe rules, hyperparameters, candidate count, and pre/post-evaluation commits.
 - Pilot results from toy data or an internal tuning split are not confirmatory scientific results.
 
-**Run the E1 benchmark:** See [Quickstart](docs/QUICKSTART.md) or [manual GitHub Actions workflow](https://github.com/TshepoGobonamang/bio-rl-grn/actions/workflows/e1-beeline.yml). The official archive is downloaded on the runner, not stored in Git. E1 outputs are exploratory, not confirmatory findings.
+**E1 exploratory results:** [Review the first official BEELINE run](reports/E1_dyn_LL_500_run_43894848848_review.md). These results support continued evaluation, not claims of RL superiority.
 
-See [docs/ROADMAP.md](docs/ROADMAP.md) for milestones and [Issue #2](https://github.com/TshepoGobonamang/bio-rl-grn/issues/2) for the real-data validation checklist.
+**M1.1 directionality + untouched-test experiment:** See [protocol](docs/M11_PROTOCOL.md) and [manual workflow](https://github.com/TshepoGobonamang/bio-rl-grn/actions/workflows/m11-beeline.yml). Select 3 replicates for initial validation. The workflow downloads the official archive on the runner and uploads metrics and trajectories, not raw expression data. No M1.1 real-data metrics exist yet.
+
+See [docs/ROADMAP.md](docs/ROADMAP.md) for milestones, [Issue #2](https://github.com/TshepoGobonamang/bio-rl-grn/issues/2) for the E1 record, and [Issue #4](https://github.com/TshepoGobonamang/bio-rl-grn/issues/4) for M1.1 validation.
