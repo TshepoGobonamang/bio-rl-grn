@@ -1,6 +1,6 @@
 # Bio-RL-GRN — Reproducible GRN Inference Experiments
 
-**Status:** Repository initialized; experimental source import and real BEELINE evaluation are pending.
+**Status:** E1 expression-only baseline implemented and CI-tested (Python 3.10–3.12). The official BEELINE replicate has not yet been executed. Adaptive evidence learning and reinforcement learning are future milestones.
 
 Bio-RL-GRN investigates whether **graph-dependent regulatory network construction** and **adaptive weighting of heterogeneous biological evidence** can improve directed TF-target network reconstruction compared with fully matched static, greedy, and reinforcement-learning controls.
 
@@ -31,4 +31,6 @@ Bio-RL-GRN investigates whether **graph-dependent regulatory network constructio
 - Record RNG seeds, environment versions, TF-universe rules, hyperparameters, candidate count, and pre/post-evaluation commits.
 - Pilot results from toy data or an internal tuning split are not confirmatory scientific results.
 
-See [docs/ROADMAP.md](docs/ROADMAP.md) for scoped implementation milestones. The E1 starter source has been prepared and locally unit-tested, but its GitHub import is still a separate milestone.
+**Run the E1 benchmark:** See [Quickstart](docs/QUICKSTART.md) or [manual GitHub Actions workflow](https://github.com/TshepoGobonamang/bio-rl-grn/actions/workflows/e1-beeline.yml). The official archive is downloaded on the runner, not stored in Git. E1 outputs are exploratory, not confirmatory findings.
+
+See [docs/ROADMAP.md](docs/ROADMAP.md) for milestones and [Issue #2](https://github.com/TshepoGobonamang/bio-rl-grn/issues/2) for the real-data validation checklist.
