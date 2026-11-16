@@ -2,9 +2,9 @@
 
 ## M0 — Import and audit the tested E1 starter
 
-- [ ] Import the tested Python package, CLI, pytest suite, GitHub Actions workflow, configuration and data preparation scripts.
-- [ ] Verify fresh checkout, environment installation, tests, smoke demonstration.
-- [ ] Exclude downloaded data, caches, experiment outputs and secrets from Git.
+- [x] Import the tested Python package, CLI, pytest suite, GitHub Actions workflow, configuration and data preparation scripts.
+- [x] Verify CI environment installation, six tests and smoke demonstration on Python 3.10–3.12.
+- [x] Exclude downloaded data, caches, experiment outputs and secrets from Git.
 - [ ] Record dependency versions, dataset release, SHA256 hashes and license requirements.
 
 **Gate:** full installation and unit tests pass in CI.
@@ -60,4 +60,4 @@
 - Learned evidence weights are not inherently calibrated probabilities of true edges.
 - An RL agent is not a scientific contribution unless compared with strong matched non-RL controls.
 
-**First actionable deliverable:** import the existing locally tested E1 scaffold, verify CI, then run the first authentic BEELINE replicate.
+**Next action:** run the [manual BEELINE v4 GitHub Actions experiment](https://github.com/TshepoGobonamang/bio-rl-grn/actions/workflows/e1-beeline.yml), then audit the artifact and document results in [Issue #2](https://github.com/TshepoGobonamang/bio-rl-grn/issues/2). No official BEELINE metrics have been established yet.
