@@ -34,3 +34,5 @@ python scripts/run_e1.py --raw-dir data/raw/beeline/dyn-LL-500-1 --processed-dir
 ```
 
 Alternatively use GitHub Actions > E1 BEELINE dyn-LL-500 exploratory benchmark > Run workflow after merging the feature branch. The manual runner downloads data temporarily, runs models and uploads only result artifacts, not redistributed expression data.
+
+The runner imports the gold reference only after all rankings are saved. The fixed 20-edge exploration budget is not derived from the known gold-edge count.

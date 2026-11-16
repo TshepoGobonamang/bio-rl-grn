@@ -8,7 +8,7 @@ results_dir: results/dyn_LL_500_1
 model_stage: expression-only static and greedy controls
 fit_fraction: 0.75
 ridge_alpha: 1.0
-greedy_max_edges: 19
+greedy_max_edges: 20
 sparsity_penalty: 0.0
 random_seed: 42
 notes: No learned RL policy or prior reliability learner at E1 stage.

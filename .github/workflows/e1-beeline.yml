@@ -37,7 +37,7 @@ jobs:
             --raw-dir data/raw/beeline/e1 \
             --processed-dir data/processed/e1 \
             --results-dir results/e1 \
-            --seed 42 --max-edges 19 --alpha 1.0
+            --seed 42 --max-edges 20 --alpha 1.0
       - name: Upload results only (no expression data)
         uses: actions/upload-artifact@v4
         with:
