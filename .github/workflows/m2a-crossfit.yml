@@ -1,0 +1,44 @@
+name: M2A cross-fitted reliability dataset
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/m2a-crossfit.yml'
+  workflow_dispatch:
+jobs:
+  build-m2a:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -e '.[dev]'
+      - run: python -m pytest -q
+      - name: Download official BEELINE v4; never commit raw data
+        run: |
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://zenodo.org/records/19009603/files/BEELINE-data.zip?download=1' \
+            --output "$RUNNER_TEMP/BEELINE-data.zip"
+      - name: Build three cross-fitted reliability training datasets
+        run: |
+          for run in dyn-LL-500-1 dyn-LI-500-1 dyn-BF-500-1; do
+            python scripts/extract_beeline_v4.py \
+              --archive "$RUNNER_TEMP/BEELINE-data.zip" --run "$run" \
+              --output "data/raw/beeline/$run"
+            python scripts/build_m2_crossfit.py \
+              --raw-dir "data/raw/beeline/$run" \
+              --output-dir "results/m2a/$run" \
+              --dataset-id "$run" --folds 3 --bins 16 \
+              --bootstrap-repeats 3 --seed 42
+          done
+      - name: Upload only meta-training rows and manifests
+        uses: actions/upload-artifact@v4
+        with:
+          name: m2a-crossfit-reliability-dataset
+          path: results/m2a/
+          if-no-files-found: error
