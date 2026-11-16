@@ -60,4 +60,8 @@
 - Learned evidence weights are not inherently calibrated probabilities of true edges.
 - An RL agent is not a scientific contribution unless compared with strong matched non-RL controls.
 
-**Next action:** run the [manual BEELINE v4 GitHub Actions experiment](https://github.com/TshepoGobonamang/bio-rl-grn/actions/workflows/e1-beeline.yml), then audit the artifact and document results in [Issue #2](https://github.com/TshepoGobonamang/bio-rl-grn/issues/2). No official BEELINE metrics have been established yet.
+**E1 baseline completed:** [2026-11-16 E1 real-data audit](../reports/E1_dyn_LL_500_run_43894848848_review.md) reports exploratory dyn-LL-500-1 results (greedy AP 0.4353 versus Pearson AP 0.3430; no independent test partition). These results **do not** establish RL or prior-reliability performance.
+
+**M1.1 implementation complete:** Three-way held-out expression evaluation, evaluation-only gold provenance and directionality scoring, reciprocal-edge heuristic ablation, and a multi-replicate workflow have been merged into main. CI passed on Python 3.10, 3.11 and 3.12.
+
+**Next action:** run the [manual M1.1 workflow](https://github.com/TshepoGobonamang/bio-rl-grn/actions/workflows/m11-beeline.yml), initially on 3 dyn-LL-500 replicates, and audit the result artifacts. Track the scientific criteria in [Issue #4](https://github.com/TshepoGobonamang/bio-rl-grn/issues/4). No official M1.1 BEELINE results have been generated yet.
