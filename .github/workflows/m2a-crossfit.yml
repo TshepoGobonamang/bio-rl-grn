@@ -36,6 +36,7 @@ jobs:
               --dataset-id "$run" --folds 3 --bins 16 \
               --bootstrap-repeats 3 --seed 42
           done
+          python scripts/audit_m2_crossfit.py --root results/m2a
       - name: Upload only meta-training rows and manifests
         uses: actions/upload-artifact@v4
         with:
