@@ -1,5 +1,8 @@
 name: M2D8 GEO source audit launcher
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/m2d8-launch.yml']
   workflow_dispatch:
     inputs:
       source_ref:
@@ -19,7 +22,7 @@ jobs:
       - name: Check out D8 research code
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.source_ref }}
+          ref: feat/m2d8-source-observation
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
