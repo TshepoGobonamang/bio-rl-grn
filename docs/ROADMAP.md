@@ -64,4 +64,10 @@
 
 **M1.1 implementation complete:** Three-way held-out expression evaluation, evaluation-only gold provenance and directionality scoring, reciprocal-edge heuristic ablation, and a multi-replicate workflow have been merged into main. CI passed on Python 3.10, 3.11 and 3.12.
 
-**Next action:** run the [manual M1.1 workflow](https://github.com/TshepoGobonamang/bio-rl-grn/actions/workflows/m11-beeline.yml), initially on 3 dyn-LL-500 replicates, and audit the result artifacts. Track the scientific criteria in [Issue #4](https://github.com/TshepoGobonamang/bio-rl-grn/issues/4). No official M1.1 BEELINE results have been generated yet.
+**M1.1–M1.2 experimental reviews completed:** [M1.1](../reports/M11_3_replica_beeline_2026_11_16.md) confirmed held-out expression improvements for expression-only greedy but weak direction concordance. [M1.2](../reports/M12_pseudotime_three_topologies_2026_11_16.md) showed improved AP from temporal information on three synthetic topologies, with expression-generalization tradeoffs.
+
+**M2A completed:** [Real M2A report](../reports/M2A_crossfit_datasets_2026_11_16.md); 1,170 fold-edge reliability records. Gold-blind feature/target separation and quality audit are implemented.
+
+**M2B implemented and empirically evaluated:** [M2B decision audit](../reports/M2B_adaptive_reliability_decision_2026_11_17.md), [official successful run](https://github.com/TshepoGobonamang/bio-rl-grn/actions/runs/44091373596). The adaptive gate beats expression-only AP but does **not** consistently outperform a fixed temporal source weight on AP, orientation or untouched expression generalization. **NO-GO on asserting learned reliability superiority and on advancing directly to RL.**
+
+**Next engineering milestone — M2C:** [Issue #13](https://github.com/TshepoGobonamang/bio-rl-grn/issues/13) — gold-blind *direction-sensitive* cross-fitted usefulness targets, independent biological evidence, controlled corruption/missingness, and uninspected network-context validation. The current reproducibility target is symmetric for reversed edges and is not a direction-truth label.
