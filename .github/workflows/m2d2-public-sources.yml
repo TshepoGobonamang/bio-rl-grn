@@ -7,6 +7,7 @@ on:
       - 'scripts/inspect_m2d2_public_sources.py'
       - 'scripts/match_hesc_collecTRI.py'
       - 'scripts/audit_m2d2_chip_overlap.py'
+      - 'scripts/run_m2d2_hesc_pilot.py'
       - '.github/workflows/m2d2-public-sources.yml'
   workflow_dispatch:
 
