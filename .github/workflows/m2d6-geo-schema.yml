@@ -1,0 +1,39 @@
+name: M2D6 GEO TF map schema audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/m2d6-real-geo-schema-audit]
+    paths:
+      - scripts/inspect_m2d6_geo_schema.py
+      - tests/test_m2d6_geo_schema.py
+      - .github/workflows/m2d6-geo-schema.yml
+jobs:
+  audit-real-tfmap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pandas pytest
+      - run: python -m pytest -q tests/test_m2d6_geo_schema.py
+      - name: Download GSE216595 TF assignment supplement
+        run: |
+          curl --fail --location --retry 3 --show-error --silent \
+            'https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6681nnn/GSM6681047/suppl/GSM6681047_180124_TFmap.csv.gz' \
+            -o "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz"
+          sha256sum "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz"
+      - name: Inspect actual source schema
+        run: |
+          python scripts/inspect_m2d6_geo_schema.py \
+            --tfmap "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz" \
+            --output results/m2d6/tfmap_schema.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m2d6-tfmap-schema
+          path: results/m2d6/tfmap_schema.json
+          if-no-files-found: warn
