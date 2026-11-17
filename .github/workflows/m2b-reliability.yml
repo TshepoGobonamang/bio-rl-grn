@@ -1,0 +1,64 @@
+name: M2B leave-one-network-out reliability and GRN evaluation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/m2b-reliability.yml'
+  workflow_dispatch:
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -e '.[dev]'
+      - name: Run regression and gold-isolation tests
+        run: python -m pytest -q
+      - name: Retrieve pinned, independently audited M2A input artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/m2a
+          gh run download 44089516809 \
+            --repo "${{ github.repository }}" \
+            --name m2a-crossfit-reliability-dataset \
+            --dir data/m2a
+      - name: Train and evaluate leave-one-topology-out reliability gates
+        run: |
+          python scripts/audit_m2_crossfit.py --root data/m2a
+          python scripts/run_m2b.py \
+            --m2a-root data/m2a \
+            --output-dir results/m2b
+      - name: Download official BEELINE v4; do not commit raw data
+        run: |
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://zenodo.org/records/19009603/files/BEELINE-data.zip?download=1' \
+            --output "$RUNNER_TEMP/BEELINE-data.zip"
+      - name: Evaluate all frozen gates under matched graph-edit budgets
+        run: |
+          for run in dyn-LL-500-1 dyn-LI-500-1 dyn-BF-500-1; do
+            python scripts/extract_beeline_v4.py \
+              --archive "$RUNNER_TEMP/BEELINE-data.zip" \
+              --run "$run" --output "data/raw/beeline/$run"
+            python scripts/evaluate_m2b_grn.py \
+              --raw-dir "data/raw/beeline/$run" \
+              --weights-csv results/m2b/m2b_inference_weights.csv \
+              --output-dir "results/m2b/$run" \
+              --dataset-id "$run" --max-edges 20 --seed 42 --bins 16
+          done
+      - name: Upload model evaluation and non-sensitive inference artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m2b-leave-one-network-reliability
+          path: results/m2b/
+          if-no-files-found: warn
