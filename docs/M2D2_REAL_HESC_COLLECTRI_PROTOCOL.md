@@ -11,6 +11,23 @@
    - Regulons columns are **source, target, weight, resources, references, sign_decision**. The `weight` sign describes CollecTRI's **regulation sign** (activation/repression), **not** TF→target arrow direction or calibrated probability. Supporting source names and citation counts are retained for matched interactions.
    - CollecTRI's curated and text-mined interactions are assembled from external literature/data. Their provenance is distinct from the hESC single-cell expression measurement, but the literature may overlap BEELINE ChIP-seq references, so **no independence from evaluation labels is asserted**.
 
+## Observed real-source matching results (independently verified)
+
+Pinned [schema run #44112971882](https://github.com/TshepoGobonamang/bio-rl-grn/actions/runs/44112971882) and [actual gene-match run #44113607598](https://github.com/TshepoGobonamang/bio-rl-grn/actions/runs/44113607598) succeeded.
+
+| Grounded source quantity | Actual count |
+|---|---:|
+| Human hESC expression genes | **17,735** |
+| Human hESC single cells | **758** |
+| CollecTRI original regulon source rows | **43,175** |
+| CollecTRI unique directed gene pairs | **42,713** |
+| Exact directed CollecTRI pairs with both genes measured in hESC | **36,064** |
+| Distinct matched curated regulators | **1,079** |
+| Distinct matched curated targets | **5,868** |
+| Matched pairs in deliberately enriched 8-TF + 24-target demonstration cohort | **233 of 992 candidates** |
+
+The **36,064** represent *distinct curated associations with both symbols present in the expression matrix*; they are not inferred GRN true positives, and source overlap with benchmark ChIP labels is not certified. The 233/992 cohort ratio is achieved through *prior-based selection* and cannot be used as an unbiased biological accuracy measure.
+
 ## Two auditable layers
 
 ### D2-A — Gene-matched source coverage (no gold)
