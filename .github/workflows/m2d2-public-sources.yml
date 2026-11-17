@@ -49,6 +49,12 @@ jobs:
             --regulons "$RUNNER_TEMP/CollecTRI_regulons.csv" \
             --source "$RUNNER_TEMP/CollecTRI_source.tsv" \
             --output results/m2d2-inspect
+      - name: Real hESC / CollecTRI prior integration — explicitly prior-enriched smoke test
+        run: |
+          python scripts/run_m2d2_hesc_pilot.py \
+            --archive "$RUNNER_TEMP/BEELINE-data.zip" \
+            --matched-prior results/m2d2-inspect/hesc_collecTRI_matched_prior_edges.csv \
+            --output results/m2d2-inspect/hesc_pilot
       - name: Publish source schema and provenance metadata
         if: always()
         uses: actions/upload-artifact@v4
