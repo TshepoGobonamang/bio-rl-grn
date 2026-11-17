@@ -18,6 +18,9 @@ from biorlgrn.m11 import split_three
 from biorlgrn.m2_parent import ParentConfig, parent_conditional_dataset
 from biorlgrn.m2_external import align_evidence
 from biorlgrn.pseudotime import load_pseudotime
+# Scripts can run as files from the repository root or be imported by pytest.
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.match_hesc_collecTRI import hesc_gene_inventory
 
 
