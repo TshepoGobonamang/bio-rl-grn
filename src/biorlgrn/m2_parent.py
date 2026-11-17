@@ -33,11 +33,14 @@ def _hash_ids(index: pd.Index) -> str:
     return hashlib.sha256("\n".join(sorted(map(str, index))).encode()).hexdigest()
 
 
-def _scaffold(F: pd.DataFrame, source: str, target: str, n: int) -> tuple[str, ...]:
-    """Select potential other parents ONLY from F; never use candidate s or target."""
+def _scaffold(F: pd.DataFrame, source: str, target: str, n: int,
+              correlation: pd.DataFrame | None = None) -> tuple[str, ...]:
+    """Source/target excluded; correlation cache must originate in F only."""
     if n <= 0:
         return ()
-    corr = F.corr().abs().fillna(0.)
+    corr = F.corr().abs().fillna(0.) if correlation is None else correlation
+    if not F.columns.equals(corr.index) or not F.columns.equals(corr.columns):
+        raise ValueError("Scaffold correlation must use the inner-fit gene universe")
     choices = [g for g in F.columns if g not in {source, target}]
     ranked = sorted(choices, key=lambda g: (-float(corr.loc[g, target]), g))
     return tuple(sorted(ranked[:n]))
@@ -90,7 +93,7 @@ def parent_conditional_dataset(
         correlations = F.corr().abs().fillna(0.)
         variance = F.var(ddof=0).clip(lower=1e-8)
         for k, (s, t) in enumerate(candidates):
-            others = _scaffold(F, s, t, cfg.max_parents)
+            others = _scaffold(F, s, t, cfg.max_parents, correlations)
             before = scorer.target_loss(t, others)
             after = scorer.target_loss(t, tuple(sorted((*others, s))))
             # Parallel marginal comparator, not the learned target.
