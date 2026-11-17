@@ -6,11 +6,12 @@ on:
       - 'scripts/observe_m2d8_real_tfmap.py'
       - 'tests/test_m2d8_real_tfmap.py'
       - '.github/workflows/m2d8-observe-geo.yml'
-  workflow_dispatch:
+  workflow_dispatch: {}
 jobs:
   observe-real-source:
     runs-on: ubuntu-latest
     timeout-minutes: 35
+    # CI-only metadata audit; no biological response labels are generated.
     permissions:
       contents: read
     steps:
