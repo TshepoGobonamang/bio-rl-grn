@@ -23,3 +23,13 @@ def test_not_enough_source_coverage_fails_not_silently_filled():
                       "target": ["NANOG", "GATA6"]})
     with pytest.raises(ValueError, match="Too few"):
         choose_prior_enriched_subset(p)
+
+def test_pilot_cli_imports_when_executed_as_script(tmp_path):
+    import subprocess
+    import sys
+    from pathlib import Path
+    cmd = Path(__file__).resolve().parents[1] / "scripts" / "run_m2d2_hesc_pilot.py"
+    done = subprocess.run([sys.executable, str(cmd), "--help"],
+                          cwd=tmp_path, capture_output=True, text=True)
+    assert done.returncode == 0, done.stderr
+    assert "--matched-prior" in done.stdout
