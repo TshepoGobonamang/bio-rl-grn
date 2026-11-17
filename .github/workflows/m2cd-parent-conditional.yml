@@ -1,0 +1,48 @@
+name: M2C-D parent-conditional predictive target audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/m2cd-parent-conditional.yml'
+  workflow_dispatch:
+
+jobs:
+  target-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -e '.[dev]'
+      - name: Software tests, source-blind target and external prior safeguards
+        run: python -m pytest -q
+      - name: Download official BEELINE synthetic networks for gold-BLIND target construction
+        run: |
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://zenodo.org/records/19009603/files/BEELINE-data.zip?download=1' \
+            --output "$RUNNER_TEMP/BEELINE-data.zip"
+      - name: Fit-only parent-conditional targets; NO biological priors assigned to synthetic genes
+        run: |
+          for run in dyn-LL-500-1 dyn-LI-500-1 dyn-BF-500-1 dyn-CY-500-1 dyn-TF-500-1 dyn-BFC-500-1; do
+            python scripts/extract_beeline_v4.py \
+              --archive "$RUNNER_TEMP/BEELINE-data.zip" \
+              --run "$run" --output "data/raw/beeline/$run"
+            python scripts/build_m2cd.py \
+              --raw-dir "data/raw/beeline/$run" \
+              --output-dir "results/m2cd/$run" \
+              --dataset-kind synthetic --max-parents 2 --seed 42
+          done
+          python scripts/audit_m2cd.py --root results/m2cd
+      - name: Upload only derived gold-blind features, targets and quality summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m2cd-parent-conditional-gold-blind
+          path: results/m2cd/
+          if-no-files-found: warn
