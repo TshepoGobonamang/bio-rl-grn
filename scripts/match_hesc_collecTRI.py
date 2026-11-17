@@ -87,6 +87,25 @@ def map_regulons(genes: list[str], regulons: pd.DataFrame) -> tuple[pd.DataFrame
         grouped = grouped.merge(signs, on=["source", "target"], validate="one_to_one")
     else:
         grouped["signed_regulatory_effect"] = np.nan
+    if {"resources", "references"}.issubset(matched.columns):
+        resources = matched.groupby(["source", "target"]).resources.agg(
+            lambda values: ";".join(sorted(set(
+                token.strip()
+                for v in values.dropna()
+                for token in str(v).split(";")
+                if token.strip()
+            )))
+        ).reset_index(name="supporting_resources")
+        pmids = matched.groupby(["source", "target"]).references.agg(
+            lambda values: len(set(
+                token.strip()
+                for v in values.dropna()
+                for token in str(v).split(";")
+                if token.strip()
+            ))
+        ).reset_index(name="n_cited_references")
+        grouped = grouped.merge(resources, on=["source", "target"], validate="one_to_one")
+        grouped = grouped.merge(pmids, on=["source", "target"], validate="one_to_one")
     coverage = {
         "n_collecTRI_raw_rows": len(regulons),
         "n_collecTRI_gene_pairs": len(
@@ -105,7 +124,7 @@ def map_regulons(genes: list[str], regulons: pd.DataFrame) -> tuple[pd.DataFrame
         "confidence_semantics": "binary association presence, NOT calibrated binding probability",
         "reference_overlap_checked": False,
         "independent_from_expression_measurement": True,
-        "independent_from_BEEELINE_evaluation_reference": "unverified",
+        "independent_from_BEELINE_evaluation_reference": "unverified",
         "evaluation_reference_accessed": False,
     }
     return grouped, coverage
