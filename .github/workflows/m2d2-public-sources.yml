@@ -1,0 +1,50 @@
+name: M2D2 public human evidence source inspection
+
+on:
+  push:
+    branches: [feat/m2d2-human-evidence-feasibility, main]
+    paths:
+      - 'scripts/inspect_m2d2_public_sources.py'
+      - '.github/workflows/m2d2-public-sources.yml'
+  workflow_dispatch:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -e '.[dev]'
+      - name: Fetch and checksum BEELINE v4 experimental expression archive
+        run: |
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://zenodo.org/records/19009603/files/BEELINE-data.zip?download=1' \
+            --output "$RUNNER_TEMP/BEELINE-data.zip"
+      - name: Fetch and checksum pinned CollecTRI 2.0 regulons and source provenance
+        run: |
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://zenodo.org/records/8192729/files/CollecTRI_regulons.csv?download=1' \
+            --output "$RUNNER_TEMP/CollecTRI_regulons.csv"
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://zenodo.org/records/8192729/files/CollecTRI_source.tsv?download=1' \
+            --output "$RUNNER_TEMP/CollecTRI_source.tsv"
+      - name: Verify actual expression and evidence schemas without opening reference networks
+        run: |
+          python scripts/inspect_m2d2_public_sources.py \
+            --archive "$RUNNER_TEMP/BEELINE-data.zip" \
+            --regulons "$RUNNER_TEMP/CollecTRI_regulons.csv" \
+            --source "$RUNNER_TEMP/CollecTRI_source.tsv" \
+            --output results/m2d2-inspect
+      - name: Publish source schema and provenance metadata
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m2d2-public-source-schema
+          path: results/m2d2-inspect/
+          if-no-files-found: warn
