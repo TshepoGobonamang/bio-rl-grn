@@ -1,0 +1,45 @@
+name: M2D8 actual GEO source observation
+on:
+  push:
+    branches: [feat/m2d8-source-observation]
+    paths:
+      - 'scripts/observe_m2d8_real_tfmap.py'
+      - 'tests/test_m2d8_real_tfmap.py'
+      - '.github/workflows/m2d8-observe-geo.yml'
+  workflow_dispatch:
+jobs:
+  observe-real-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install minimum dependencies
+        run: python -m pip install pandas pytest
+      - name: Check inspection logic
+        run: python -m pytest -q tests/test_m2d8_real_tfmap.py
+      - name: Download actual GEO supplement
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 4 --retry-delay 3 --show-error \
+            'https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6681nnn/GSM6681047/suppl/GSM6681047_180124_TFmap.csv.gz' \
+            --output "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz"
+          test -s "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz"
+          gzip -t "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz"
+          sha256sum "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz"
+      - name: Observe source records and publish actual schema summary
+        run: |
+          python scripts/observe_m2d8_real_tfmap.py \
+            --source "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz" \
+            --output results/m2d8/actual_tfmap_observation.json
+      - name: Retain summary even if subsequent steps fail
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m2d8-actual-source-observation
+          path: results/m2d8/*.json
+          if-no-files-found: warn
