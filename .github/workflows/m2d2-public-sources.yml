@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/inspect_m2d2_public_sources.py'
       - 'scripts/match_hesc_collecTRI.py'
+      - 'scripts/audit_m2d2_chip_overlap.py'
       - '.github/workflows/m2d2-public-sources.yml'
   workflow_dispatch:
 
@@ -55,6 +56,17 @@ jobs:
             --archive "$RUNNER_TEMP/BEELINE-data.zip" \
             --matched-prior results/m2d2-inspect/hesc_collecTRI_matched_prior_edges.csv \
             --output results/m2d2-inspect/hesc_pilot
+      - name: Download separate BEELINE ChIP reference ONLY AFTER prior + features are frozen
+        run: |
+          curl --fail --location --retry 3 --silent --show-error \
+            'https://zenodo.org/records/19009603/files/BEELINE-Networks.zip?download=1' \
+            --output "$RUNNER_TEMP/BEELINE-Networks.zip"
+      - name: Post-hoc diagnostic of prior/reference edge overlap — not independent validation
+        run: |
+          python scripts/audit_m2d2_chip_overlap.py \
+            --prior results/m2d2-inspect/hesc_collecTRI_matched_prior_edges.csv \
+            --networks-archive "$RUNNER_TEMP/BEELINE-Networks.zip" \
+            --output results/m2d2-inspect
       - name: Publish source schema and provenance metadata
         if: always()
         uses: actions/upload-artifact@v4
