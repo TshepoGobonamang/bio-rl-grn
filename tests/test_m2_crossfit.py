@@ -101,3 +101,41 @@ def test_same_seed_same_dataset():
     b, mb = make_reliability_meta_dataset(f, pt.loc[f.index], list(f), cfg)
     pd.testing.assert_frame_equal(a, b)
     assert ma == mb
+
+def test_exported_feature_target_files_are_strictly_separated(tmp_path):
+    from scripts.audit_m2_crossfit import audit
+    x, pt = _dummy()
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    x.T.to_csv(raw / "ExpressionData.csv")
+    pt.to_csv(raw / "PseudoTime.csv")
+    root = tmp_path / "results"
+    out = root / "toy"
+    meta = build(raw, out, dataset_id="toy", folds=3, bootstrap_repeats=0)
+    feat = pd.read_csv(out / "m2_features.csv")
+    target = pd.read_csv(out / "m2_targets.csv")
+    assert len(feat) == len(target) == meta["n_rows"]
+    assert not any(c.endswith(("_TARGET", "_TARGET_ONLY")) for c in feat.columns)
+    assert all(c.endswith(("_TARGET", "_TARGET_ONLY")) or c in meta["data_keys"]
+               for c in target.columns)
+    checked = audit(root)
+    assert int(checked.n_features.sum()) == meta["n_rows"]
+    assert checked.feature_target_separation_verified.all()
+
+
+def test_quality_audit_rejects_target_leakage(tmp_path):
+    from scripts.audit_m2_crossfit import audit
+    x, pt = _dummy()
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    x.T.to_csv(raw / "ExpressionData.csv")
+    pt.to_csv(raw / "PseudoTime.csv")
+    root = tmp_path / "results"
+    out = root / "toy"
+    build(raw, out, dataset_id="toy", folds=3, bootstrap_repeats=0)
+    path = out / "m2_features.csv"
+    features = pd.read_csv(path)
+    features["y_temporal_reproducibility_TARGET"] = .9
+    features.to_csv(path, index=False)
+    with pytest.raises(ValueError, match="Unexpected predictor columns"):
+        audit(root)

@@ -40,3 +40,21 @@ The [M2A GitHub Actions workflow](../.github/workflows/m2a-crossfit.yml) builds 
 - BoolODE synthetic pseudotime can reflect simulation time and may overestimate the usefulness of measured pseudotime.
 - A reproducible directional association is **not** the biological truth of an edge; conditional expression gain is predictive, not causal.
 - Next step is an empirical **meta-dataset quality audit** followed by an appropriately regularized model and matched fixed/nonlearned baselines, then independent topology and external biological testing.
+
+## M2A data contract: separate model inputs from validation targets
+
+The original `m2_crossfit_edges.csv` remains available **for auditing only**. A future reliability learner must NEVER select features by dropping columns from this combined file. The preferred exports are:
+
+- **`m2_features.csv`**: directed-edge/fold identifiers and ONLY the 12 pre-declared fitting-only predictors in the manifest. It cannot contain columns ending in `_TARGET` or `_TARGET_ONLY`.
+- **`m2_targets.csv`**: matching identifiers plus validation-only temporal/reconstruction targets and diagnostics. It cannot contain fit predictors.
+- **`m2a_quality_summary.csv`** and **`m2a_quality_manifest.json`**: audit of missing masks, target saturation, feature/target key correspondence, row counts, no gold input, and inner-fold separation, generated across all network folders.
+
+Run the audit after data generation:
+
+```bash
+python scripts/audit_m2_crossfit.py --root results/m2a
+```
+
+The audit fails on unexpected predictor columns, unaligned fold-edge IDs, missing evidence encoded as observed, absent targets incorrectly assigned nonmissing soft labels, or invalid 0–1 pseudo-target values.
+
+**Evaluation requirement:** Reverse-direction pairs, folds and networks are not independent samples. Use grouped or topology-held-out evaluation of future reliability models. The soft reliability target measures **within-fold reproducibility of temporal association**, not the biological truth of a regulatory interaction.
