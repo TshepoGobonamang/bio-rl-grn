@@ -5,6 +5,7 @@ on:
     branches: [feat/m2d2-human-evidence-feasibility, main]
     paths:
       - 'scripts/inspect_m2d2_public_sources.py'
+      - 'scripts/match_hesc_collecTRI.py'
       - '.github/workflows/m2d2-public-sources.yml'
   workflow_dispatch:
 
@@ -40,6 +41,13 @@ jobs:
             --archive "$RUNNER_TEMP/BEELINE-data.zip" \
             --regulons "$RUNNER_TEMP/CollecTRI_regulons.csv" \
             --source "$RUNNER_TEMP/CollecTRI_source.tsv" \
+            --output results/m2d2-inspect
+      - name: Match actual measured human genes to pinned CollecTRI edges
+        run: |
+          python scripts/match_hesc_collecTRI.py \\
+            --archive "$RUNNER_TEMP/BEELINE-data.zip" \\
+            --regulons "$RUNNER_TEMP/CollecTRI_regulons.csv" \\
+            --source "$RUNNER_TEMP/CollecTRI_source.tsv" \\
             --output results/m2d2-inspect
       - name: Publish source schema and provenance metadata
         if: always()
