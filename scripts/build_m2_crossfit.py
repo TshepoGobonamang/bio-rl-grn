@@ -41,7 +41,24 @@ def build(raw_dir: Path, output_dir: Path, *, dataset_id: str | None = None,
         "outer_score_and_test_excluded_from_dataset": True,
     })
     output_dir.mkdir(parents=True, exist_ok=True)
+    # The combined edge table remains for backward-compatible auditing ONLY.
+    # Model training must use the separate allowlisted feature file.
+    keys = ["dataset_id", "fold_id", "source", "target", "pair_id"]
+    features = rows.loc[:, keys + manifest["feature_columns"]].copy()
+    target_columns = [c for c in rows if c.endswith("_TARGET") or c.endswith("_TARGET_ONLY")]
+    targets = rows.loc[:, keys + target_columns].copy()
+    assert not any(c.endswith(("_TARGET", "_TARGET_ONLY")) for c in features)
+    assert features[keys].equals(targets[keys])
+    assert not features.duplicated(keys).any() and not targets.duplicated(keys).any()
+    features.to_csv(output_dir / "m2_features.csv", index=False)
+    targets.to_csv(output_dir / "m2_targets.csv", index=False)
     rows.to_csv(output_dir / "m2_crossfit_edges.csv", index=False)
+    manifest["separate_feature_file"] = "m2_features.csv"
+    manifest["separate_target_file"] = "m2_targets.csv"
+    manifest["combined_file_diagnostic_only"] = "m2_crossfit_edges.csv"
+    manifest["data_keys"] = keys
+    manifest["n_target_columns"] = len(target_columns)
+    manifest["feature_target_separation_verified"] = True
     (output_dir / "m2_crossfit_manifest.json").write_text(
         json.dumps(manifest, indent=2), encoding="utf-8"
     )
