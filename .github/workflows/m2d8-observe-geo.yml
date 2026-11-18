@@ -21,6 +21,11 @@ jobs:
           python-version: '3.11'
       - name: Install minimum dependencies
         run: python -m pip install pandas pytest
+      - name: Verify complete research checkout
+        run: |
+          git rev-parse HEAD
+          test -f tests/test_m2d8_real_tfmap.py
+          test -f scripts/observe_m2d8_real_tfmap.py
       - name: Check inspection logic
         run: python -m pytest -q tests/test_m2d8_real_tfmap.py
       - name: Download actual GEO supplement
