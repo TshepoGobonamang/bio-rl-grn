@@ -24,6 +24,11 @@ jobs:
         with:
           ref: feat/m2d8-source-observation
           persist-credentials: false
+      - name: Verify D8 checkout
+        run: |
+          git rev-parse HEAD
+          test -f tests/test_m2d8_real_tfmap.py
+          test -f scripts/observe_m2d8_real_tfmap.py
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -51,4 +56,4 @@ jobs:
         with:
           name: m2d8-actual-source-observation
           path: results/m2d8/*.json
-          if-no-files-found: warn
+          if-no-files-found: error
