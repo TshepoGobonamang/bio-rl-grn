@@ -40,7 +40,7 @@ jobs:
       - name: Install analysis requirements
         run: python -m pip install 'anndata>=0.10,<0.13' pandas pytest
       - name: Run exact join unit tests
-        run: python -m pytest -q tests/test_m2d15_tfmap_reconciliation.py
+        run: python -m pytest -q tests/test_m2d15_tfmap_reconciliation.py tests/test_m2d15b_exact_concordance.py
       - name: Download and validate original GEO files
         shell: bash
         run: |
@@ -72,6 +72,14 @@ jobs:
           python scripts/audit_m2d15_headerless_tfmap.py \
             --source "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz" \
             --output results/m2d15/headerless_tfmap_audit.json
+      - name: Exact headerless TFmap to H5AD cell-barcode concordance
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/audit_m2d15b_exact_concordance.py \
+            --tfmap "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz" \
+            --h5ad "$RUNNER_TEMP/GSE216595_180124_perturb.h5ad.gz" \
+            --output results/m2d15/exact_headerless_concordance.json
       - name: Reconcile only when exact keys supplied
         shell: bash
         env:
