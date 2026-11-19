@@ -1,0 +1,15 @@
+{
+  "validated_control_tf_labels": [],
+  "control_identity_verified": false,
+  "control_identity_source": null,
+  "biological_culture_replicate_provenance": {
+    "verified": false,
+    "source": null,
+    "independent_culture_id_field": null,
+    "sequencing_batch_not_used_as_replicate": false
+  },
+  "tf_barcode_mapping_verified": false,
+  "tf_barcode_mapping_source": null,
+  "matched_cell_context_verified": false,
+  "matched_cell_context_source": null
+}
