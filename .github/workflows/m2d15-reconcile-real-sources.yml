@@ -65,6 +65,13 @@ jobs:
           python scripts/inspect_m2d10_h5ad.py \
             --h5ad "$RUNNER_TEMP/GSE216595_180124_perturb.h5ad.gz" \
             --output results/m2d15/observed_h5ad_schema.json
+      - name: Audit potential headerless TFmap (preserve first source record)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/audit_m2d15_headerless_tfmap.py \
+            --source "$RUNNER_TEMP/GSM6681047_180124_TFmap.csv.gz" \
+            --output results/m2d15/headerless_tfmap_audit.json
       - name: Reconcile only when exact keys supplied
         shell: bash
         env:
