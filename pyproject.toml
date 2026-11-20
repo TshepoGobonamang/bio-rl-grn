@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "grn-reliability-benchmark"
-version = "0.1.0"
+version = "0.2.0"
 description = "Leakage-aware graph-conditioned GRN inference benchmark and independent evaluation"
 readme = "README.md"
 requires-python = ">=3.10"

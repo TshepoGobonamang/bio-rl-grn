@@ -18,6 +18,8 @@ def main(argv=None):
     f.add_argument('--tf-list',type=Path)
     f.add_argument('--allow-all-genes',action='store_true')
     f.add_argument('--prior',type=Path)
+    f.add_argument('--prior-secondary',type=Path)
+    f.add_argument('--gcev',action='store_true',help='Fit nested paired evidence-value gates (experimental)')
     f.add_argument('--seed',type=int,default=42)
     f.add_argument('--max-genes',type=int,default=12)
     f.add_argument('--max-parents',type=int,default=2)
@@ -35,6 +37,7 @@ def main(argv=None):
     s=cmd.add_parser('smoke')
     s.add_argument('--output',type=Path,required=True)
     s.add_argument('--seed',type=int,default=42)
+    s.add_argument('--gcev',action='store_true',help='Test GCEV using synthetic-only data')
     a=p.parse_args(argv)
     if a.command=='generate-smoke':
         print(generate_smoke(a.output,a.seed,a.cells,a.genes))
@@ -42,7 +45,8 @@ def main(argv=None):
         v=run_fit(a.expression,a.output,tf_list=a.tf_list,prior=a.prior,seed=a.seed,
                   max_genes=a.max_genes,max_parents=a.max_parents,k=a.top_k,
                   alpha=a.alpha,graph_query_budget=a.query_budget,missing=a.missing,
-                  corrupt=a.corrupt,allow_all_genes=a.allow_all_genes)
+                  corrupt=a.corrupt,allow_all_genes=a.allow_all_genes,
+                  gcev=a.gcev,prior_secondary=a.prior_secondary)
         print(f"Sealed {v['n_candidate_edges']} candidate edges; reference not accessed")
     elif a.command=='evaluate':
         print(evaluate(a.fitted,a.reference,a.output,
@@ -52,7 +56,7 @@ def main(argv=None):
         generate_smoke(data,seed=a.seed)
         run_fit(data/'expression.csv',a.output/'fit',tf_list=data/'tfs.csv',
                 prior=data/'TOY_ONLY_random_prior.csv',seed=a.seed,max_genes=8,k=7,
-                graph_query_budget=1500)
+                graph_query_budget=1500,gcev=a.gcev)
         metrics=evaluate(a.output/'fit',data/'reference_complete.csv',
                          a.output/'evaluation',reference_complete=True,k=7)
         print(metrics.to_string(index=False))

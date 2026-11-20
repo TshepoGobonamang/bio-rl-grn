@@ -4,9 +4,27 @@
 
 Clean-room research software for **graph-conditioned, cross-fitted reliability signals in directed gene-regulatory network inference**. This repository is a **new implementation**, not a claim that independent biological validation or reinforcement learning has succeeded.
 
+
+## v0.2 experimental method: graph-conditional evidence valuation (GCEV)
+
+**GCEV is a new, experimental one-step implementation, not a demonstrated biological advance.**
+It estimates source-specific improvement from **matched graph-edit choices with vs. without one evidence source**, trains a target-held-out utility gate using graph-state features, and compares it with fixed-source, globally learned and graph-state-ablated controls. All paired source-value targets use outer-fit cells only; final expression-test and gold evaluation stay separate. Nested search has extra computational cost reported in its manifest.
+
+```bash
+# Controlled toy-engineering pilot; two SIMULATED gold-derived evidence streams
+python scripts/controlled_synthetic_pilot.py --output results/SYNTHETIC_ONLY_gcev_pilot \
+  --seeds 11 42 77 --cells 130 --genes 7
+
+# Real-source interface, only after evidence provenance review
+# grnb fit --expression ... --tf-list ... --prior ... --prior-secondary ... \
+#   --gcev --output results/real/fit
+```
+
+See [GCEV method, safeguards, limits and validation](docs/GCEV_METHOD_AND_VALIDATION.md) and [controlled pilot results](reports/GCEV_SYNTHETIC_ONLY_PILOT_2026_11_20.md). **The synthetic pilot is not independent biological validation.**
+
 ## Scientific status
 
-- **Implemented and locally tested:** Pearson/Spearman baselines, parent-conditional predictive gain, utility-based greedy graph editing, fixed and nonlearned source-weight controls, group-cross-fitted adaptive evidence scoring, fit-only feature selection, split and artifact hashes, separate reference evaluation, source-dropout/corruption, deterministic synthetic smoke demo.
+- **Implemented and locally tested:** GCEV one-step paired source-ablation and group-held-out graph-conditional source weighting; Pearson/Spearman baselines, parent-conditional predictive gain, utility-based greedy graph editing, fixed and nonlearned source-weight controls, group-cross-fitted adaptive evidence scoring, fit-only feature selection, split and artifact hashes, separate reference evaluation, source-dropout/corruption, deterministic synthetic smoke demo.
 - **Not completed:** independent unseen-cohort benchmarking; verified perturbation-derived direct causal edges; true independent biological replicates/controls for GSE216595; budget-matched trained RL policy; submission-ready results/manuscript.
 - **Prior knowledge:** Previous research in `TshepoGobonamang/bio-rl-grn` demonstrated mixed/negative reliability results and showed source/reference overlap risk. It is not silently imported as confirmatory evidence here.
 
