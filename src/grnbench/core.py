@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import time
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -228,7 +229,8 @@ def run_fit(expression: Path, out: Path, *, tf_list: Path | None = None,
             prior: Path | None = None, seed: int = 42, max_genes: int = 12,
             max_parents: int = 2, k: int = 10, alpha: float = 1.0,
             graph_query_budget: int = 5000, missing: float = 0.0,
-            corrupt: float = 0.0, allow_all_genes: bool = False):
+            corrupt: float = 0.0, allow_all_genes: bool = False,
+            gcev: bool = False, prior_secondary: Path | None = None):
     if k < 1 or max_genes < 3 or max_parents < 0 or graph_query_budget < 1:
         raise ValueError('Invalid positive model configuration')
     expression = Path(expression)
@@ -272,12 +274,55 @@ def run_fit(expression: Path, out: Path, *, tf_list: Path | None = None,
                                                             evidence, mask, alpha,
                                                             max_parents, seed))
         rankings.update(fixed=fixed, heuristic=heuristic, adaptive=adaptive)
+    # GCEV cross-fitting and counterfactual source-ablation targets see ONLY
+    # the outer fit subset; graph-scoring and outer test cells are not accessed.
+    gcev_result = None
+    gcev_elapsed_seconds = None
+    gcev_fit_loss_evaluations = None
+    source_files = {}
+    if gcev:
+        if prior is None:
+            raise ValueError('GCEV requires a provided (real or explicitly synthetic) evidence source')
+        from .gcev import (paired_source_valuation, learn_graph_conditional_weights,
+                           compose_graph_conditional_rank)
+        source_files['primary'] = str(prior)
+        source_matrices = {'primary':(evidence,mask)}
+        if prior_secondary is not None:
+            secondary, secondary_mask = read_prior(prior_secondary, edges)
+            secondary, secondary_mask = evidence_sensitivity(secondary, secondary_mask,
+                                                              missing, corrupt, seed+501)
+            source_matrices['secondary'] = (secondary,secondary_mask)
+            source_files['secondary'] = str(prior_secondary)
+        gcev_start = time.perf_counter()
+        labels = paired_source_valuation(fit,edges,source_matrices,
+                                         alpha=alpha,max_parents=max_parents,
+                                         boost=.3,seed=seed)
+        gcev_result = learn_graph_conditional_weights(labels,shrinkage=.05,seed=seed)
+        gcev_elapsed_seconds = round(time.perf_counter()-gcev_start,6)
+        # Every source uses two held-out graph losses. Each target/fold graph
+        # scaffold needs one baseline loss and one loss per eligible action.
+        unique_contexts = labels.drop_duplicates(['fold','target'])
+        gcev_fit_loss_evaluations = int((unique_contexts.candidate_count+1).sum()+2*len(labels))
+        for method in ('fixed_sources','global_source','no_graph_state','gcev'):
+            rankings[method] = compose_graph_conditional_rank(expr_rank,edges,
+                         source_matrices,gcev_result.per_target_source,method,boost=.3)
+    elif prior_secondary is not None:
+        raise ValueError('A secondary source requires --gcev')
     order, trajectory, queries, accepted = greedy_ranking(fit, score, edges, alpha,
                                                           k, graph_query_budget, conditional)
     # Greedy order preserves actual edit selections. Remaining edges are fallback
     # rankings only and must not be described as accepted graph edits.
     out.mkdir(parents=True, exist_ok=True)
     (out/'rankings').mkdir(exist_ok=True)
+    if gcev_result is not None:
+        # Diagnostic labels are kept apart from predictor scores. Evaluation
+        # cannot ingest them; ranking seal includes GCEV methods below.
+        gcev_dir=out/'gcev'
+        gcev_dir.mkdir(exist_ok=True)
+        gcev_result.paired_decisions.to_csv(gcev_dir/'paired_source_value_targets.csv',index=False)
+        gcev_result.per_target_source.to_csv(gcev_dir/'oof_source_weights.csv',index=False)
+        (gcev_dir/'training_contract.json').write_text(json.dumps(
+            gcev_result.gate_fit_metadata,indent=2)+'\n')
     rows = []
     for method, values in rankings.items():
         ids = sorted(range(len(edges)), key=lambda i: (-float(values[i]), edges[i]))
@@ -302,6 +347,16 @@ def run_fit(expression: Path, out: Path, *, tf_list: Path | None = None,
     manifest = {'status':'EVALUATION_PENDING','source_expression':str(expression),
                 'expression_sha256':sha256(expression),
                 'prior_sha256':sha256(prior) if prior is not None else None,
+                'secondary_prior_sha256':sha256(prior_secondary) if prior_secondary else None,
+                'gcev_enabled':bool(gcev),
+                'gcev_training_elapsed_seconds':gcev_elapsed_seconds,
+                'gcev_nested_loss_evaluations':gcev_fit_loss_evaluations,
+                'gcev_models_have_unequal_training_compute_vs_fixed':bool(gcev),
+                'gcev_source_files':source_files,
+                'gcev_methods':['fixed_sources','global_source','no_graph_state','gcev'] if gcev else [],
+                'gcev_training_contract_sha256':sha256(out/'gcev'/'training_contract.json') if gcev else None,
+                'gcev_paired_targets_sha256':sha256(out/'gcev'/'paired_source_value_targets.csv') if gcev else None,
+                'gcev_weights_sha256':sha256(out/'gcev'/'oof_source_weights.csv') if gcev else None,
                 'tf_list_sha256':sha256(tf_list) if tf_list else None,
                 'n_cells':len(x),'n_genes':len(x.columns),'genes':list(x.columns),
                 'n_regulators':len(regulators),'regulators':regulators,
@@ -326,6 +381,16 @@ def evaluate(fit_dir: Path, reference: Path, out: Path, *, reference_complete: b
     from sklearn.metrics import average_precision_score, roc_auc_score
     fit_dir, reference, out = Path(fit_dir), Path(reference), Path(out)
     manifest = json.loads((fit_dir/'fit_manifest.json').read_text())
+    if manifest.get('gcev_enabled'):
+        checks = [
+            ('paired_source_value_targets.csv','gcev_paired_targets_sha256'),
+            ('oof_source_weights.csv','gcev_weights_sha256'),
+            ('training_contract.json','gcev_training_contract_sha256'),
+        ]
+        for name,key in checks:
+            p = fit_dir/'gcev'/name
+            if not p.exists() or sha256(p) != manifest.get(key):
+                raise ValueError(f'GCEV artifact mutated after fitting: {name}')
     reference_df = pd.read_csv(reference)
     if not {'source','target'}.issubset(reference_df):
         raise ValueError('Reference requires source,target')

@@ -28,3 +28,12 @@ jobs:
           name: synthetic-smoke-NOT-biological-results
           path: results/smoke/
           if-no-files-found: warn
+      - name: Run source-ablation GCEV controlled synthetic engineering pilot
+        run: python scripts/controlled_synthetic_pilot.py --output results/gcev-pilot --seeds 11 42 77 --cells 130 --genes 7
+      - name: Retain GCEV synthetic pilot outputs (not biological results)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-gcev-engineering-pilot-NOT-biological
+          path: results/gcev-pilot/
+          if-no-files-found: warn
