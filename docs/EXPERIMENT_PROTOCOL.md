@@ -1,38 +1,39 @@
-# E1 prototype protocol (pre-registration draft)
+# Locked evaluation protocol — research design v0.1
 
-**Goal:** validate data import, graph-conditioned ridge loss and static/greedy controls on BEELINE dyn-LL-500 replicate 1. Not yet a confirmatory experiment.
+## Hypothesis
 
-## Inputs
+Can source-blind, cross-fitted parent-conditional predictive usefulness, combined with explicitly available external regulatory evidence, improve held-out directed edge ranking and expression test error compared with an equal-information fixed evidence weight and nonlearned source-stability heuristic?
 
-- BEELINE v4, dyn-LL-500-1 ExpressionData.csv, GroundTruthNetwork.csv, optional pseudotime.
-- Unless an independent list is supplied, all measured genes are eligible regulators; disclose the all-gene assumption explicitly.
-- Gold standard is never used in fit, model selection, prior construction, TF candidate filtering or reward.
+A null/negative result is valid. The software does not estimate causal effects, and the test-set reference must never select priors, model weights, candidate edges, genes or search budgets.
 
-## Split and modeling
+## Development and final confirmation
 
-- Deterministic shuffle: 75% fit, 25% internal graph scoring.
-- Each target fits ridge regression from its selected parent set, with alpha=lambda_r*n_fit and an unpenalized intercept.
-- Mean target score is held-out squared loss divided by fit-partition target variance.
-- Marginal utility gain is reduction in graph loss minus normalized sparsity cost; greedy accepts maximum positive-gain addition.
-- Pearson/Spearman score fitting-only absolute correlation.
+Develop on already inspected older BEELINE topologies and smoke data only. Select **previously uninspected** independent network realizations/cohorts *before* viewing their reference edges. Record source accession/commit, checksum, topology, generator/realization ID, expression split seed, biological vs technical replicate structure and gene eligibility. Split fitting 60%, internal graph scoring 20%, untouched expression test 20%; save split permutation SHA256. Use complete benchmark reference only in evaluation.
 
-## Evaluation and limits
+Do not claim independent observations from repeated split seeds, edge-fold records, sequencing libraries or pseudo-replicated cells. Compute uncertainty at independently generated **network realization** level and cluster by topology family as sensitivity analysis.
 
-- Rank every allowed directed candidate; only a separate evaluation operation reads gold.
-- Report AUROC, AUPRC, prevalence baseline, Precision@K and Recall@K.
-- This small, single-replicate study is exploratory, not evidence for RL superiority or biological validation.
-- Repeatedly querying the internal graph-scoring partition may overfit; add independent untouched expression context for confirmatory analysis.
+## Method definitions
 
-## Run official dataset
+For proposed edge s→t, select a source-blind scaffold of up to two other potential parents using fitting-only target correlations. Fit baseline ridge on fitting cells and score on independent internal scoring cells. Fit augmented ridge including s on the same fitting cells; let Δ=(L_before − L_after)/max(L_before, ε), clipped to [−1, 1]. This is a *predictive association target*. Inner 3-fold cross-fitting uses only the 60% fitting partition for adaptive target generation.
 
-Official data: https://zenodo.org/records/19009603 (BEELINE-data.zip; approximately 262 MB).
-The downloader/extractor checks publisher-provided MD5.
+Adaptive regression uses TF-target feature correlations, prior masks and prior strengths; final reliability predictions are out-of-target via GroupKFold. It has no regulatory gold supervision and is not calibrated P(edge). Source absence must never become an asserted negative. Fixed and nonlearned heuristics use exactly the same prior entries and candidate universe.
 
-```bash
-python scripts/extract_beeline_v4.py --archive BEELINE-data.zip --run dyn-LL-500-1 --output data/raw/beeline/dyn-LL-500-1
-python scripts/run_e1.py --raw-dir data/raw/beeline/dyn-LL-500-1 --processed-dir data/processed/dyn_LL_500_1 --results-dir results/dyn_LL_500_1
-```
+Greedy graph editing adds the largest **positive** internal graph utility improvement, subject to utility-query budget. Output ranking fills unaccepted positions using a declared conditional-gain fallback; `selected_edges` records actually accepted edits, and full-ranking AP must not be described as all-greedy edited edges. Match model settings / top-K for untouched test loss comparisons.
 
-Alternatively use GitHub Actions > E1 BEELINE dyn-LL-500 exploratory benchmark > Run workflow after merging the feature branch. The manual runner downloads data temporarily, runs models and uploads only result artifacts, not redistributed expression data.
+## Minimum baseline matrix
 
-The runner imports the gold reference only after all rankings are saved. The fixed 20-edge exploration budget is not derived from the known gold-edge count.
+Pearson, Spearman, conditional predictive-gain, greedy ridge, fixed weighted evidence, nonlearned evidence heuristic, group-cross-fitted adaptive reliability. **Fixed/adaptive/heuristic are omitted rather than imputed if no real prior source exists**. Prespecify reliability weight and ridge penalty; do not tune on final labels.
+
+## Outcomes
+
+Primary: sklearn **average precision (AP)** of held-out gold rankings on a verified complete candidate reference; orientation accuracy for unique unambiguous one-direction reference pairs; untouched expression test NMSE. Secondary: AUROC, Precision@K, source coverage, accepted greedy edits, utility queries and runtime. Pearson/Spearman tie directions must be counted as unassessable, not wins.
+
+Missingness matrix: 0%,25%,50%,75%; source-strength corruption: 0%,10%,25%,50%, using genuine available source modalities. These perturbations do not convert absent evidence to a negative. Preserve control, shuffled evidence and matched availability experiments in the final study.
+
+## Control of information access
+
+The `fit` command has no reference argument. It records SHA256s for expression, whitelist, provided prior and every ranking. The `evaluate` command checks ranking hashes, candidate coverage, and demands `--reference-complete`. A clinical/real positive-only reference cannot be evaluated as if missing edges were false. Never use final gold labels to choose hyperparameters or candidate genes.
+
+## Completion rule
+
+One source-pinned CI/integration run on frozen independent benchmark families, paired comparisons, per-network metrics, network-level uncertainty and reproduced result tables. Do not claim independent biological validation or RL superiority until their specific experimental requirements pass. A final paper can report negative results.

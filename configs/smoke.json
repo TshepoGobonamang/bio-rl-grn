@@ -1,0 +1,8 @@
+{
+  "purpose": "synthetic software smoke test ONLY",
+  "seed": 42,
+  "cells": 180,
+  "genes": 8,
+  "methodology": ["pearson", "spearman", "conditional", "greedy", "fixed", "heuristic", "adaptive"],
+  "not_for_biological_conclusions": true
+}

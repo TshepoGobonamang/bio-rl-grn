@@ -1,36 +1,19 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
-
 [project]
-name = "bio-rl-grn"
+name = "grn-reliability-benchmark"
 version = "0.1.0"
-description = "Research testbed for graph-conditioned regulatory network inference (Bio-RL-GRN)"
+description = "Leakage-aware graph-conditioned GRN inference benchmark and independent evaluation"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [{name = "Bio-RL-GRN Research Team"}]
-dependencies = [
-  "numpy>=1.24,<3",
-  "scipy>=1.11,<2",
-  "pandas>=2.0,<3",
-  "scikit-learn>=1.3,<2",
-  "PyYAML>=6.0,<7",
-  "matplotlib>=3.7,<4",
-]
-
+dependencies = ["numpy>=1.24,<3", "pandas>=2,<3", "scipy>=1.11,<2", "scikit-learn>=1.3,<2"]
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.9"]
-
 [project.scripts]
-biorlgrn = "biorlgrn.cli:main"
-
+grnb = "grnbench.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra"
-
-[tool.ruff]
-line-length = 100

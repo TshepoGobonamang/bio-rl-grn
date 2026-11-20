@@ -1,0 +1,21 @@
+{
+  "status": "UNLOCKED_PROTOCOL_NOT_YET_FROZEN",
+  "research_question": "Does cross-fitted graph-parent-conditional source reliability improve directed reference ranking and untouched expression loss versus strongest matched controls?",
+  "no_test_reference_access_before_fit": true,
+  "reference_completeness_required": true,
+  "unseen_network_realizations": [],
+  "fit_fraction": 0.6,
+  "internal_graph_scoring_fraction": 0.2,
+  "expression_test_fraction": 0.2,
+  "random_seeds_to_lock": [42, 73, 137],
+  "max_parents": 2,
+  "ridge_alpha": 1.0,
+  "top_k": 10,
+  "candidate_gene_selection": "top expression variance in fit partition; TF whitelist fixed without reference",
+  "methods": ["pearson", "spearman", "conditional", "greedy", "fixed", "heuristic", "adaptive"],
+  "prior_missing_fractions": [0, 0.25, 0.5, 0.75],
+  "prior_strength_corruption_fractions": [0, 0.1, 0.25, 0.5],
+  "rl": "NOT_EXECUTED_EXCLUDE_FROM_CLAIMS",
+  "independent_biological_validation": "NOT_CONFIRMED",
+  "rule": "Do not call this confirmatory until previously uninspected networks and source provenance are pinned and the protocol is frozen before gold evaluation"
+}
