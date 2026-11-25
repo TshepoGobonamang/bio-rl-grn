@@ -1,0 +1,13 @@
+{
+  "n_independent_graphs": 32,
+  "n_expected_conditions": 256,
+  "n_checked_conditions": 256,
+  "n_ranking_files_independently_rescored": 3328,
+  "parent_state_ap_audit": true,
+  "all_method_metric_rows": 3328,
+  "max_allowed_metric_error": 1e-11,
+  "matched_split_and_evidence_checks": 64,
+  "no_errors": true,
+  "errors": [],
+  "oracle_prior_is_synthetic_only": true
+}
