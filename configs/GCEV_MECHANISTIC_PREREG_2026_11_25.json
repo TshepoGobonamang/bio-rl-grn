@@ -1,0 +1,295 @@
+{
+  "protocol_id": "GCEV-MECH-LCK-2026-11-25-001",
+  "description": "32 new independent DAGs crossed within-DAG with linear, saturation-only, pairwise-interaction-only and combined mechanisms; two evidence conditions",
+  "original_48_dags_are_exploratory_only": true,
+  "pilot_and_predecessor_seeds_excluded": "11,42,77,2001-2048",
+  "network_seeds": "6101-6132 inclusive",
+  "independent_units": 32,
+  "scenarios": [
+    {
+      "id": "clean",
+      "missing": 0.0,
+      "corrupt": 0.0
+    },
+    {
+      "id": "source_stress",
+      "missing": 0.5,
+      "corrupt": 0.25
+    }
+  ],
+  "mechanisms": [
+    {
+      "name": "linear",
+      "saturation": 0,
+      "interaction": 0
+    },
+    {
+      "name": "saturation",
+      "saturation": 1,
+      "interaction": 0
+    },
+    {
+      "name": "interaction",
+      "saturation": 0,
+      "interaction": 1
+    },
+    {
+      "name": "combined_mechanism",
+      "saturation": 1,
+      "interaction": 1
+    }
+  ],
+  "n_network_condition_fits": 256,
+  "method_parameters": {
+    "ridge_alpha": 1.0,
+    "crossfit_folds": 3,
+    "max_parents": 2,
+    "source_boost": 0.3,
+    "shrinkage": 0.05,
+    "top_k": 7,
+    "graph_utility_budget": 1600,
+    "fit_score_test": "60/20/20"
+  },
+  "primary": "mean per-DAG 0.5*((dAP(sat0,interaction1)-dAP(sat0,interaction0))+(dAP(sat1,interaction1)-dAP(sat1,interaction0))) in clean scenario; dAP=GCEV AP minus no_graph_state AP",
+  "bootstrap": {
+    "draws": 4000,
+    "rng_seed": 20261125,
+    "unit": "independent paired DAG",
+    "strata": [
+      "n_genes=7,target_switch",
+      "n_genes=9,target_switch",
+      "n_genes=7,global_stable",
+      "n_genes=9,global_stable"
+    ],
+    "per_stratum": 8
+  },
+  "claim_success": "primary stratified 95% CI lower > 0 and point effect >= 0.02 AP; interaction conditions GCEV vs no_graph_state untouched NMSE relative difference upper 95% CI <= 0.02",
+  "biological_claim_permitted": false,
+  "outcome_aware_revisions_forbidden": true,
+  "networks": [
+    {
+      "network_id": "dag_6101",
+      "seed": 6101,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6102",
+      "seed": 6102,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6103",
+      "seed": 6103,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6104",
+      "seed": 6104,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6105",
+      "seed": 6105,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6106",
+      "seed": 6106,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6107",
+      "seed": 6107,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6108",
+      "seed": 6108,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6109",
+      "seed": 6109,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6110",
+      "seed": 6110,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6111",
+      "seed": 6111,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6112",
+      "seed": 6112,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6113",
+      "seed": 6113,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6114",
+      "seed": 6114,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6115",
+      "seed": 6115,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6116",
+      "seed": 6116,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6117",
+      "seed": 6117,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6118",
+      "seed": 6118,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6119",
+      "seed": 6119,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6120",
+      "seed": 6120,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6121",
+      "seed": 6121,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6122",
+      "seed": 6122,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6123",
+      "seed": 6123,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6124",
+      "seed": 6124,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6125",
+      "seed": 6125,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6126",
+      "seed": 6126,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6127",
+      "seed": 6127,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6128",
+      "seed": 6128,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6129",
+      "seed": 6129,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6130",
+      "seed": 6130,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "dag_6131",
+      "seed": 6131,
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "dag_6132",
+      "seed": 6132,
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    }
+  ]
+}

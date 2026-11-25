@@ -1,0 +1,75 @@
+name: GCEV Mechanistic Confirmation — 32 Paired DAGs
+on:
+  push:
+    branches:
+      - research/gcev-graph-mechanism-confirmation-2026-11-25
+    paths:
+      - 'scripts/gcev_mechanism_factorial.py'
+      - 'scripts/verify_gcev_mechanistic.py'
+      - 'scripts/plot_gcev_mechanism.py'
+      - 'tests/test_gcev_mechanism_factorial.py'
+      - 'configs/GCEV_MECHANISTIC_PREREG_2026_11_25.json'
+      - '.github/workflows/gcev-mechanism-confirmation.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  mechanistic-confirmation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify frozen experiment code and exact protocol
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          sha256sum configs/GCEV_MECHANISTIC_PREREG_2026_11_25.json
+          printf '%s  %s\n' \
+            a5b2cd5fc293bc220aec4df519dcb6ccb8e69bac7a390b23b73f10a665cff701 \
+            configs/GCEV_MECHANISTIC_PREREG_2026_11_25.json | sha256sum --check
+      - name: Install and test
+        run: |
+          python -m pip install -e '.[dev]'
+          python -m pytest -q
+      - name: Run all 256 preregistered synthetic conditions
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=src:. python scripts/gcev_mechanism_factorial.py \
+            --protocol configs/GCEV_MECHANISTIC_PREREG_2026_11_25.json \
+            --output results/gcev_mechanistic_32_dags --workers 4
+      - name: Independently rescore every saved regulatory ranking
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=src:. python scripts/verify_gcev_mechanistic.py \
+            --root results/gcev_mechanistic_32_dags
+      - name: Render paired-DAG figure pack
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install matplotlib
+          PYTHONPATH=src:. python scripts/plot_gcev_mechanism.py \
+            --root results/gcev_mechanistic_32_dags
+      - name: Upload outcome and independent-DAG diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gcev-mechanism-confirmation-32-dags
+          path: |
+            results/gcev_mechanistic_32_dags/protocol.json
+            results/gcev_mechanistic_32_dags/independent_integrity_audit.json
+            results/gcev_mechanistic_32_dags/figures/*.png
+            results/gcev_mechanistic_32_dags/figures/*.svg
+            results/gcev_mechanistic_32_dags/mechanism_decision.json
+            results/gcev_mechanistic_32_dags/execution_ledger.json
+            results/gcev_mechanistic_32_dags/failures.json
+            results/gcev_mechanistic_32_dags/all_method_metrics.csv
+            results/gcev_mechanistic_32_dags/per_dag_factorial_effects.csv
+            results/gcev_mechanistic_32_dags/per_dag_mechanism_comparisons.csv
+            results/gcev_mechanistic_32_dags/per_condition_source_decisions.csv
+          if-no-files-found: warn
