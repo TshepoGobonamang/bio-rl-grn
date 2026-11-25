@@ -303,7 +303,7 @@ def run_fit(expression: Path, out: Path, *, tf_list: Path | None = None,
         # scaffold needs one baseline loss and one loss per eligible action.
         unique_contexts = labels.drop_duplicates(['fold','target'])
         gcev_fit_loss_evaluations = int((unique_contexts.candidate_count+1).sum()+2*len(labels))
-        for method in ('fixed_sources','global_source','no_graph_state','gcev'):
+        for method in ('fixed_sources','global_source','no_graph_state','no_parent_state','no_action_state','gcev'):
             rankings[method] = compose_graph_conditional_rank(expr_rank,edges,
                          source_matrices,gcev_result.per_target_source,method,boost=.3)
     elif prior_secondary is not None:
@@ -353,7 +353,7 @@ def run_fit(expression: Path, out: Path, *, tf_list: Path | None = None,
                 'gcev_nested_loss_evaluations':gcev_fit_loss_evaluations,
                 'gcev_models_have_unequal_training_compute_vs_fixed':bool(gcev),
                 'gcev_source_files':source_files,
-                'gcev_methods':['fixed_sources','global_source','no_graph_state','gcev'] if gcev else [],
+                'gcev_methods':['fixed_sources','global_source','no_graph_state','no_parent_state','no_action_state','gcev'] if gcev else [],
                 'gcev_training_contract_sha256':sha256(out/'gcev'/'training_contract.json') if gcev else None,
                 'gcev_paired_targets_sha256':sha256(out/'gcev'/'paired_source_value_targets.csv') if gcev else None,
                 'gcev_weights_sha256':sha256(out/'gcev'/'oof_source_weights.csv') if gcev else None,
