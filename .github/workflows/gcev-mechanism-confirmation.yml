@@ -5,6 +5,8 @@ on:
       - research/gcev-graph-mechanism-confirmation-2026-11-25
     paths:
       - 'scripts/gcev_mechanism_factorial.py'
+      - 'scripts/verify_gcev_mechanistic.py'
+      - 'scripts/plot_gcev_mechanism.py'
       - 'tests/test_gcev_mechanism_factorial.py'
       - 'configs/GCEV_MECHANISTIC_PREREG_2026_11_25.json'
       - '.github/workflows/gcev-mechanism-confirmation.yml'
@@ -40,6 +42,19 @@ jobs:
           PYTHONPATH=src:. python scripts/gcev_mechanism_factorial.py \
             --protocol configs/GCEV_MECHANISTIC_PREREG_2026_11_25.json \
             --output results/gcev_mechanistic_32_dags --workers 4
+      - name: Independently rescore every saved regulatory ranking
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=src:. python scripts/verify_gcev_mechanistic.py \
+            --root results/gcev_mechanistic_32_dags
+      - name: Render paired-DAG figure pack
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install matplotlib
+          PYTHONPATH=src:. python scripts/plot_gcev_mechanism.py \
+            --root results/gcev_mechanistic_32_dags
       - name: Upload outcome and independent-DAG diagnostics
         if: always()
         uses: actions/upload-artifact@v4
@@ -47,6 +62,9 @@ jobs:
           name: gcev-mechanism-confirmation-32-dags
           path: |
             results/gcev_mechanistic_32_dags/protocol.json
+            results/gcev_mechanistic_32_dags/independent_integrity_audit.json
+            results/gcev_mechanistic_32_dags/figures/*.png
+            results/gcev_mechanistic_32_dags/figures/*.svg
             results/gcev_mechanistic_32_dags/mechanism_decision.json
             results/gcev_mechanistic_32_dags/execution_ledger.json
             results/gcev_mechanistic_32_dags/failures.json
