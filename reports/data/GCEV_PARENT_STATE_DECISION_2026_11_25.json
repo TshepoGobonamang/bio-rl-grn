@@ -1,0 +1,69 @@
+{
+  "protocol_id": "GCEV-PARENT-LOCK-2026-11-25-001",
+  "independent_dags": 32,
+  "conditions": 256,
+  "n_method_evaluations": 3328,
+  "primary_parent_state_delta_ap": {
+    "mean": 0.005644416359906965,
+    "low95": -0.00016842441530528102,
+    "high95": 0.011448157002328168,
+    "unit": "independent DAG",
+    "n_dag": 32
+  },
+  "primary_parent_state_relative_test_nmse": {
+    "mean": 0.0007003675743886569,
+    "low95": -0.0022644756936628973,
+    "high95": 0.0038171192515101785,
+    "unit": "independent DAG",
+    "n_dag": 32
+  },
+  "primary_parent_state_supported": false,
+  "decision": "PRIMARY_PARENT_FEATURE_ADVANTAGE_NOT_ESTABLISHED",
+  "secondary_descriptive": {
+    "action_delta_ap_without_parent": {
+      "mean": 0.0027220870351284984,
+      "low95": -0.012993418042386684,
+      "high95": 0.019273770861412912,
+      "unit": "independent DAG",
+      "n_dag": 32
+    },
+    "action_delta_ap_with_parent": {
+      "mean": 0.010958932403139566,
+      "low95": -0.005155072091545186,
+      "high95": 0.028694244002266295,
+      "unit": "independent DAG",
+      "n_dag": 32
+    },
+    "gcev_vs_fixed_ap": {
+      "mean": -0.0637099333962822,
+      "low95": -0.08892654510463362,
+      "high95": -0.03840342333926806,
+      "unit": "independent DAG",
+      "n_dag": 32
+    }
+  },
+  "stress_descriptive": {
+    "clean": {
+      "mean_parent_delta_ap": 0.005644416359906965,
+      "mean_delta_test_nmse": 0.000700367574388657
+    },
+    "source_stress": {
+      "mean_parent_delta_ap": 0.007050212747552696,
+      "mean_delta_test_nmse": 0.0006158488758110652
+    }
+  },
+  "parent_feature_diagnostics": {
+    "n_distinct_parent_counts": 1,
+    "fraction_contexts_with_single_parent_count": 1.0,
+    "mean_parent_target_correlation_std": 0.10878369322094683,
+    "mean_value_prediction_mse_gcev": 0.005932567285829867,
+    "mean_value_prediction_mse_no_parent": 0.0059010464794467254,
+    "mean_value_prediction_mse_no_action": 0.005499942347015727,
+    "mean_changed_edit_rate": 0.15355282738095233,
+    "mean_training_seconds": 0.26748145703125
+  },
+  "independent_biological_validation": false,
+  "scope": "Direct parent feature block only; action features still depend on fitted parent scaffold.",
+  "protocol_sha256": "04210a82fa9b6cbed7300806c32e244f91b2ce857ac75ad7bcd82c9ba6f56a25",
+  "elapsed_seconds": 84.98
+}
