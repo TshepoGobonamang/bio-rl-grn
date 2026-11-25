@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "prereg_protocol_hash": "556c6745948cc89b10c9b7ee92a64d4b5637bcefbe180c0c062082b7d2f0272c",
+  "source_runs_checked": 192,
+  "method_rankings_checked": 2112,
+  "max_abs_metric_recomputation_difference": 1.1102230246251565e-16,
+  "failure_count": 0,
+  "failures": [],
+  "exact_reference_is_synthetic_oracle": true,
+  "no_biological_accuracy_claim": true
+}
