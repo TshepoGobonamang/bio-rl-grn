@@ -1,0 +1,56 @@
+name: GCEV preregistered 48-network benchmark
+on:
+  push:
+    branches:
+      - research/gcev-preregistered-multinetwork-benchmark
+    paths:
+      - scripts/confirmatory_gcev.py
+      - configs/GCEV_BENCHMARK_PREREG_2026_11_25.json
+      - tests/test_confirmatory_gcev.py
+      - .github/workflows/gcev-preregistered-benchmark.yml
+  workflow_dispatch: {}
+jobs:
+  confirmatory-synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Verify code and protocol
+        run: |
+          git rev-parse HEAD
+          sha256sum configs/GCEV_BENCHMARK_PREREG_2026_11_25.json
+          python -m pytest -q
+      - name: Execute all 48 independent graphs and 4 matched evidence conditions
+        run: |
+          python scripts/confirmatory_gcev.py \
+            --protocol configs/GCEV_BENCHMARK_PREREG_2026_11_25.json \
+            --output results/confirmatory_synthetic_only \
+            --workers 3
+      - name: Upload full summary and integrity records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gcev-preregistered-48-network-synthetic-results
+          path: |
+            results/confirmatory_synthetic_only/frozen_protocol.json
+            results/confirmatory_synthetic_only/primary_decision.json
+            results/confirmatory_synthetic_only/per_network_method_metrics.csv
+            results/confirmatory_synthetic_only/paired_network_effects.csv
+            results/confirmatory_synthetic_only/network_bootstrap_95.csv
+            results/confirmatory_synthetic_only/method_means.csv
+            results/confirmatory_synthetic_only/network_execution_ledger.json
+            results/confirmatory_synthetic_only/failure_ledger.json
+          if-no-files-found: error
