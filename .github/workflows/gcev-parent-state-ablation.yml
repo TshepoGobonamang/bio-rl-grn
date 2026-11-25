@@ -1,0 +1,68 @@
+name: GCEV — Preregistered Direct Parent-State Ablation
+on:
+  push:
+    branches:
+      - research/gcev-parent-state-only-ablation-2026-11-25
+    paths:
+      - 'src/grnbench/gcev.py'
+      - 'src/grnbench/core.py'
+      - 'scripts/gcev_parent_state_confirm.py'
+      - 'scripts/verify_gcev_parent_state.py'
+      - 'tests/test_gcev_parent_state.py'
+      - 'configs/GCEV_PARENT_STATE_PREREG_2026_11_25.json'
+      - '.github/workflows/gcev-parent-state-ablation.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  parent-state-ablation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify preregistered experiment and immutable source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          printf '%s  %s\n' '04210a82fa9b6cbed7300806c32e244f91b2ce857ac75ad7bcd82c9ba6f56a25' 'configs/GCEV_PARENT_STATE_PREREG_2026_11_25.json' | sha256sum --check
+      - name: Install and test
+        run: |
+          python -m pip install -e '.[dev]'
+          PYTHONPATH=src:. python -m pytest -q
+      - name: Run full frozen 32 DAG by 4 mechanisms by 2 evidence conditions
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=src:. python scripts/gcev_parent_state_confirm.py \
+            --protocol configs/GCEV_PARENT_STATE_PREREG_2026_11_25.json \
+            --output results/gcev_parent_state_32_dags --workers 4
+      - name: Independently rescore all rankings and verify experiment pairing
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=src:. python scripts/verify_gcev_parent_state.py \
+            --root results/gcev_parent_state_32_dags
+      - name: Upload complete confirmation results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gcev-parent-state-confirmation-32-dags
+          retention-days: 30
+          path: |
+            results/gcev_parent_state_32_dags/protocol.json
+            results/gcev_parent_state_32_dags/parent_state_decision.json
+            results/gcev_parent_state_32_dags/execution_ledger.json
+            results/gcev_parent_state_32_dags/failures.json
+            results/gcev_parent_state_32_dags/all_method_metrics.csv
+            results/gcev_parent_state_32_dags/per_dag_parent_effects.csv
+            results/gcev_parent_state_32_dags/per_dag_mechanism_comparisons.csv
+            results/gcev_parent_state_32_dags/per_condition_source_decisions.csv
+            results/gcev_parent_state_32_dags/independent_integrity_audit.json
+            results/gcev_parent_state_32_dags/networks/**/fit/rankings/*.csv
+            results/gcev_parent_state_32_dags/networks/**/fit/fit_manifest.json
+            results/gcev_parent_state_32_dags/networks/**/common/reference_complete.csv
+          if-no-files-found: warn
