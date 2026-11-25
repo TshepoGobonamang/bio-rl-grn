@@ -22,10 +22,9 @@ SOURCE_FEATURES = (
     'source_coverage', 'source_mean', 'source_max', 'source_std',
     'other_source_coverage', 'source_disagreement', 'candidate_count',
 )
-GRAPH_FEATURES = (
-    'parent_count', 'parent_target_correlation', 'baseline_gain',
-    'baseline_margin', 'winning_source_prior', 'action_prior_contrast',
-)
+PARENT_STATE_FEATURES = ('parent_count', 'parent_target_correlation')
+ACTION_FEATURES = ('baseline_gain', 'baseline_margin', 'winning_source_prior', 'action_prior_contrast')
+GRAPH_FEATURES = PARENT_STATE_FEATURES + ACTION_FEATURES
 FEATURES = SOURCE_FEATURES + GRAPH_FEATURES
 
 
@@ -226,10 +225,13 @@ def learn_graph_conditional_weights(targets: pd.DataFrame,
     sources = sorted(targets['evidence_source'].astype(str).unique())
     one_hot = np.column_stack([(targets['evidence_source']==s).to_numpy(float) for s in sources])
     y = targets['source_value'].to_numpy(float)
-    estimated = {k:np.zeros(len(y),dtype=float) for k in ['gcev','no_graph_state','global_source']}
+    estimated = {k:np.zeros(len(y),dtype=float) for k in ['gcev','no_parent_state','no_action_state','no_graph_state','global_source']}
     cv = GroupKFold(n_splits=min(3,len(unique)))
     for a,b in cv.split(targets,y,groups):
-        for method, cols in [('gcev',FEATURES),('no_graph_state',SOURCE_FEATURES)]:
+        for method, cols in [('gcev',FEATURES),
+                              ('no_parent_state',SOURCE_FEATURES + ACTION_FEATURES),
+                              ('no_action_state',SOURCE_FEATURES + PARENT_STATE_FEATURES),
+                              ('no_graph_state',SOURCE_FEATURES)]:
             xx = np.column_stack([targets[list(cols)].to_numpy(float),one_hot])
             mu, sd = xx[a].mean(axis=0),xx[a].std(axis=0)
             sd = np.maximum(sd,1e-8)
@@ -263,6 +265,11 @@ def learn_graph_conditional_weights(targets: pd.DataFrame,
             'n_sources':len(sources),
             'features_graph_conditional':list(FEATURES),
             'features_graph_ablated':list(SOURCE_FEATURES),
+            'features_parent_state_only':list(PARENT_STATE_FEATURES),
+            'features_action_only':list(ACTION_FEATURES),
+            'features_no_parent_state':list(SOURCE_FEATURES + ACTION_FEATURES),
+            'features_no_action_state':list(SOURCE_FEATURES + PARENT_STATE_FEATURES),
+            'feature_ablation_note':'Action features still depend indirectly on fitted parent scaffold; removing explicit parent columns does not erase all state dependence.',
             'source_valuation':'paired_graph_edit_same_budget_inner_validation',
             'reliability_not_calibrated_edge_probability':True,
             'no_gold_used':True,
@@ -279,7 +286,7 @@ def compose_graph_conditional_rank(expr_rank: np.ndarray,
                                    learned: pd.DataFrame,
                                    method: str,boost: float=.3) -> np.ndarray:
     """Fixed source utility, group-independent predicted gate, or GCEV gate."""
-    if method not in ('gcev','no_graph_state','global_source','fixed_sources'):
+    if method not in ('gcev','no_parent_state','no_action_state','no_graph_state','global_source','fixed_sources'):
         raise ValueError('Unsupported source weighting method')
     score=np.asarray(expr_rank,dtype=float).copy()
     weights = {
