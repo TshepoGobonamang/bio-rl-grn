@@ -1,0 +1,495 @@
+{
+  "protocol_id": "GCEV-LCK-2026-11-25-001",
+  "status": "PROSPECTIVE_PROCEDURE_LOCKED_BEFORE_CONFIRMATORY_NETWORK_EVALUATION",
+  "scope": "synthetic_methods_validation_only_NOT_INDEPENDENT_BIOLOGICAL_VALIDATION",
+  "predecessor_pilot_seeds_already_inspected": [
+    11,
+    42,
+    77
+  ],
+  "generator_spec": {
+    "linear": "topologically ordered Gaussian linear DAG x_t=sum_i w_it*x_i+Gaussian(0,1)",
+    "nonlinear": "topologically ordered nonlinear DAG x_t=sum_i 1.1*w_it*tanh(x_i)+0.3*tanh(x_first*x_second) if >=2 parents +Gaussian(0,1)",
+    "graph_edges": "DAG predecessors i<j sampled Bernoulli(0.30) with signs \u00b11, magnitude uniform[0.35,0.80]; redraw until >=2 true edges; attempts recorded",
+    "no_unobserved_truth": "all generated DAG edges are known and reference_complete asserted only for synthetic graphs"
+  },
+  "source_generation": {
+    "observed_probability": 0.77,
+    "score_truth_positive_mean": 0.9,
+    "score_truth_negative_mean": 0.1,
+    "noise_sd": 0.07,
+    "source_labels": [
+      "SIM_A",
+      "SIM_B"
+    ],
+    "truth_dependency": "both synthetic evidence sources derived from simulation oracle ground truth; zero biological independence",
+    "target_switch": "source SIM_A reliable for even target index, SIM_B for odd; unreliable source inverts truth label before scoring",
+    "global_stable": "source SIM_A flips oracle label with probability 0.12 per candidate; SIM_B flips with probability 0.25; independent target-specific assignment; source noise separately seeded"
+  },
+  "evaluation_unit": "independent generated DAG realization; repeated corruption scenarios are paired within DAG, not independent networks",
+  "network_design": [
+    {
+      "network_id": "net_2001",
+      "seed": 2001,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2002",
+      "seed": 2002,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2003",
+      "seed": 2003,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2004",
+      "seed": 2004,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2005",
+      "seed": 2005,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2006",
+      "seed": 2006,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2007",
+      "seed": 2007,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2008",
+      "seed": 2008,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2009",
+      "seed": 2009,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2010",
+      "seed": 2010,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2011",
+      "seed": 2011,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2012",
+      "seed": 2012,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2013",
+      "seed": 2013,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2014",
+      "seed": 2014,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2015",
+      "seed": 2015,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2016",
+      "seed": 2016,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2017",
+      "seed": 2017,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2018",
+      "seed": 2018,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2019",
+      "seed": 2019,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2020",
+      "seed": 2020,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2021",
+      "seed": 2021,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2022",
+      "seed": 2022,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2023",
+      "seed": 2023,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2024",
+      "seed": 2024,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2025",
+      "seed": 2025,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2026",
+      "seed": 2026,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2027",
+      "seed": 2027,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2028",
+      "seed": 2028,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2029",
+      "seed": 2029,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2030",
+      "seed": 2030,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2031",
+      "seed": 2031,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2032",
+      "seed": 2032,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2033",
+      "seed": 2033,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2034",
+      "seed": 2034,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2035",
+      "seed": 2035,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2036",
+      "seed": 2036,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2037",
+      "seed": 2037,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2038",
+      "seed": 2038,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2039",
+      "seed": 2039,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2040",
+      "seed": 2040,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2041",
+      "seed": 2041,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2042",
+      "seed": 2042,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2043",
+      "seed": 2043,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2044",
+      "seed": 2044,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "target_switch"
+    },
+    {
+      "network_id": "net_2045",
+      "seed": 2045,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2046",
+      "seed": 2046,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2047",
+      "seed": 2047,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    },
+    {
+      "network_id": "net_2048",
+      "seed": 2048,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "evidence_regime": "global_stable"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "clean",
+      "missing": 0.0,
+      "corrupt": 0.0
+    },
+    {
+      "id": "dropout50",
+      "missing": 0.5,
+      "corrupt": 0.0
+    },
+    {
+      "id": "corrupt25",
+      "missing": 0.0,
+      "corrupt": 0.25
+    },
+    {
+      "id": "combined",
+      "missing": 0.5,
+      "corrupt": 0.25
+    }
+  ],
+  "frozen_hyperparameters": {
+    "split_fit_score_test": [
+      0.6,
+      0.2,
+      0.2
+    ],
+    "ridge_alpha": 1.0,
+    "n_nested_folds": 3,
+    "max_parents": 2,
+    "source_boost": 0.3,
+    "shrinkage": 0.05,
+    "top_k": 7,
+    "graph_query_budget": 1600,
+    "evidence_corruption": "one minus score for selected observed entries; fractional dropout of original observed mask"
+  },
+  "primary_contrast": {
+    "contrast": "gcev - no_graph_state",
+    "metric": "noninterpolated_sklearn_average_precision",
+    "scenario": "clean",
+    "statistic": "equal-weight per-network mean paired difference across 48 independent DAGs",
+    "confidence_interval": "95% percentile bootstrap stratified by 8 (family\u00d7size\u00d7evidence_regime) strata of 6 DAGs, RNG 20261125, 4000 replicates",
+    "success_if": "lower_95_of_AP_difference > 0.0 AND upper_95_of_mean_relative_test_NMSE_difference <= 0.02"
+  },
+  "secondary_contrasts": [
+    "gcev - fixed_sources",
+    "gcev - global_source",
+    "gcev - conditional",
+    "gcev - greedy"
+  ],
+  "secondary_metrics": [
+    "AUROC",
+    "precision_at_7",
+    "unique_direction_accuracy_with_ties_separate",
+    "untouched_test_NMSE",
+    "graph_edit_utility_queries",
+    "gcev_nested_loss_evaluations",
+    "gcev_training_elapsed_seconds",
+    "source_added_changes_edit_rate"
+  ],
+  "robustness": "same predeclared network seeds and source scores across 4 settings; differences vs clean reported by original network; no per-setting tuning",
+  "negative_controls": [
+    "no_graph_state ablation shares same OOF paired targets, source values, folds and ridge regression with GCEV",
+    "global_source target-held-out source-specific mean",
+    "fixed_sources",
+    "expression-only conditional",
+    "source reliability regime global_stable has no designed target-dependent source reliability"
+  ],
+  "missing_evidence": "not a negative regulatory interaction; mask preserved",
+  "leakage": "fit and internal scoring and final test partition separate; gold used for synthetic source manufacturing prior to model, reference withheld from learner and opened only after ranking hashes frozen",
+  "excluded_claims": [
+    "real independent biological source",
+    "true causal TF-direction validation",
+    "RL superiority",
+    "top-tier journal level broad external validation"
+  ],
+  "exclusion_rule": "do not selectively omit failure runs; if malformed/degenerate data, record failure with exact cause and report intended N; no replacement after inspecting AP",
+  "no_posthoc_tuning": "weights, selected seeds, dataset family and scenarios frozen here before evaluation. Any subsequent change is a new labeled exploratory protocol, not this registered result."
+}
