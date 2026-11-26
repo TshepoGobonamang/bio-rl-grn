@@ -1,4 +1,5 @@
 name: BIO-V3 source identity launcher (main)
+# Triggered explicitly after implementation review; source-only, no perturbation outcomes.
 on:
   push:
     branches: [main]
