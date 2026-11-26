@@ -24,3 +24,9 @@ Do **not** keep rewriting numeric-label guesses. Evaluate a *separately authenti
 **PASS only when** an original-author barcode source has a recorded file hash, 100% exact cell-ID match, fully reconciled cell-type assignments and no source conflicts. A numeric `CellType` field, marker enrichment or the published number of cells alone is **NOT identity proof**.
 
 No ENCODE BIO-V2 perturbation results enter these selection steps. Those six perturbations have already been inspected and can only support exploratory comparisons, not an uninspected biological confirmation. Regulatory priors remain unqualified, and this experiment does not establish direct TF-target causality or GCEV superiority.
+
+## Executable single-cell-line fallback, explicitly not identical K562
+
+10x Genomics published a one-sample **K562-r** (ATCC CRL-3344) Flex/fixed-RNA dataset [10k K562-r singleplex](https://www.10xgenomics.com/datasets/10k-human-k562-r-cells-singleplex-sample-1-standard). **K562-r is a distinct clone/protocol from the 2021 K562–BT142 mixture and ENCODE's K562 CRISPRi panel**. It can only serve as a separately labelled exploratory training candidate subject to context-comparability review.
+
+An independent optional 10x HDF5 source workflow is implemented in `.github/workflows/gcev-biov3-k562r-source-candidate.yml`. It *tests a plausible 10x CDN asset path*, not a previously verified official file URL; failure to retrieve an authentic 10x HDF5 leaves this alternative blocked. After a successful download, the exporter checks gene/cell ID uniqueness and integer counts, records SHA256 and freezes 800-cell 60/20/20 train/internal-score/test splits. Gene selection uses **fit-only variance** and exports 256 Ensembl features without any ENCODE outcome or regulatory reference. It does not fit GCEV or assert equivalent cell-line biology.
