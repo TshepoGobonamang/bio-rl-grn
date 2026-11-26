@@ -1,0 +1,80 @@
+name: BIO-V4 original K562 gene/TF and JASPAR motif qualification
+on:
+  push:
+    branches: [research/gcev-biov4-gene-tf-motif-qualification]
+    paths:
+      - 'docs/BIOV4_FROZEN_GENE_TF_MOTIF_ELIGIBILITY_2026_11_26.md'
+      - 'scripts/biov4_qualify_gene_universe.py'
+      - 'tests/test_biov4_qualify_gene_universe.py'
+      - '.github/workflows/gcev-biov4-gene-tf-motif.yml'
+  pull_request:
+    paths:
+      - 'scripts/biov4_qualify_gene_universe.py'
+      - 'tests/test_biov4_qualify_gene_universe.py'
+      - '.github/workflows/gcev-biov4-gene-tf-motif.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  actions: read
+jobs:
+  qualify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Minimal dependencies
+        run: python -m pip install "numpy>=1.24,<3" "scipy>=1.11,<2" "pandas>=2,<3" "pytest>=8,<10"
+      - name: Test annotation ambiguity and TF eligibility
+        run: python -m pytest -q tests/test_biov4_qualify_gene_universe.py
+      - name: Retrieve source-verified unmodified K562 expression split
+        uses: actions/download-artifact@v4
+        with:
+          name: gcev-biov3b-authentic-k562-only-expression
+          repository: ${{ github.repository }}
+          run-id: 45881788164
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: results/biov3b_from_verified
+      - name: Check exact frozen input before querying JASPAR / GENCODE
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          sha256sum docs/BIOV4_FROZEN_GENE_TF_MOTIF_ELIGIBILITY_2026_11_26.md
+          test -s results/biov3b_from_verified/biov3b_K562_fit_only_512/selected_gene_symbols.csv
+          test -s results/biov3b_from_verified/biov3b_K562_fit_only_512/cell_partitions.csv
+          test -s results/biov3b_from_verified/biov3b_K562_fit_only_512/k562_selected_original_scale.npz
+          test -s results/biov3b_from_verified/biov3b_K562_fit_only_512/split_manifest.json
+      - name: Download independent GENCODE v29 gene annotation and JASPAR 2026 motifs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/biov4"
+          curl --fail --location --retry 4 --retry-delay 4 --connect-timeout 25 --max-time 500 --show-error \
+            'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v29.annotation.gtf.gz' \
+            --output "$RUNNER_TEMP/biov4/gencode.v29.annotation.gtf.gz"
+          curl --fail --location --retry 4 --retry-delay 4 --connect-timeout 25 --max-time 500 --show-error \
+            'https://jaspar2026.elixir.no/download/data/2026/CORE/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt' \
+            --output "$RUNNER_TEMP/biov4/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt"
+          gzip -t "$RUNNER_TEMP/biov4/gencode.v29.annotation.gtf.gz"
+          test -s "$RUNNER_TEMP/biov4/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt"
+          sha256sum "$RUNNER_TEMP/biov4/"*
+      - name: Execute 512-gene exact annotation and motif TF eligibility audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/biov4_qualify_gene_universe.py \
+            --input results/biov3b_from_verified \
+            --gencode "$RUNNER_TEMP/biov4/gencode.v29.annotation.gtf.gz" \
+            --jaspar "$RUNNER_TEMP/biov4/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt" \
+            --output results/biov4
+      - name: Publish audit even if K562 regulator universe is insufficient
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gcev-biov4-real-gencode-jaspar-eligibility
+          path: results/biov4/
+          if-no-files-found: warn
+          retention-days: 60
