@@ -129,7 +129,8 @@ def _replicate(r: dict) -> int | None:
 
 
 def inspect_experiment(obj: dict, *, expected_tf: str | None,
-                       expected_control: str, raw_sha256: str) -> dict:
+                       expected_control: str, raw_sha256: str,
+                       expected_annotation: str = 'V29') -> dict:
     accession = accession_of(obj)
     assays = ' '.join(str(obj.get(k) or '') for k in ('assay_title', 'assay_term_name')).lower()
     assay_ok = 'crispri' in assays and 'rna-seq' in assays
@@ -206,6 +207,7 @@ def inspect_experiment(obj: dict, *, expected_tf: str | None,
         quant_files.append(q)
     qualified = [q for q in quant_files
                  if q['one_biological_replicate'] and q['assembly'] == 'GRCh38'
+                 and q['genome_annotation'] == expected_annotation
                  and q['biological_replicates'][0] in set(ids)]
     file_reps = {q['biological_replicates'][0] for q in qualified}
     annotations = {q['genome_annotation'] for q in qualified}
@@ -217,6 +219,7 @@ def inspect_experiment(obj: dict, *, expected_tf: str | None,
     audit_counts = {k: len(v) if isinstance(v, list) else 1 for k, v in audits.items()}
     findings = {
         'source': f'{HOST}/experiments/{accession}/',
+        'selected_genome_annotation': expected_annotation,
         'source_json_sha256': raw_sha256,
         'accession': accession,
         'expected_tf': expected_tf,
@@ -257,7 +260,8 @@ def evaluate_panel(manifest: dict, fetch: Callable[[str], tuple[dict, str]]) -> 
             obj, checksum = fetch(accession)
             findings.append(inspect_experiment(obj, expected_tf=tf,
                                               expected_control=required,
-                                              raw_sha256=checksum))
+                                              raw_sha256=checksum,
+                                              expected_annotation=manifest.get('genome_annotation','V29')))
         except (ValueError, KeyError, TypeError, FileNotFoundError, urllib.error.URLError,
                 TimeoutError, json.JSONDecodeError) as exc:
             errors[accession] = f'{type(exc).__name__}: {exc}'
