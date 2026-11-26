@@ -1,0 +1,52 @@
+name: BIO-V3 10x K562-r single-cell-line expression candidate
+on:
+  push:
+    branches: [research/gcev-biov3-author-identity-reconciliation]
+    paths:
+      - 'scripts/biov3_k562r_singleline_intake.py'
+      - 'tests/test_biov3_k562r.py'
+      - '.github/workflows/gcev-biov3-k562r-source-candidate.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  candidate-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install source-inspection dependencies and test exact training splits
+        shell: bash
+        run: |
+          python -m pip install numpy scipy pandas h5py pytest
+          python -m pytest -q tests/test_biov3_k562r.py
+      - name: Retrieve candidate 10x filtered gene-expression matrix only from known provider host
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/k562r" results/biov3-k562r
+          URL='https://cf.10xgenomics.com/samples/cell-exp/7.0.0/10k_K562_singleplex_10k_K562_singleplex/10k_K562_singleplex_10k_K562_singleplex_filtered_feature_bc_matrix.h5'
+          echo 'IMPORTANT: URL is a candidate path; successful actual HTTP and HDF5 verification is required.'
+          printf '%s\n' "$URL" > results/biov3-k562r/candidate_download_url.txt
+          curl --fail --location --retry 2 --retry-delay 3 --connect-timeout 25 --max-time 420 --show-error "$URL" \
+            --output "$RUNNER_TEMP/k562r/candidate.h5"
+          test -s "$RUNNER_TEMP/k562r/candidate.h5"
+          sha256sum "$RUNNER_TEMP/k562r/candidate.h5"
+      - name: Enforce actual HDF5 matrix identity and fit-only gene selection
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/biov3_k562r_singleline_intake.py \
+            --h5 "$RUNNER_TEMP/k562r/candidate.h5" \
+            --out results/biov3-k562r/qualified_candidate \
+            --cells 800 --genes 256
+      - name: Publish only derived training-candidate files, never original HDF5
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gcev-biov3-k562r-independent-training-candidate
+          path: results/biov3-k562r
+          if-no-files-found: warn
