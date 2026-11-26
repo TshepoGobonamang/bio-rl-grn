@@ -224,6 +224,9 @@ def run(panel_file:Path, output:Path, gtf_file:Path) -> dict:
     if panel.get('genome_annotation')!='V29' or panel.get('genome_assembly')!='GRCh38':
         raise ValueError('Frozen annotation mismatch')
     report=evaluate_panel(panel,lambda a:fetch_original(a))
+    # evaluate_panel is a pure-function validator; the existing ENCODE intake
+    # requires the authenticated input-origin tag normally set by its CLI.
+    report['data_origin']='ORIGINAL_ENCODE_API'
     output.mkdir(parents=True,exist_ok=True)
     (output/'original_source_audit.json').write_text(json.dumps(report,indent=2)+'\n')
     selected=selected_files(report,panel)
