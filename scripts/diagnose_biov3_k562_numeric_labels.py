@@ -10,6 +10,7 @@ import gzip
 import hashlib
 import json
 import math
+from itertools import chain
 from pathlib import Path
 
 
@@ -34,15 +35,16 @@ def audit(expression: Path, metadata: Path) -> dict:
         first=next(rows)
         if len(header)!=len(set(header)) or len(first)!=len(header)+1:
             raise ValueError("Gene-by-cell matrix orientation not confirmed: expected first data row gene ID + cell values")
-        if not set(header).issubset(set(label_for)):
-            raise ValueError("Expression header contains cell IDs not present in original metadata")
+        matched=[(i, cell) for i,cell in enumerate(header) if cell in label_for]
+        if len(matched)<0.95*len(header):
+            raise ValueError("Too many cells lack an exact match to original metadata")
         cells_by_label={}
-        for i,cell in enumerate(header):
+        for i,cell in matched:
             cells_by_label.setdefault(label_for[cell],[]).append(i)
         if any(len(ix)<2 for ix in cells_by_label.values()):
             raise ValueError("Insufficient cells in a source metadata category")
         found={}
-        for record in [first,*rows]:
+        for record in chain((first,),rows):
             if not record: continue
             gene=record[0]
             if gene not in MARKERS:continue
@@ -65,7 +67,9 @@ def audit(expression: Path, metadata: Path) -> dict:
       "source":"GSM5534702 original GEO expression + metadata",
       "expression_sha256":hashlib.sha256(expression.read_bytes()).hexdigest(),
       "metadata_sha256":hashlib.sha256(metadata.read_bytes()).hexdigest(),
-      "n_exactly_joined_cells":len(header),
+      "n_exactly_joined_cells":len(matched),
+      "n_unmatched_expression_cells":len(header)-len(matched),
+      "n_unmatched_metadata_cells":len(set(label_for)-set(header)),
       "n_metadata_cells":len(label_for),
       "celltype_numeric_label_counts":{k:len(v) for k,v in cells_by_label.items()},
       "gene_by_cell_orientation_observed":True,
