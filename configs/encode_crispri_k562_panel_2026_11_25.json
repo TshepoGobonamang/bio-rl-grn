@@ -1,0 +1,26 @@
+{
+  "protocol_id": "GCEV-BIO-ENCODE-K562-2026-11-25-001",
+  "freeze_date": "2026-11-25",
+  "stage": "source_design_qualification_before_expression_outcomes",
+  "organism": "Homo sapiens",
+  "cell_line": "K562",
+  "perturbation_assay": "CRISPRi RNA-seq",
+  "genome_assembly": "GRCh38",
+  "genome_annotation": "V29",
+  "control": {"accession": "ENCSR095PIC", "control_type": "non-specific target", "minimum_distinct_isogenic_biosamples": 2},
+  "perturbations": [
+    {"tf": "TFDP1", "accession": "ENCSR552HTC"},
+    {"tf": "KLF2", "accession": "ENCSR620DOP"},
+    {"tf": "NR2F2", "accession": "ENCSR688UTN"},
+    {"tf": "RELA", "accession": "ENCSR052ZPX"},
+    {"tf": "SP1", "accession": "ENCSR650QAK"},
+    {"tf": "NR2C2", "accession": "ENCSR808HQN"}
+  ],
+  "min_isogenic_replicates_per_perturbation": 2,
+  "required_quantification": "per-biological-replicate gene quantifications TSV, same assembly and annotation",
+  "model_training_rule": "never use ENCODE CRISPRi perturbation responses as model features or priors",
+  "biological_claims": "downstream perturbation-responsive expression, not proven direct TF binding",
+  "evaluation_rule": "continuous perturbation-response association or validated response enrichment; do not call unresponsive genes proven negatives",
+  "sources": ["https://www.encodeproject.org/experiments/ENCSR095PIC/", "https://www.encodeproject.org/data-standards/rna-seq/long-rnas/"],
+  "exclusions": "retain all 6 accessions in denominator; exclude file/method/assay if metadata fails; record explicit reasons; do not replace TFs after outcome inspection"
+}
