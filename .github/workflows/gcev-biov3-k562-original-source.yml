@@ -4,7 +4,9 @@ on:
     branches: [research/gcev-biov3-k562-training-source-audit]
     paths:
       - 'scripts/audit_biov3_k562_scRNA_source.py'
+      - 'scripts/diagnose_biov3_k562_numeric_labels.py'
       - 'tests/test_biov3_k562_source_audit.py'
+      - 'tests/test_biov3_k562_label_diagnostics.py'
       - 'configs/biov3_k562_training_candidate_2026_11_26.json'
       - '.github/workflows/gcev-biov3-k562-original-source.yml'
   pull_request:
@@ -27,7 +29,7 @@ jobs:
       - name: Source schema tests
         run: |
           python -m pip install pytest
-          python -m pytest -q tests/test_biov3_k562_source_audit.py
+          python -m pytest -q tests/test_biov3_k562_source_audit.py tests/test_biov3_k562_label_diagnostics.py
       - name: Download original GEO expression and cell annotations
         shell: bash
         run: |
@@ -49,11 +51,19 @@ jobs:
             --expression "$RUNNER_TEMP/biov3/GSM5534702_K562-BT142_10x_scRNAseq_Expression.txt.gz" \
             --metadata "$RUNNER_TEMP/biov3/GSM5534702_K562-BT142_10x_scRNAseq_MetaData.txt.gz" \
             --output results/encode_biov3/k562_training_source_observation.json
+      - name: Original numeric cell-class and marker expression diagnostics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/diagnose_biov3_k562_numeric_labels.py \
+            --expression "$RUNNER_TEMP/biov3/GSM5534702_K562-BT142_10x_scRNAseq_Expression.txt.gz" \
+            --metadata "$RUNNER_TEMP/biov3/GSM5534702_K562-BT142_10x_scRNAseq_MetaData.txt.gz" \
+            --output results/encode_biov3/k562_numeric_labels_and_marker_diagnostics.json
       - name: Retain original-source schema report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: gcev-biov3-original-k562-training-source-schema
-          path: results/encode_biov3/k562_training_source_observation.json
+          path: results/encode_biov3/*.json
           if-no-files-found: warn
           retention-days: 60
