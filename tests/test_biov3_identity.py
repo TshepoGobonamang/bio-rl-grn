@@ -24,10 +24,12 @@ def test_unknown_numeric_assignment_not_inferred():
     with pytest.raises(ValueError,match='barcode mismatch'):
         audit_identity({'a':'1','b':'2'},{'a':'K562','c':'BT142'})
 
-def test_mixed_identity_codes_block_export():
-    with pytest.raises(ValueError,match='not uniquely'):
-        audit_identity({'a':'1','b':'1','c':'2','d':'2'},
-                       {'a':'K562','b':'BT142','c':'K562','d':'BT142'})
+def test_mixed_numeric_code_records_disagreement_without_relabeling():
+    r=audit_identity({'a':'1','b':'1','c':'2','d':'2'},
+                     {'a':'K562','b':'BT142','c':'K562','d':'BT142'})
+    assert r['numeric_code_maps_directly_to_cell_line'] is False
+    assert r['code_to_line'] is None
+    assert r['author_counts']=={'K562':2,'BT142':2}
 
 def test_wrong_gene_row_length_rejected(tmp_path):
     expr=tmp_path/'source.gz'
