@@ -6,6 +6,7 @@
   "cell_line": "K562",
   "perturbation_assay": "CRISPRi RNA-seq",
   "genome_assembly": "GRCh38",
+  "genome_annotation": "V29",
   "control": {"accession": "ENCSR095PIC", "control_type": "non-specific target", "minimum_distinct_isogenic_biosamples": 2},
   "perturbations": [
     {"tf": "TFDP1", "accession": "ENCSR552HTC"},
