@@ -65,14 +65,18 @@ def audit_identity(meta: dict[str, str], labels: dict[str, str]) -> dict:
     x = defaultdict(Counter)
     for cell, code in meta.items():
         x[code][labels[cell]] += 1
-    mapping = {}
-    for code, c in sorted(x.items()):
-        if len(c) != 1:
-            raise ValueError('Original GEO CellType code is not uniquely associated with author cell identities')
-        mapping[code] = next(iter(c))
-    if set(mapping.values()) != {'K562', 'BT142'}:
-        raise ValueError('Cannot certify two distinct K562/BT142 numeric mappings')
+    contingency = {code: dict(c) for code, c in sorted(x.items())}
+    one_to_one = all(len(c) == 1 for c in x.values())
+    mapping = {code: next(iter(c)) for code, c in x.items()} if one_to_one else None
+    if one_to_one and set(mapping.values()) != {'K562', 'BT142'}:
+        one_to_one, mapping = False, None
+    # The author-derived per-barcode labels remain authoritative even if the
+    # original GEO numeric codes turn out to encode another cell property.
+    # Treat that disagreement as a result, never a reason to discard genuine
+    # barcode-level identities or to force a numeric relabeling.
     return {'author_counts': dict(counts),
+            'numeric_code_vs_author_identity': contingency,
+            'numeric_code_maps_directly_to_cell_line': one_to_one,
             'code_to_line': mapping,
             'n_original_cells': len(meta),
             'n_author_matched_cells': len(labels),
