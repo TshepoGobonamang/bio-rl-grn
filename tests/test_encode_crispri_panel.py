@@ -150,3 +150,20 @@ def test_encode_nested_library_biosample_is_original_independent_unit():
     assert result['replicate_to_biosample']==[
         {'biological_replicate_number':1,'biosample_id':'ENCBS123AAA'},
         {'biological_replicate_number':2,'biosample_id':'ENCBS789BBB'}]
+
+
+def test_annotation_version_locked_before_response_comparison():
+    x=exp('ENCSR552HTC','TFDP1')
+    extra=[]
+    for q in x['files']:
+        z=dict(q)
+        z['genome_annotation']='V24'
+        extra.append(z)
+    x['files'] += extra
+    result=audit.inspect_experiment(x,expected_tf='TFDP1',
+                                    expected_control='ENCSR095PIC',
+                                    raw_sha256='f',expected_annotation='V29')
+    assert result['source_quantification_pass']
+    assert len(result['quantification_candidates'])==4
+    assert len(result['per_replicate_grch38_quantifications'])==2
+    assert {x['genome_annotation'] for x in result['per_replicate_grch38_quantifications']}=={'V29'}
