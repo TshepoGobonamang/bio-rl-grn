@@ -53,6 +53,8 @@ jobs:
           a=json.loads(Path('results/encode_k562/source_metadata_audit.json').read_text())
           for x in a.get('experiments',[]):
               print(x['accession'], 'design=',x.get('design_metadata_pass'), 'replicate_q=',x.get('per_replicate_quantification_available'), 'qualified_files=',len(x.get('per_replicate_grch38_quantifications',[])), 'file_candidates=',len(x.get('quantification_candidates',[])), 'QC=',x.get('audit_counts',{}))
+              print(' FLAGS:', {k:x.get(k) for k in ('assay_match','cell_line_match','released','target_match','linked_expected_control','replication_type','biological_replicate_numbers','biosample_identifiers','unresolved_replicate_references','biosample_replicates_verified_from_metadata','unresolved_file_references')})
+              for q in x.get('quantification_candidates',[]): print(' FILE:', {k:q.get(k) for k in ('accession','assembly','genome_annotation','biological_replicates','one_biological_replicate','href')})
           print('DECISION:',a.get('decision'),'ERRORS:',a.get('errors'))
           PY
           else
