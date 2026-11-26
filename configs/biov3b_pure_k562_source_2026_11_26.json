@@ -1,0 +1,31 @@
+{
+  "protocol_id": "GCEV-BIOV3B-K562-PURE-2026-11-26-001",
+  "date": "2026-11-26",
+  "decision": "Do not assume GSM5534702 CellType codes: exported 1512/1154 do not match publication 1310/1356; choose separately identified K562-only sample",
+  "source": {
+    "geo_series": "GSE306708",
+    "geo_sample": "GSM9224207",
+    "title": "Fresh K562",
+    "source_cell_line": "K562",
+    "download_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9224nnn/GSM9224207/suppl/GSM9224207_Fresh_K562.h5ad",
+    "format": "h5ad",
+    "assembly": "GRCh38.101 as GEO reported; gene identifier/annotation versions require observation"
+  },
+  "scope": "original expression-only matrix qualification, no GCEV model fitting or ENCODE result evaluation",
+  "requirements": [
+    "source checksum",
+    "unique cell and gene identifiers",
+    "nonnegative finite expression and sparse structure",
+    "matrix scale characterized not assumed",
+    "no ENCODE perturbation response data in fit",
+    "gene-id mapping before TF priors",
+    "fit/internal/test split created prior to feature selection"
+  ],
+  "disallowed": [
+    "invent numeric K562 label mapping",
+    "exclude cells using ENCODE response",
+    "claim direct regulatory validation",
+    "treat biological technical lanes as independent cultures"
+  ],
+  "secondary_source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9224207"
+}
