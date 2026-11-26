@@ -83,3 +83,47 @@ def test_qc_flags_remain_visible():
     x['audit']={'NOT_COMPLIANT':['example QC concern']}
     r=audit.inspect_experiment(x,expected_tf='TFDP1', expected_control='ENCSR095PIC',raw_sha256='a')
     assert r['manual_audit_review_required']
+
+
+def test_original_linked_replicates_resolved_and_has_source_hashes():
+    p1='/replicates/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/'
+    p2='/replicates/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/'
+    x=exp('ENCSR552HTC','TFDP1')
+    x['replicates']=[p1,p2]
+    records={
+        p1:{'@id':p1,'experiment':'/experiments/ENCSR552HTC/',
+            'biological_replicate_number':1,'biosample':'/biosamples/ENCBSAAA123/'},
+        p2:{'@id':p2,'experiment':'/experiments/ENCSR552HTC/',
+            'biological_replicate_number':2,'biosample':'/biosamples/ENCBSBBB234/'},
+    }
+    def fetch(url):
+        path=url.replace(audit.HOST,'').split('?')[0]
+        return records[path], 'e'*64
+    resolved=audit.resolve_replicates(x,fetch)
+    assert list(resolved['_gcev_original_replicate_sha256'])==[p1,p2]
+    r=audit.inspect_experiment(resolved,expected_tf='TFDP1',
+                               expected_control='ENCSR095PIC',raw_sha256='a')
+    assert r['design_metadata_pass']
+    assert r['source_quantification_pass']
+    assert len(r['original_replicate_record_sha256'])==2
+
+
+def test_original_replicate_wrong_experiment_rejected():
+    p='/replicates/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/'
+    x=exp('ENCSR552HTC','TFDP1')
+    x['replicates']=[p]
+    import pytest
+    with pytest.raises(ValueError,match='different experiment'):
+        audit.resolve_replicates(x,lambda url:(
+            {'@id':p,'experiment':'/experiments/ENCSR620DOP/',
+             'biological_replicate_number':1,'biosample':'/biosamples/ENCBSAAA123/'},
+            'f'*64))
+
+
+def test_missing_original_qc_annotations_requires_manual_review():
+    x=exp('ENCSR552HTC','TFDP1')
+    del x['audit']
+    r=audit.inspect_experiment(x,expected_tf='TFDP1',
+                               expected_control='ENCSR095PIC',raw_sha256='a')
+    assert r['manual_audit_review_required']
+    assert r['original_qc_metadata_missing']
