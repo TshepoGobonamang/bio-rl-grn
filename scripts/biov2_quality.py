@@ -166,6 +166,8 @@ def build_qc(selected: dict, downloaded: dict, gene_symbol: dict[str,str], outpu
             knockdown.append({'tf':symbol,'experiment':accession,'gene_id':gid,
                               'status':'DESCRIPTIVE_MRNA_CHECK_REQUIRES_QC',
                               'control_tpm_mean':ctl,'perturbed_tpm_mean':trt,
+                              'control_TPM_by_biosample_json':json.dumps({str(meta.set_index('sample_id').loc[col,'biosample_id']):float(tpm.loc[gid,col]) for col in ctrl_cols},sort_keys=True),
+                              'perturbed_TPM_by_biosample_json':json.dumps({str(meta.set_index('sample_id').loc[col,'biosample_id']):float(tpm.loc[gid,col]) for col in treatment_cols},sort_keys=True),
                               'log2_tpm_ratio_pseudo1':float(np.log2(kd_ratio)),
                               'percent_mrna_reduction_pseudocount':float(100*(1-kd_ratio)),
                               'treatment_replicates_below_control_mean':int((treated<ctl).sum()),
