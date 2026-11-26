@@ -25,11 +25,34 @@ jobs:
         run: python -m pip install '.[dev]'
       - name: Tests include fail-closed biological design and replication checks
         run: python -m pytest -q tests/test_encode_crispri_panel.py tests/test_encode_replicate_responses.py
+      - name: Record frozen panel and source-audit code revision
+        run: |
+          git rev-parse HEAD
+          python - <<'PY'
+          import hashlib, pathlib
+          p=pathlib.Path('configs/encode_crispri_k562_panel_2026_11_25.json')
+          print('frozen_panel_sha256:', hashlib.sha256(p.read_bytes()).hexdigest())
+          PY
       - name: Request original ENCODE metadata and record source hashes
         run: |
           python scripts/audit_encode_crispri_panel.py \
             --manifest configs/encode_crispri_k562_panel_2026_11_25.json \
             --output results/encode_k562/source_metadata_audit.json
+      - name: Show actual source-audit decision, including missing per-replicate files
+        if: always()
+        run: |
+          if test -s results/encode_k562/source_metadata_audit.json; then
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('results/encode_k562/source_metadata_audit.json').read_text())
+          for x in a.get('experiments',[]):
+              print(x['accession'], 'design=',x.get('design_metadata_pass'), 'replicate_q=',x.get('per_replicate_quantification_available'), 'qualified_files=',len(x.get('per_replicate_grch38_quantifications',[])), 'file_candidates=',len(x.get('quantification_candidates',[])), 'QC=',x.get('audit_counts',{}))
+          print('DECISION:',a.get('decision'),'ERRORS:',a.get('errors'))
+          PY
+          else
+            echo 'Source audit did not produce a JSON report' >&2
+          fi
       - name: Upload audit report even if source qualification fails
         if: always()
         uses: actions/upload-artifact@v4
