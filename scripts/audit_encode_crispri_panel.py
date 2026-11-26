@@ -35,7 +35,7 @@ def accession_of(value: Any) -> str:
 
 def fetch_json(url: str, *, timeout: int = 45) -> tuple[dict, str]:
     """Read one original public ENCODE JSON record, preserving its raw SHA256."""
-    if not url.startswith(HOST + '/') or not (('/experiments/' in url) or ('/replicates/' in url)):
+    if not url.startswith(HOST + '/') or not (('/experiments/' in url) or ('/replicates/' in url) or ('/libraries/' in url)):
         raise ValueError('Unexpected original ENCODE record URL')
     req = urllib.request.Request(url, headers={
         'Accept': 'application/json',
@@ -60,7 +60,7 @@ def resolve_replicates(obj: dict, fetch: Callable[[str], tuple[dict, str]]) -> d
     resolved = []
     record_hashes = {}
     for item in (obj.get('replicates') or []):
-        if isinstance(item, dict) and item.get('biological_replicate_number') is not None and item.get('biosample'):
+        if isinstance(item, dict) and item.get('biological_replicate_number') is not None and _biosample(item):
             resolved.append(item)
             continue
         path = item.get('@id') if isinstance(item, dict) else str(item)
@@ -69,8 +69,17 @@ def resolve_replicates(obj: dict, fetch: Callable[[str], tuple[dict, str]]) -> d
         record, sha = fetch(HOST + path + '?format=json&frame=embedded')
         if record.get('@id') and record.get('@id') != path:
             raise ValueError(f'Replicate identity mismatch: {path}')
-        if not record.get('biosample') or record.get('biological_replicate_number') is None:
-            raise ValueError(f'Original replicate lacks biosample or biological number: {path}')
+        # ENCODE's canonical model is replicate -> library -> biosample.
+        # Do not invent an independent unit from a replicate number or file.
+        if not _biosample(record) and isinstance(record.get('library'), str):
+            library_path = record['library']
+            if not re.fullmatch(r'/libraries/ENCLB[0-9A-Z]{6}/', library_path):
+                raise ValueError(f'Unverifiable library reference: {library_path!r}')
+            library, library_sha = fetch(HOST + library_path + '?format=json&frame=embedded')
+            record['library'] = library
+            record_hashes[library_path] = library_sha
+        if not _biosample(record) or record.get('biological_replicate_number') is None:
+            raise ValueError(f'Original replicate missing verified library biosample or number: {path}')
         if record.get('experiment'):
             exp = accession_of(record['experiment'])
             if exp and exp != accession_of(obj):
@@ -101,7 +110,14 @@ def jsonfile(directory: Path, accession: str) -> tuple[dict, str]:
 
 
 def _biosample(r: dict) -> str:
-    return record_id(r.get('biosample'))
+    """Stable source biosample ID; support ENCODE replicate.library.biosample."""
+    direct = r.get('biosample')
+    if direct:
+        return record_id(direct)
+    library = r.get('library')
+    if isinstance(library, dict) and library.get('biosample'):
+        return record_id(library['biosample'])
+    return ''
 
 
 def _replicate(r: dict) -> int | None:
@@ -136,6 +152,7 @@ def inspect_experiment(obj: dict, *, expected_tf: str | None,
 
     reps = obj.get('replicates') or []
     ids, biosamples = [], []
+    replicate_map = []
     unresolved = 0
     for item in reps:
         if not isinstance(item, dict):
@@ -147,6 +164,7 @@ def inspect_experiment(obj: dict, *, expected_tf: str | None,
             continue
         ids.append(num)
         biosamples.append(bio)
+        replicate_map.append({'biological_replicate_number': num, 'biosample_id': bio})
     biological = (
         str(obj.get('replication_type') or '').lower() == 'isogenic'
         and len(set(ids)) >= 2
@@ -212,6 +230,7 @@ def inspect_experiment(obj: dict, *, expected_tf: str | None,
         'replication_type': obj.get('replication_type'),
         'biological_replicate_numbers': sorted(set(ids)),
         'biosample_identifiers': sorted(set(biosamples)),
+        'replicate_to_biosample': sorted(replicate_map, key=lambda x: x['biological_replicate_number']),
         'unresolved_replicate_references': unresolved,
         'original_replicate_record_sha256': obj.get('_gcev_original_replicate_sha256', {}),
         'biosample_replicates_verified_from_metadata': biological,
