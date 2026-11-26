@@ -1,0 +1,72 @@
+name: BIO-V2 DESeq2 from verified QC inputs (Ubuntu packages)
+on:
+  push:
+    branches: [research/gcev-encode-biov2-qc-deseq2]
+    paths:
+      - '.github/workflows/gcev-encode-biov2-deseq2-apt.yml'
+      - 'scripts/biov2_deseq2.R'
+      - 'scripts/verify_biov2_deseq2.py'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  actions: read
+jobs:
+  deseq2-prebuilt:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 85
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reuse successful original-data QC artifact from frozen run
+        uses: actions/download-artifact@v4
+        with:
+          name: gcev-encode-biov2-original-source-qc
+          run-id: 45800397436
+          repository: ${{ github.repository }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: results/encode_biov2/qc
+      - name: Verify authenticated QC matrices are present
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f results/encode_biov2/qc/qc_manifest.json
+          for tf in TFDP1 KLF2 NR2F2 RELA SP1 NR2C2; do
+            test -s "results/encode_biov2/qc/$tf/rsem_expected_counts.csv.gz"
+            test -s "results/encode_biov2/qc/$tf/rsem_TPM.csv.gz"
+            test -s "results/encode_biov2/qc/$tf/rsem_effective_length.csv.gz"
+            test -s "results/encode_biov2/qc/$tf/coldata.csv"
+          done
+          sha256sum results/encode_biov2/qc/qc_manifest.json
+          git rev-parse HEAD
+      - name: Install distribution-packaged R, DESeq2 and tximport
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            r-base-core r-bioc-deseq2 r-bioc-tximport
+          Rscript -e "stopifnot(requireNamespace('DESeq2'), requireNamespace('tximport')); cat('R=',R.version.string,'\nDESeq2=',as.character(packageVersion('DESeq2')),'\ntximport=',as.character(packageVersion('tximport')),'\n')"
+      - name: Calculate original RSEM count-based contrasts
+        shell: bash
+        run: |
+          set -euo pipefail
+          Rscript scripts/biov2_deseq2.R \
+            results/encode_biov2/qc \
+            results/encode_biov2/deseq2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Independent statistical-file integrity audit
+        run: |
+          python -m pip install pandas numpy pytest
+          python scripts/verify_biov2_deseq2.py \
+            --qc results/encode_biov2/qc \
+            --deseq2 results/encode_biov2/deseq2 \
+            --output results/encode_biov2/deseq2/verification.json
+      - name: Publish original-data differential-expression results and independent verification
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gcev-encode-biov2-deseq2-apt-authentic-results
+          path: results/encode_biov2/deseq2
+          if-no-files-found: warn
+          retention-days: 60
