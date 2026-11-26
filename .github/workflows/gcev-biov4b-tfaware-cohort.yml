@@ -58,7 +58,7 @@ jobs:
           sha256sum "$RUNNER_TEMP/biov4b/"*
       - name: Build original-fit-only 16-TF 48-target expression cohort
         run: |
-          python scripts/biov4b_select_tfaware_cohort.py \
+          python -m scripts.biov4b_select_tfaware_cohort \
             --input results/biov3b_from_verified \
             --gencode "$RUNNER_TEMP/biov4b/gencode.v29.annotation.gtf.gz" \
             --jaspar "$RUNNER_TEMP/biov4b/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt" \
