@@ -9,6 +9,11 @@ on:
       - 'tests/test_encode_replicate_responses.py'
       - 'configs/encode_crispri_k562_panel_2026_11_25.json'
       - '.github/workflows/gcev-encode-bio-source-audit.yml'
+  pull_request:
+    paths:
+      - 'scripts/audit_encode_crispri_panel.py'
+      - '.github/workflows/gcev-encode-bio-source-audit.yml'
+      - 'configs/encode_crispri_k562_panel_2026_11_25.json'
   workflow_dispatch: {}
 permissions:
   contents: read
