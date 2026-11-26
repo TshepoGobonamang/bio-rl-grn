@@ -127,3 +127,26 @@ def test_missing_original_qc_annotations_requires_manual_review():
                                expected_control='ENCSR095PIC',raw_sha256='a')
     assert r['manual_audit_review_required']
     assert r['original_qc_metadata_missing']
+
+
+def test_encode_nested_library_biosample_is_original_independent_unit():
+    p1='/replicates/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/'
+    p2='/replicates/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/'
+    x=exp('ENCSR552HTC','TFDP1')
+    x['replicates']=[p1,p2]
+    payload={
+        p1:{'@id':p1,'experiment':'/experiments/ENCSR552HTC/',
+            'biological_replicate_number':1,
+            'library':{'biosample':{'accession':'ENCBS123AAA'}}},
+        p2:{'@id':p2,'experiment':'/experiments/ENCSR552HTC/',
+            'biological_replicate_number':2,
+            'library':{'biosample':{'accession':'ENCBS789BBB'}}},
+    }
+    y=audit.resolve_replicates(x,lambda u:(payload[u.replace(audit.HOST,'').split('?')[0]],'b'*64))
+    result=audit.inspect_experiment(y,expected_tf='TFDP1',
+                                    expected_control='ENCSR095PIC',raw_sha256='f')
+    assert result['biosample_replicates_verified_from_metadata']
+    assert result['source_quantification_pass']
+    assert result['replicate_to_biosample']==[
+        {'biological_replicate_number':1,'biosample_id':'ENCBS123AAA'},
+        {'biological_replicate_number':2,'biosample_id':'ENCBS789BBB'}]
