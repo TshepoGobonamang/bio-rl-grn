@@ -5,8 +5,10 @@ on:
     paths:
       - 'scripts/audit_encode_crispri_panel.py'
       - 'scripts/prepare_encode_replicate_responses.py'
+      - 'scripts/execute_encode_real_responses.py'
       - 'tests/test_encode_crispri_panel.py'
       - 'tests/test_encode_replicate_responses.py'
+      - 'tests/test_encode_real_responses.py'
       - 'configs/encode_crispri_k562_panel_2026_11_25.json'
       - '.github/workflows/gcev-encode-bio-source-audit.yml'
   pull_request:
@@ -20,7 +22,7 @@ permissions:
 jobs:
   source-metadata:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -29,7 +31,7 @@ jobs:
       - name: Install local test requirements
         run: python -m pip install '.[dev]'
       - name: Tests include fail-closed biological design and replication checks
-        run: python -m pytest -q tests/test_encode_crispri_panel.py tests/test_encode_replicate_responses.py
+        run: python -m pytest -q tests/test_encode_crispri_panel.py tests/test_encode_replicate_responses.py tests/test_encode_real_responses.py
       - name: Record frozen panel and source-audit code revision
         run: |
           git rev-parse HEAD
@@ -60,6 +62,19 @@ jobs:
           else
             echo 'Source audit did not produce a JSON report' >&2
           fi
+      - name: Download authentic V29 replicate quantifications and compute descriptive responses
+        run: |
+          python -m scripts.execute_encode_real_responses \
+            --audit results/encode_k562/source_metadata_audit.json \
+            --panel configs/encode_crispri_k562_panel_2026_11_25.json \
+            --output results/encode_k562/real_responses
+      - name: Publish only derived response summaries (never original downloaded TSVs)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gcev-encode-k562-real-replicate-descriptive-responses
+          path: results/encode_k562/real_responses
+          if-no-files-found: warn
       - name: Upload audit report even if source qualification fails
         if: always()
         uses: actions/upload-artifact@v4
