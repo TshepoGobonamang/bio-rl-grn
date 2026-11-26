@@ -79,7 +79,7 @@ jobs:
           packages: |
             bioc::DESeq2
             bioc::tximport
-      - name: DESeq2: shared-control contrasts from original RSEM estimates with length offsets
+      - name: 'DESeq2 - shared-control contrasts from original RSEM estimates with length offsets'
         shell: bash
         run: |
           set -euo pipefail
