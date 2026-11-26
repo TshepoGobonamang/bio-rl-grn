@@ -1,0 +1,32 @@
+{
+  "protocol_id": "GCEV-BIOV3-K562-TRAINING-SOURCE-2026-11-26-001",
+  "freeze_date": "2026-11-26",
+  "status": "candidate_source_schema_inspection_only",
+  "geo_series": "GSE182685",
+  "geo_sample": "GSM5534702",
+  "original_study_context": "K562-BT142 mixed cell-line scRNA-seq; K562 subset must be demonstrated by original metadata, not assumed",
+  "files": {
+    "expression": {
+      "name": "GSM5534702_K562-BT142_10x_scRNAseq_Expression.txt.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5534nnn/GSM5534702/suppl/GSM5534702_K562-BT142_10x_scRNAseq_Expression.txt.gz"
+    },
+    "metadata": {
+      "name": "GSM5534702_K562-BT142_10x_scRNAseq_MetaData.txt.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5534nnn/GSM5534702/suppl/GSM5534702_K562-BT142_10x_scRNAseq_MetaData.txt.gz"
+    }
+  },
+  "cell_line_required": "K562",
+  "expected_control_context": "untreated K562 single-cell expression without any ENCODE K562 TF CRISPRi treatment labels",
+  "no_reference_outcome_access": true,
+  "prohibit_reuse_as_biological_truth": true,
+  "original_encode_validation_panel_already_inspected": true,
+  "requires_next": [
+    "original GEO processed file checksums and actual metadata schema",
+    "verified K562 membership with exact cell identifier matching",
+    "gene identifier mapping to GRCh38 / GENCODE V29 or predeclared version mapping",
+    "sample conditions and absence of ENCODE CRISPRi outcome leakage",
+    "candidate TF list selected from training expression only",
+    "orthogonal regulatory prior: provenance-audited JASPAR 2026 CORE promoter scans, no raw PFM-to-edge assumptions",
+    "freeze model predictions against an independent yet-uninspected perturbation panel"
+  ]
+}
