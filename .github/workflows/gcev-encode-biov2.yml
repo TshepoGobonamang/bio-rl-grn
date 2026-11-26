@@ -1,0 +1,102 @@
+name: GCEV BIO-V2 original K562 QC and count-based DESeq2
+on:
+  push:
+    branches: [research/gcev-encode-biov2-qc-deseq2]
+    paths:
+      - 'scripts/biov2_quality.py'
+      - 'scripts/biov2_deseq2.R'
+      - 'tests/test_biov2_quality.py'
+      - '.github/workflows/gcev-encode-biov2.yml'
+      - 'docs/BIOV2_QC_AND_DIFFERENTIAL_EXPRESSION.md'
+  pull_request:
+    paths:
+      - 'scripts/biov2_quality.py'
+      - 'scripts/biov2_deseq2.R'
+      - 'tests/test_biov2_quality.py'
+      - '.github/workflows/gcev-encode-biov2.yml'
+      - 'docs/BIOV2_QC_AND_DIFFERENTIAL_EXPRESSION.md'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  original-source-qc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Python quality-control requirements
+        run: python -m pip install '.[dev]'
+      - name: Validate BIO-V2 rules before opening new results
+        run: python -m pytest -q tests/test_biov2_quality.py tests/test_encode_crispri_panel.py tests/test_encode_replicate_responses.py tests/test_encode_real_responses.py
+      - name: Freeze original code and ENCODE panel checksums
+        shell: bash
+        run: |
+          git rev-parse HEAD
+          sha256sum configs/encode_crispri_k562_panel_2026_11_25.json
+      - name: Download official GENCODE V29 GRCh38 gene annotation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/encode_qc"
+          curl --fail --location --retry 4 --retry-delay 5 --connect-timeout 30 --max-time 450 \
+            'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v29.annotation.gtf.gz' \
+            -o "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
+          test -s "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
+          gzip -t "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
+          sha256sum "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
+      - name: Authenticate all original ENCODE replicate quantifications and calculate QC
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.biov2_quality \
+            --panel configs/encode_crispri_k562_panel_2026_11_25.json \
+            --gtf "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz" \
+            --output results/encode_biov2/qc
+      - name: Publish quality and replicate-level DESeq2 inputs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gcev-encode-biov2-original-source-qc
+          path: results/encode_biov2/qc
+          if-no-files-found: error
+          retention-days: 60
+
+  deseq2-analysis:
+    needs: original-source-qc
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download quality-checked gene-level count, abundance and length inputs
+        uses: actions/download-artifact@v4
+        with:
+          name: gcev-encode-biov2-original-source-qc
+          path: results/encode_biov2/qc
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.5.1'
+          use-public-rspm: true
+      - name: Install exact Bioconductor count analysis dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            bioc::DESeq2
+            bioc::tximport
+      - name: 'DESeq2 - shared-control contrasts from original RSEM estimates with length offsets'
+        shell: bash
+        run: |
+          set -euo pipefail
+          Rscript scripts/biov2_deseq2.R \
+            results/encode_biov2/qc \
+            results/encode_biov2/deseq2
+      - name: Upload independent differential-expression outputs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gcev-encode-biov2-deseq2-statistical-results
+          path: results/encode_biov2/deseq2
+          if-no-files-found: warn
+          retention-days: 60
