@@ -12,10 +12,14 @@ all_summary <- list()
 for (tf in c('TFDP1','KLF2','NR2F2','RELA','SP1','NR2C2')) {
   location <- file.path(qc_root, tf)
   read_mat <- function(name) {
-    f <- gzfile(file.path(location, name))
-    d <- read.csv(f, header=TRUE, check.names=FALSE, row.names=1)
-    close(f)
-    d
+    # read.csv() manages the lifecycle of an unopened gzfile connection.
+    # Closing it a second time caused "invalid connection" before DESeq2.
+    path <- file.path(location, name)
+    if (!file.exists(path) || file.info(path)$size <= 0) {
+      stop(tf, ': missing or empty original QC matrix: ', name)
+    }
+    read.csv(gzfile(path, open='rt'), header=TRUE,
+             check.names=FALSE, row.names=1)
   }
   counts <- as.matrix(read_mat('rsem_expected_counts.csv.gz'))
   abundance <- as.matrix(read_mat('rsem_TPM.csv.gz'))
