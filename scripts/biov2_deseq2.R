@@ -18,7 +18,7 @@ for (tf in c('TFDP1','KLF2','NR2F2','RELA','SP1','NR2C2')) {
     if (!file.exists(path) || file.info(path)$size <= 0) {
       stop(tf, ': missing or empty original QC matrix: ', name)
     }
-    read.csv(gzfile(path, open='rt'), header=TRUE,
+    read.csv(gzfile(path), header=TRUE,
              check.names=FALSE, row.names=1)
   }
   counts <- as.matrix(read_mat('rsem_expected_counts.csv.gz'))
