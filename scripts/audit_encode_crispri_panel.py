@@ -33,20 +33,62 @@ def accession_of(value: Any) -> str:
     return match.group(1) if match else ''
 
 
-def fetch_original(accession: str, *, timeout: int = 45) -> tuple[dict, str]:
-    url = f'{HOST}/experiments/{accession}/?format=json&frame=embedded'
+def fetch_json(url: str, *, timeout: int = 45) -> tuple[dict, str]:
+    """Read one original public ENCODE JSON record, preserving its raw SHA256."""
+    if not url.startswith(HOST + '/') or not (('/experiments/' in url) or ('/replicates/' in url)):
+        raise ValueError('Unexpected original ENCODE record URL')
     req = urllib.request.Request(url, headers={
         'Accept': 'application/json',
-        'User-Agent': 'GCEV-ENCODE-provenance-audit/0.1 academic metadata checker',
+        'User-Agent': 'GCEV-ENCODE-provenance-audit/0.2 academic metadata checker',
     })
     with urllib.request.urlopen(req, timeout=timeout) as response:
         data = response.read(8_000_001)
     if len(data) > 8_000_000:
-        raise ValueError(f'ENCODE metadata too large for safe audit: {accession}')
+        raise ValueError('ENCODE record exceeds safe metadata size')
     obj = json.loads(data)
-    if not isinstance(obj, dict) or accession_of(obj) != accession:
-        raise ValueError(f'Unexpected ENCODE response identity for {accession}')
+    if not isinstance(obj, dict):
+        raise ValueError('ENCODE response is not a JSON record')
     return obj, hashlib.sha256(data).hexdigest()
+
+
+def resolve_replicates(obj: dict, fetch: Callable[[str], tuple[dict, str]]) -> dict:
+    """Resolve original ENCODE replicate links; never infer biosample IDs from file counts.
+
+    ENCODE experiment frame=embedded can still return string replicate paths;
+    those MUST be fetched individually before auditing biological units.
+    """
+    resolved = []
+    record_hashes = {}
+    for item in (obj.get('replicates') or []):
+        if isinstance(item, dict) and item.get('biological_replicate_number') is not None and item.get('biosample'):
+            resolved.append(item)
+            continue
+        path = item.get('@id') if isinstance(item, dict) else str(item)
+        if not isinstance(path, str) or not re.fullmatch(r'/replicates/[a-fA-F0-9-]{36}/', path):
+            raise ValueError(f'Unverifiable ENCODE replicate reference: {path!r}')
+        record, sha = fetch(HOST + path + '?format=json&frame=embedded')
+        if record.get('@id') and record.get('@id') != path:
+            raise ValueError(f'Replicate identity mismatch: {path}')
+        if not record.get('biosample') or record.get('biological_replicate_number') is None:
+            raise ValueError(f'Original replicate lacks biosample or biological number: {path}')
+        if record.get('experiment'):
+            exp = accession_of(record['experiment'])
+            if exp and exp != accession_of(obj):
+                raise ValueError(f'Replicate linked to a different experiment: {path}')
+        record_hashes[path] = sha
+        resolved.append(record)
+    result = dict(obj)
+    result['replicates'] = resolved
+    result['_gcev_original_replicate_sha256'] = record_hashes
+    return result
+
+
+def fetch_original(accession: str, *, timeout: int = 45) -> tuple[dict, str]:
+    url = f'{HOST}/experiments/{accession}/?format=json&frame=embedded'
+    obj, source_sha = fetch_json(url, timeout=timeout)
+    if accession_of(obj) != accession:
+        raise ValueError(f'Unexpected ENCODE experiment identity for {accession}')
+    return resolve_replicates(obj, lambda u: fetch_json(u, timeout=timeout)), source_sha
 
 
 def jsonfile(directory: Path, accession: str) -> tuple[dict, str]:
@@ -171,13 +213,15 @@ def inspect_experiment(obj: dict, *, expected_tf: str | None,
         'biological_replicate_numbers': sorted(set(ids)),
         'biosample_identifiers': sorted(set(biosamples)),
         'unresolved_replicate_references': unresolved,
+        'original_replicate_record_sha256': obj.get('_gcev_original_replicate_sha256', {}),
         'biosample_replicates_verified_from_metadata': biological,
         'quantification_candidates': quant_files,
         'per_replicate_grch38_quantifications': qualified,
         'per_replicate_quantification_available': quant_ok,
         'unresolved_file_references': unresolved_files,
         'audit_counts': audit_counts,
-        'manual_audit_review_required': bool(audit_counts),
+        'manual_audit_review_required': bool(audit_counts) or not ('audit' in obj or 'audits' in obj),
+        'original_qc_metadata_missing': not ('audit' in obj or 'audits' in obj),
     }
     findings['design_metadata_pass'] = bool(released and assay_ok and context_ok and target_ok
                                            and source_control_ok and biological)
