@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: c2d90150535954e1e818a39cbb75dcb306e3e1f9
+          ref: 4da1369bef863ee1a45a6d539ba70fc520c5e006
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -27,17 +27,24 @@ jobs:
         run: |
           git rev-parse HEAD
           sha256sum configs/encode_crispri_k562_panel_2026_11_25.json
+      - name: Reuse checksum-pinned GENCODE V29 annotation
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/encode_qc/gencode.v29.annotation.gtf.gz
+          key: gencode-v29-gtf-e77a9568d8783f432a03f5e49d8f52d89e8b0e795382cfcb1d93bbd279b0c2b9
       - name: Download official GENCODE V29 GRCh38 gene annotation
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/encode_qc"
-          curl --fail --location --retry 4 --retry-delay 5 --connect-timeout 30 --max-time 450 \
-            'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v29.annotation.gtf.gz' \
-            -o "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
+          if [ ! -s "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz" ]; then
+            curl --fail --location --retry 4 --retry-delay 5 --connect-timeout 30 --max-time 450 \
+              'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v29.annotation.gtf.gz' \
+              -o "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
+          fi
           test -s "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
           gzip -t "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
-          sha256sum "$RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz"
+          echo "e77a9568d8783f432a03f5e49d8f52d89e8b0e795382cfcb1d93bbd279b0c2b9  $RUNNER_TEMP/encode_qc/gencode.v29.annotation.gtf.gz" | sha256sum -c
       - name: Authenticate all original ENCODE replicate quantifications and calculate QC
         shell: bash
         run: |
@@ -62,7 +69,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: c2d90150535954e1e818a39cbb75dcb306e3e1f9
+          ref: 4da1369bef863ee1a45a6d539ba70fc520c5e006
           persist-credentials: false
       - name: Download quality-checked gene-level count, abundance and length inputs
         uses: actions/download-artifact@v4
