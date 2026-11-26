@@ -8,6 +8,13 @@ on:
       - 'tests/test_biov2_quality.py'
       - '.github/workflows/gcev-encode-biov2.yml'
       - 'docs/BIOV2_QC_AND_DIFFERENTIAL_EXPRESSION.md'
+  pull_request:
+    paths:
+      - 'scripts/biov2_quality.py'
+      - 'scripts/biov2_deseq2.R'
+      - 'tests/test_biov2_quality.py'
+      - '.github/workflows/gcev-encode-biov2.yml'
+      - 'docs/BIOV2_QC_AND_DIFFERENTIAL_EXPRESSION.md'
   workflow_dispatch: {}
 permissions:
   contents: read
