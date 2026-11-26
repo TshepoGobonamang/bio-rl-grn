@@ -1,0 +1,73 @@
+name: BIO-V4B source-audited TF-aware K562 development cohort
+on:
+  push:
+    branches: [research/gcev-biov4b-tf-aware-fit-only-cohort]
+    paths:
+      - 'docs/BIOV4B_LOCKED_TF_AWARE_COHORT_2026_11_26.md'
+      - 'scripts/biov4b_select_tfaware_cohort.py'
+      - 'tests/test_biov4b_tfaware_cohort.py'
+      - '.github/workflows/gcev-biov4b-tfaware-cohort.yml'
+  pull_request:
+    paths:
+      - 'scripts/biov4b_select_tfaware_cohort.py'
+      - 'tests/test_biov4b_tfaware_cohort.py'
+      - '.github/workflows/gcev-biov4b-tfaware-cohort.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  actions: read
+jobs:
+  select:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install minimum tested dependencies
+        run: python -m pip install "numpy>=1.24,<3" "scipy>=1.11,<2" "pandas>=2,<3" "pytest>=8,<10"
+      - name: Verify fixed TF/target selection rules
+        run: python -m pytest -q tests/test_biov4_qualify_gene_universe.py tests/test_biov4b_tfaware_cohort.py
+      - name: Retrieve frozen K562 original source and cell partitions
+        uses: actions/download-artifact@v4
+        with:
+          name: gcev-biov3b-authentic-k562-only-expression
+          repository: ${{ github.repository }}
+          run-id: 45881788164
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: results/biov3b_from_verified
+      - name: Freeze original code and protocol revision
+        run: |
+          git rev-parse HEAD
+          sha256sum docs/BIOV4B_LOCKED_TF_AWARE_COHORT_2026_11_26.md
+          test -s results/biov3b_from_verified/biov3b_pure_k562/k562_expression_original_scale.npz
+          test -s results/biov3b_from_verified/biov3b_K562_fit_only_512/split_manifest.json
+      - name: Download pinned GENCODE v29/JASPAR 2026 sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/biov4b"
+          curl --fail --location --retry 4 --retry-delay 4 --connect-timeout 25 --max-time 500 --show-error \
+            'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v29.annotation.gtf.gz' \
+            -o "$RUNNER_TEMP/biov4b/gencode.v29.annotation.gtf.gz"
+          curl --fail --location --retry 4 --retry-delay 4 --connect-timeout 25 --max-time 500 --show-error \
+            'https://jaspar2026.elixir.no/download/data/2026/CORE/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt' \
+            -o "$RUNNER_TEMP/biov4b/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt"
+          gzip -t "$RUNNER_TEMP/biov4b/gencode.v29.annotation.gtf.gz"
+          sha256sum "$RUNNER_TEMP/biov4b/"*
+      - name: Build original-fit-only 16-TF 48-target expression cohort
+        run: |
+          python scripts/biov4b_select_tfaware_cohort.py \
+            --input results/biov3b_from_verified \
+            --gencode "$RUNNER_TEMP/biov4b/gencode.v29.annotation.gtf.gz" \
+            --jaspar "$RUNNER_TEMP/biov4b/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt" \
+            --output results/biov4b
+      - name: Publish source-checked 64-gene development cohort
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gcev-biov4b-real-k562-tfaware-64-gene-development-cohort
+          path: results/biov4b/
+          if-no-files-found: warn
+          retention-days: 60
