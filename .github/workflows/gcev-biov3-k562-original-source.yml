@@ -7,6 +7,11 @@ on:
       - 'tests/test_biov3_k562_source_audit.py'
       - 'configs/biov3_k562_training_candidate_2026_11_26.json'
       - '.github/workflows/gcev-biov3-k562-original-source.yml'
+  pull_request:
+    paths:
+      - 'scripts/audit_biov3_k562_scRNA_source.py'
+      - 'tests/test_biov3_k562_source_audit.py'
+      - '.github/workflows/gcev-biov3-k562-original-source.yml'
   workflow_dispatch: {}
 permissions:
   contents: read
