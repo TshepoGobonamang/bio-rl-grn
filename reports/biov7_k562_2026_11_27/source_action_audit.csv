@@ -1,0 +1,15 @@
+transform,variant,evidence_source,n_nested_rows,different_edge_rows,constant_within_target_rows,mean_source_value,max_abs_source_value,mean_gcev_weight,positive_gcev_weights,source_is_target_constant_dnase,positive_dnase_weights_are_gate_extrapolation_not_action_utility
+log1p_original,primary_mixed,encode_ENCSR000EOT_K562_dnase_promoter_coverage,192,0,192,0.0,0.0,0.03530477276162184,47,True,True
+log1p_original,primary_mixed,jaspar2026_GRCh38_promoter_motif_potential,192,96,0,-0.0034267418303390944,0.13328583936500998,0.039244352589336215,39,False,False
+log1p_original,matched_v1,encode_ENCSR000EOT_K562_dnase_promoter_coverage,192,0,192,0.0,0.0,0.03425655407530684,45,True,True
+log1p_original,matched_v1,jaspar2026_GRCh38_promoter_motif_potential,192,96,0,-0.0034267418303390944,0.13328583936500998,0.039160902221075676,39,False,False
+log1p_original,matched_v2,encode_ENCSR000EOT_K562_dnase_promoter_coverage,192,0,192,0.0,0.0,0.03761226850403307,44,True,True
+log1p_original,matched_v2,jaspar2026_GRCh38_promoter_motif_potential,192,96,0,-0.0034267418303390944,0.13328583936500998,0.0370786210489089,38,False,False
+log1p_original,motif_only,jaspar2026_GRCh38_promoter_motif_potential,192,96,0,-0.0034267418303390944,0.13328583936500998,0.061353366114015456,43,False,False
+log1p_cp10k,primary_mixed,encode_ENCSR000EOT_K562_dnase_promoter_coverage,192,0,192,0.0,0.0,0.04362955951477303,45,True,True
+log1p_cp10k,primary_mixed,jaspar2026_GRCh38_promoter_motif_potential,192,78,0,-0.004915259857812495,0.20057276807628302,0.026072911170739982,25,False,False
+log1p_cp10k,matched_v1,encode_ENCSR000EOT_K562_dnase_promoter_coverage,192,0,192,0.0,0.0,0.04360072556758282,45,True,True
+log1p_cp10k,matched_v1,jaspar2026_GRCh38_promoter_motif_potential,192,78,0,-0.004915259857812495,0.20057276807628302,0.02649923782115538,26,False,False
+log1p_cp10k,matched_v2,encode_ENCSR000EOT_K562_dnase_promoter_coverage,192,0,192,0.0,0.0,0.03944198556474954,45,True,True
+log1p_cp10k,matched_v2,jaspar2026_GRCh38_promoter_motif_potential,192,78,0,-0.004915259857812495,0.20057276807628302,0.022542838694551547,24,False,False
+log1p_cp10k,motif_only,jaspar2026_GRCh38_promoter_motif_potential,192,78,0,-0.004915259857812495,0.20057276807628302,0.04871632878223139,30,False,False

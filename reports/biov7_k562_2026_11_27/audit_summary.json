@@ -1,0 +1,67 @@
+{
+  "TF_only_parents_and_actions": true,
+  "fit_cells_used": 394,
+  "freeze_manifest_sha256": "7b8865e7cd31b97f7577005ebec96f38f457cb0800c2a305ff70538e21a56826",
+  "frozen_before_internal_score": true,
+  "internal_score_cells_evaluated": 131,
+  "matched_fixed_weight_cancellation_checks": [
+    {
+      "fixed_weight_changed_targets_vs_primary": 0,
+      "transform": "log1p_original",
+      "variant": "primary_mixed"
+    },
+    {
+      "fixed_weight_changed_targets_vs_primary": 0,
+      "transform": "log1p_original",
+      "variant": "matched_v1"
+    },
+    {
+      "fixed_weight_changed_targets_vs_primary": 0,
+      "transform": "log1p_original",
+      "variant": "matched_v2"
+    },
+    {
+      "fixed_weight_changed_targets_vs_primary": 0,
+      "transform": "log1p_original",
+      "variant": "motif_only"
+    },
+    {
+      "fixed_weight_changed_targets_vs_primary": 0,
+      "transform": "log1p_cp10k",
+      "variant": "primary_mixed"
+    },
+    {
+      "fixed_weight_changed_targets_vs_primary": 0,
+      "transform": "log1p_cp10k",
+      "variant": "matched_v1"
+    },
+    {
+      "fixed_weight_changed_targets_vs_primary": 0,
+      "transform": "log1p_cp10k",
+      "variant": "matched_v2"
+    },
+    {
+      "fixed_weight_changed_targets_vs_primary": 0,
+      "transform": "log1p_cp10k",
+      "variant": "motif_only"
+    }
+  ],
+  "partition_counts": {
+    "fit": 394,
+    "internal_score": 131,
+    "untouched_test": 133
+  },
+  "perturbation_outcomes_accessed": false,
+  "primary_contrast": "GCEV minus no_graph_state; negative delta favors GCEV",
+  "primary_endpoint": "macro NMSE across 64 targets on original log1p X, primary mixed-caller prior",
+  "reference_network_used": false,
+  "same_candidate_universe_all_methods": true,
+  "same_two_parent_scaffold_plus_one_edit": true,
+  "source_action_audit_file": "source_action_audit.csv",
+  "source_weight_interpretation": "predicted action utility, not binding probability; positive DNase weights are extrapolation",
+  "study_status": "DEVELOPMENT_INTERNAL_EXPRESSION_GENERALIZATION_NOT_BIOLOGICAL_CONFIRMATION",
+  "test_cells_used": 0,
+  "test_transforms_or_predictions_or_descriptive_statistics_computed": false,
+  "test_used": false,
+  "uncertainty": "paired cell bootstrap conditional on one fitted source cohort; not independent biological replication"
+}

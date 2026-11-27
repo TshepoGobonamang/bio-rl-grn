@@ -1,0 +1,15 @@
+{
+  "status": "PASSED",
+  "checked_hash_entries": 111,
+  "summary_rows": 56,
+  "contrast_rows": 24,
+  "per_target_rows": 3584,
+  "cell_error_arrays": 56,
+  "target_constant_dnase_rows_zero_utility": 1152,
+  "fixed_source_choices_identical_across_variants": true,
+  "metric_and_bootstrap_maximum_error": 8.881784197001252e-16,
+  "absolute_numeric_tolerance": 1e-10,
+  "test_used": false,
+  "regulatory_truth_evaluated": false,
+  "reference_comparison": null
+}
