@@ -126,3 +126,26 @@ def test_selected_exact_motif_names_and_probabilities(tmp_path):
     motif_file.write_text(text)
     with pytest.raises(ValueError,match="not original TF"):
         parse_meme_selected(motif_file,selected)
+
+
+
+def test_dinucleotide_null_is_deterministic_across_python_hash_seeds():
+    """Guard against randomized set-iteration order changing RNG consumption."""
+    import os
+    import subprocess
+    import sys
+    code=(
+        "import numpy as np,hashlib;"
+        "from scripts.biov5_scan_grch38_promoters import dinucleotide_shuffle;"
+        "s=('ACGTTGCGAATCCCAGCTTG'*60)+'A';"
+        "r=np.random.default_rng(20261127);"
+        "out='|'.join(dinucleotide_shuffle(s,r) for _ in range(4));"
+        "print(hashlib.sha256(out.encode()).hexdigest())"
+    )
+    results=[]
+    for seed in ("0","1","77","random"):
+        env={**os.environ,"PYTHONHASHSEED":seed}
+        value=subprocess.check_output(
+            [sys.executable,"-c",code],env=env,text=True).strip()
+        results.append(value)
+    assert len(set(results))==1
