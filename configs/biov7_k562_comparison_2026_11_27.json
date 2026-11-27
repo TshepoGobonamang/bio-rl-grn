@@ -1,0 +1,96 @@
+{
+  "protocol": "GCEV-BIOV7-K562-MATCHED-COMPARISON-2026-11-27-001",
+  "stage": "DEVELOPMENT_INTERNAL_SCORE_PREDICTIVE_COMPARISON_NOT_REGULATORY_CONFIRMATION",
+  "parent_commit": "ff50587142c7995c281f156be598815b68682ac7",
+  "seed": 20261127,
+  "alpha": 1,
+  "max_parents": 2,
+  "boost": 0.3,
+  "n_folds": 3,
+  "shrinkage": 0.05,
+  "bootstrap_resamples": 10000,
+  "transforms": [
+    "log1p_original",
+    "log1p_cp10k"
+  ],
+  "variants": [
+    "primary_mixed",
+    "matched_v1",
+    "matched_v2",
+    "motif_only"
+  ],
+  "methods": [
+    "expression_only",
+    "fixed_sources",
+    "global_source",
+    "no_graph_state",
+    "no_parent_state",
+    "no_action_state",
+    "gcev"
+  ],
+  "primary_case": {
+    "transform": "log1p_original",
+    "variant": "primary_mixed"
+  },
+  "primary_contrast": "gcev_minus_no_graph_state",
+  "secondary_contrasts": [
+    "gcev_minus_fixed_sources",
+    "gcev_minus_expression_only"
+  ],
+  "evaluation_partition": "internal_score",
+  "frozen_partition_counts": {
+    "fit": 394,
+    "internal_score": 131,
+    "untouched_test": 133
+  },
+  "frozen_genes": 64,
+  "frozen_regulators": 16,
+  "frozen_edges": 1008,
+  "eligible_residual_actions": 880,
+  "final_parent_count_per_target": 3,
+  "endpoints": {
+    "primary": "mean normalized squared prediction error over 64 targets and 131 internal-score cells",
+    "secondary": "mean NMSE over the 48 target-only genes; selected-action differences; source-valuation diagnostics; source weights; runtime",
+    "nmse_denominator": "target variance in 394 fit cells, ddof=0, lower bound 1e-9",
+    "negative_paired_difference_favors_gcev": true,
+    "uncertainty": "paired cell bootstrap of cell-wise mean error across64 fixed genes; 10000 resamples; percentile95%; conditional on this fitted source cohort; not biological-replicate inference",
+    "no_auroc_auprc_without_independent_truth": true
+  },
+  "constraints": {
+    "no_gene_reselection": true,
+    "no_repartition": true,
+    "untouched_test_remains_sealed": true,
+    "no_ENCODE_perturbation_outcomes": true,
+    "no_hyperparameter_search": true,
+    "no_best_variant_selection": true,
+    "candidate_parents_tf_only": true,
+    "same_scaffold_and_one_insertion_all_methods": true,
+    "constant_source_must_not_change_within_target_action": true,
+    "source_weights_not_causal_probabilities": true,
+    "product_not_independent_source": true,
+    "all_cases_frozen_before_internal_score_readout": true,
+    "no_claim_of_regulatory_or_population_superiority": true,
+    "negative_or_null_results_retained": true
+  },
+  "provenance": {
+    "original_h5ad_sha256": "14eb3129e57769899e0d301f515531a7e410e52dc7488fb1f981c43b2ea99ca6",
+    "original_expression_npz_sha256": "0e5dd2f2be0e8924ac089c5f0e620ce94950902ecfd65fa596faafa35aa6e897",
+    "cohort_npz_sha256": "5271925dcb486923977383334d39a513e5aa77474de5d16f3c506a7602742d20",
+    "partitions_sha256": "c1b562feeb150d299f2c7c331966084ed65471759f114e1963b782f6d68bed73",
+    "gene_universe_sha256": "b8dd6122a56cc82b00ed6dfd9754209a61905631b0f122f5394dde7ccb5e16c9",
+    "motif_prior_sha256": "ea0bc14356fed5d2a8d4b5452e94e2372dc2f6e2da1d990a151ab1283a86b4e0",
+    "primary_biov6_table_sha256": "1d6ab9b17a0ee8d535481451a8688eedb74916675e0c29e247f0bdf06784e5ca",
+    "matched_v1_table_sha256": "fa8d85d837cab530e5fd8214c22b5f94e2c6b7bffbf32c2eb13e067f88d5c9cc",
+    "matched_v2_table_sha256": "0a7871079188ed148deed0b2d5aaa182f9ed8bb7ee9b6154fedd94633e78d951",
+    "source_GEO": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM9224207",
+    "source_processing_review": "GEO reports STARsolo UMI counting, >1000 UMI and mito fraction <0.4 selection. Exported X count-like; exact raw-UMI status remains unverified. CP10k is a declared sensitivity.",
+    "upstream_GitHub_artifacts": {
+      "cohort": 15151091546,
+      "original_expression": 15147700883,
+      "biov5": 15192626844,
+      "biov6_primary": 15193389552,
+      "biov6_matched": 15194436273
+    }
+  }
+}
+
