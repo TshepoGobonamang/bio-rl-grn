@@ -1,5 +1,13 @@
 # Project status and gated delivery
 
+## Current record: 27 November 2026
+
+The [ten-track report](../reports/TEN_TRACK_RESEARCH_STATUS_2026_11_27.md) is the current status. [BIO-V8](../reports/BIOV8_EVIDENCE_QUALIFICATION_2026_11_27.md) exported and verified frozen scores, executed representation diagnostics, and reproduced the numerical outputs on GitHub. External ENCODE metadata searches failed with HTTP 403, so source inventory remains incomplete and biological scoring is blocked. All 133 expression-test cells remain sealed. No GCEV or RL superiority is established.
+
+The older stage table below is preserved as a **20 November historical checkpoint**, not a current assertion that all later source and comparison work is unexecuted.
+
+## Historical checkpoint: 20 November 2026
+
 **2026-11-20:** clean-room software scaffold built and locally tested; no real independent run is claimed.
 
 | Stage | Gate | State |

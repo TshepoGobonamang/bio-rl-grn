@@ -1,0 +1,56 @@
+[
+  {
+    "cache_key": "babaf6b894f4b1754e4082f4e6ddd1a63c89124f5d1db5b52c3e2b9c36b25410",
+    "error": "HTTPError: HTTP Error 403: Forbidden",
+    "payload_opened": false,
+    "request_kind": "metadata_json",
+    "requested_at_utc": "2026-11-27T13:55:21.315224+00:00",
+    "status": "error",
+    "url": "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_title=CRISPRi+RNA-seq&limit=100&from=0&format=json&frame=embedded"
+  },
+  {
+    "cache_key": "bc0cbcba2a33c589c6eb929d7846c531173292230f19c10479da8e23cd9420d0",
+    "error": "HTTPError: HTTP Error 403: Forbidden",
+    "payload_opened": false,
+    "request_kind": "metadata_json",
+    "requested_at_utc": "2026-11-27T13:55:21.612136+00:00",
+    "status": "error",
+    "url": "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_title=shRNA+RNA-seq&limit=100&from=0&format=json&frame=embedded"
+  },
+  {
+    "cache_key": "df1ea655f0fdc44448ce6259d3f40bc8c785d8e632215186b144f3ec7c79d889",
+    "error": "HTTPError: HTTP Error 403: Forbidden",
+    "payload_opened": false,
+    "request_kind": "metadata_json",
+    "requested_at_utc": "2026-11-27T13:55:21.787503+00:00",
+    "status": "error",
+    "url": "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_title=knockdown+RNA-seq&limit=100&from=0&format=json&frame=embedded"
+  },
+  {
+    "cache_key": "a3fcdeb18bc370c98d2fa4344c7ff3373aafa796f91eabc6079c74c2f794e86b",
+    "error": "HTTPError: HTTP Error 403: Forbidden",
+    "payload_opened": false,
+    "request_kind": "metadata_json",
+    "requested_at_utc": "2026-11-27T13:55:22.027487+00:00",
+    "status": "error",
+    "url": "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_title=TF+ChIP-seq&limit=100&from=0&format=json&frame=embedded"
+  },
+  {
+    "cache_key": "f9d2e5ab93df25bbb78effcd93b6dee389d512f0c0855929a2a88e5d1cf91195",
+    "error": "HTTPError: HTTP Error 403: Forbidden",
+    "payload_opened": false,
+    "request_kind": "metadata_json",
+    "requested_at_utc": "2026-11-27T13:55:22.196286+00:00",
+    "status": "error",
+    "url": "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_term_name=RNA-seq&limit=100&from=0&format=json&frame=embedded"
+  },
+  {
+    "cache_key": "37746ac4b79885d7abd5d785ddc1aa8b8d63e4b2ec92e984e6ee8103cb04e89c",
+    "error": "HTTPError: HTTP Error 403: Forbidden",
+    "payload_opened": false,
+    "request_kind": "metadata_json",
+    "requested_at_utc": "2026-11-27T13:55:22.360247+00:00",
+    "status": "error",
+    "url": "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_term_name=ChIP-seq&limit=100&from=0&format=json&frame=embedded"
+  }
+]

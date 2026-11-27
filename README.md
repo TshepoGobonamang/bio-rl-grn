@@ -4,6 +4,12 @@
 
 Clean-room research software for **graph-conditioned, cross-fitted reliability signals in directed gene-regulatory network inference**. This repository is a **new implementation**, not a claim that independent biological validation or reinforcement learning has succeeded.
 
+## Current checkpoint — 27 November 2026
+
+**BIO-V8 source-action qualification is executed and computationally reproduced.** It preserves 49,280 existing candidate scores and 3,584 graph choices, and records 2,688 deterministic representation diagnostics without reading expression matrices or new assay outcomes. Original external ENCODE metadata acquisition is **blocked by HTTP 403**; the inventory is incomplete and biological scoring is NO-GO. Public binding leads are not qualified validation data. All 133 reserved test cells remain sealed.
+
+Read the [BIO-V8 results and next gate](reports/BIOV8_EVIDENCE_QUALIFICATION_2026_11_27.md), [current ten-track status](reports/TEN_TRACK_RESEARCH_STATUS_2026_11_27.md), [BIO-V7 predictive comparison](reports/BIOV7_REAL_K562_MATCHED_COMPARISON_2026_11_27.md), and [design lock](docs/BIOV8_LOCKED_EVIDENCE_QUALIFICATION_2026_11_27.md). BIO-V7 and the registered synthetic studies did not establish the primary GCEV superiority claims; those outcomes remain part of the record. No trained RL policy has been evaluated.
+
 
 ## v0.2 experimental method: graph-conditional evidence valuation (GCEV)
 
