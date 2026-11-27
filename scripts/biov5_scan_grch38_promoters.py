@@ -402,7 +402,7 @@ def run(cohort_root:Path, gtf:Path, meme:Path, out:Path) -> dict:
             g=row.gene_symbol
             meta=next(m for m in coords if m["gene_symbol"]==g)
             f.write(f">{g}|{row.gencode_gene_id}|{meta['chromosome']}:{meta['start_0based']}-{meta['end_0based_exclusive']}|{meta['gencode_strand']}\n{sequences[g]}\n")
-    pd.DataFrame(coords).to_csv(out/"genecode29_promoter_coordinates_and_sources.csv",index=False)
+    pd.DataFrame(coords).to_csv(out/"gencode29_promoter_coordinates_and_sources.csv",index=False)
     source_motifs=[]
     for tf,models in motifs.items():
         for m in models:
@@ -458,7 +458,7 @@ def run(cohort_root:Path, gtf:Path, meme:Path, out:Path) -> dict:
         "scientific_status":"MOTIF_BINDING_POTENTIAL_NOT_DIRECT_REGULATION",
         "file_sha256":{
             p.name:sha(p) for p in (out/"gene_oriented_hg38_promoters.fa",
-                   out/"genecode29_promoter_coordinates_and_sources.csv",
+                   out/"gencode29_promoter_coordinates_and_sources.csv",
                    out/"jaspar_selected_motifs_sha256.csv",
                    out/"k562_tf_to_promoter_motif_prior_1008.csv")
         }
