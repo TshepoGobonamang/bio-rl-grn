@@ -268,7 +268,8 @@ def scan_one_motif(fwd: np.ndarray, rev: np.ndarray, motif: dict) -> dict:
 def dinucleotide_shuffle(seq: str, rng: np.random.Generator) -> str:
     """Random Eulerian trail through original directed nucleotide transitions."""
     if len(seq)<2 or set(seq)-DNA: raise ValueError("Cannot shuffle invalid DNA")
-    outgoing={b:[] for b in DNA}
+    # Stable canonical alphabet order: never depend on randomized Python set hashing.
+    outgoing={b:[] for b in "ACGT"}
     for left,right in zip(seq,seq[1:]):
         outgoing[left].append(right)
     for adj in outgoing.values():
