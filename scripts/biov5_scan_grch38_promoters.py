@@ -479,7 +479,7 @@ def main():
     p.add_argument("--jaspar",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
     args=p.parse_args()
-    run(args.cohort,args.gencode,args.jasper,args.output)
+    run(args.cohort,args.gencode,args.jaspar,args.output)
 
 
 if __name__=="__main__":main()
