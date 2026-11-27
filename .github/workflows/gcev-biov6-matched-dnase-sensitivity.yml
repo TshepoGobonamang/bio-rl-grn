@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install minimum source interpretation/test dependencies
-        run: python -m pip install "numpy>=1.24,<3" "pandas>=2,<3" "pytest>=8,<10"
+        run: python -m pip install "numpy>=1.24,<3" "pandas>=2,<3" "scipy>=1.11,<2" "pytest>=8,<10"
       - name: Verify original source assay and fixed version-specific file selection
         run: python -m pytest -q tests/test_biov6_k562_dnase_accessibility.py tests/test_biov6_matched_caller_sensitivity.py
       - name: Freeze secondary analysis code and two version definitions
