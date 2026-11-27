@@ -1,0 +1,104 @@
+name: BIO-V5 GENCODE GRCh38 promoter sequence and JASPAR 2026 motif evidence
+on:
+  push:
+    branches: [research/gcev-biov5-sequence-backed-promoter-prior]
+    paths:
+      - 'docs/BIOV5_LOCKED_SEQUENCE_MOTIF_PROMOTER_PRIOR_2026_11_27.md'
+      - 'scripts/biov5_scan_grch38_promoters.py'
+      - 'tests/test_biov5_motif_promoter_prior.py'
+      - '.github/workflows/gcev-biov5-sequence-motif-prior.yml'
+  pull_request:
+    paths:
+      - 'scripts/biov5_scan_grch38_promoters.py'
+      - 'tests/test_biov5_motif_promoter_prior.py'
+      - '.github/workflows/gcev-biov5-sequence-motif-prior.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  actions: read
+jobs:
+  motif-promoter:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install exact method dependencies
+        run: python -m pip install "numpy>=1.24,<3" "pandas>=2,<3" "pytest>=8,<10"
+      - name: Test strand orientation, actual MEME matrices, null shuffles and prior scoring
+        run: python -m pytest -q tests/test_biov5_motif_promoter_prior.py
+      - name: Authenticate frozen source and locked protocol
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          sha256sum docs/BIOV5_LOCKED_SEQUENCE_MOTIF_PROMOTER_PRIOR_2026_11_27.md
+          python -V
+      - name: Fetch original source-audited K562 16-TF/48-target gene cohort
+        uses: actions/download-artifact@v4
+        with:
+          name: gcev-biov4b-real-k562-tfaware-64-gene-development-cohort
+          run-id: 45889615265
+          repository: ${{ github.repository }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: results/biov4b_frozen
+      - name: Obtain unchanged original GENCODE v29 and JASPAR 2026 motif source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/biov5"
+          curl --fail --location --retry 5 --retry-delay 5 --connect-timeout 30 --max-time 600 --show-error \
+            'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_29/gencode.v29.annotation.gtf.gz' \
+            -o "$RUNNER_TEMP/biov5/gencode.v29.annotation.gtf.gz"
+          curl --fail --location --retry 5 --retry-delay 5 --connect-timeout 30 --max-time 600 --show-error \
+            'https://jaspar2026.elixir.no/download/data/2026/CORE/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt' \
+            -o "$RUNNER_TEMP/biov5/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt"
+          echo 'e77a9568d8783f432a03f5e49d8f52d89e8b0e795382cfcb1d93bbd279b0c2b9  ' "$RUNNER_TEMP/biov5/gencode.v29.annotation.gtf.gz" | sed 's/  / /g' >/dev/null
+          echo "e77a9568d8783f432a03f5e49d8f52d89e8b0e795382cfcb1d93bbd279b0c2b9  $RUNNER_TEMP/biov5/gencode.v29.annotation.gtf.gz" | sha256sum -c -
+          echo "ae4f77a17256c7b8b7b73402810c1ecf4fc411e9ad7832cdc87d586dee9a4a15  $RUNNER_TEMP/biov5/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt" | sha256sum -c -
+          gzip -t "$RUNNER_TEMP/biov5/gencode.v29.annotation.gtf.gz"
+      - name: Fetch 64 authentic UCSC hg38 promoter DNA segments and scan both JASPAR motif strands
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m scripts.biov5_scan_grch38_promoters \
+            --cohort results/biov4b_frozen \
+            --gencode "$RUNNER_TEMP/biov5/gencode.v29.annotation.gtf.gz" \
+            --jaspar "$RUNNER_TEMP/biov5/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt" \
+            --output results/biov5_real_prior
+      - name: Reconcile 1,008 source-observed motif evidence values and original DNA provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          import pandas as pd
+          from pathlib import Path
+          root=Path('results/biov5_real_prior')
+          x=json.loads((root/'biov5_motif_prior_manifest.json').read_text())
+          e=pd.read_csv(root/'k562_tf_to_promoter_motif_prior_1008.csv')
+          g=pd.read_csv(root/'genecode29_promoter_coordinates_and_sources.csv')
+          assert len(e)==1008 and len(g)==64
+          assert not e.duplicated(['tf','target']).any() and not (e.tf==e.target).any()
+          assert e.prior_score.between(0,1).all()
+          assert e.empirical_p.between(1/129,1).all()
+          assert e.bh_q.between(1/129,1).all()
+          assert (e.null_shuffles==128).all() and e.source_observed.all()
+          assert (g.length==1201).all() and g.sequence_pass.all()
+          assert x['tested_directed_no_self_edges']==1008
+          assert x['ENCODE_perturbation_response_labels_accessed'] is False
+          for name,expected in x['file_sha256'].items():
+              h=hashlib.sha256((root/name).read_bytes()).hexdigest()
+              assert h==expected, name
+          print('INDEPENDENT_AUDIT_OK',len(e),'edges',len(g),'promoters',e.prior_score.gt(0).sum(),'positive prior values')
+          PY
+      - name: Archive actual sequence-backed TF-promoter prior with source hashes
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gcev-biov5-actual-hg38-jaspar-motif-promoter-prior
+          path: results/biov5_real_prior/
+          if-no-files-found: warn
+          retention-days: 75
