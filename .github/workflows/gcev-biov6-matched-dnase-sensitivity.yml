@@ -7,6 +7,12 @@ on:
       - 'scripts/biov6_matched_caller_sensitivity.py'
       - 'tests/test_biov6_matched_caller_sensitivity.py'
       - '.github/workflows/gcev-biov6-matched-dnase-sensitivity.yml'
+  pull_request:
+    paths:
+      - 'docs/BIOV6_SECONDARY_MATCHED_PIPELINE_SENSITIVITY_2026_11_27.md'
+      - 'scripts/biov6_matched_caller_sensitivity.py'
+      - 'tests/test_biov6_matched_caller_sensitivity.py'
+      - '.github/workflows/gcev-biov6-matched-dnase-sensitivity.yml'
   workflow_dispatch: {}
 permissions:
   contents: read
