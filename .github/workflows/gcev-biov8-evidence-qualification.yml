@@ -1,0 +1,90 @@
+name: BIO-V8 evidence qualification without expression or outcome access
+
+on:
+  push:
+    branches: [research/gcev-biov8-evidence-qualification]
+    paths:
+      - 'scripts/biov8*.py'
+      - 'tests/test_biov8*.py'
+      - 'configs/biov8*'
+      - '.github/workflows/gcev-biov8-evidence-qualification.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frozen-scores-and-metadata-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed source-qualification environment
+        run: python -m pip install 'numpy==2.3.5' 'pandas==2.2.3' 'pytest==9.2.0'
+      - name: Verify source identity, isolation and metadata transport boundaries
+        run: python -m pytest -q tests/test_biov8_freeze_and_audit.py tests/test_biov8_encode_metadata_audit.py
+      - name: Retrieve already-frozen BIO-V7 scores only
+        uses: actions/download-artifact@v4
+        with:
+          name: gcev-biov7-fit-only-frozen-decisions-before-internal-score
+          run-id: 46004482269
+          repository: ${{ github.repository }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: inputs/biov7
+      - name: Retrieve the already-constructed primary prior
+        uses: actions/download-artifact@v4
+        with:
+          name: gcev-biov6-authentic-k562-dnase-replicate-promoter-accessibility
+          run-id: 45991610752
+          repository: ${{ github.repository }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: inputs/biov6/primary
+      - name: Retrieve the already-constructed processing sensitivities
+        uses: actions/download-artifact@v4
+        with:
+          name: gcev-biov6-matched-k562-dnase-two-pipeline-sensitivity
+          run-id: 45992406882
+          repository: ${{ github.repository }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: inputs/biov6/sensitivity
+      - name: Freeze all existing scores and execute representation diagnostics
+        run: |
+          python scripts/biov8_freeze_and_audit.py \
+            --protocol configs/biov8_evidence_qualification_2026_11_27.json \
+            --biov7-results inputs/biov7 \
+            --primary-prior inputs/biov6/primary/k562_tf_target_accessibility_and_motif_context_1008.csv \
+            --matched-v1 inputs/biov6/sensitivity/k562_dnase_v1_matched_joint_context_1008.csv \
+            --matched-v2 inputs/biov6/sensitivity/k562_dnase_v2_matched_joint_context_1008.csv \
+            --output results/biov8/frozen
+      - name: Preserve scores before external metadata qualification
+        uses: actions/upload-artifact@v4
+        with:
+          name: gcev-biov8-frozen-scores-before-external-metadata
+          path: results/biov8/frozen/
+          if-no-files-found: error
+          retention-days: 75
+      - name: Audit original ENCODE JSON metadata without opening outcome files
+        run: |
+          python scripts/biov8_encode_metadata_audit.py \
+            --protocol configs/biov8_evidence_qualification_2026_11_27.json \
+            --output results/biov8/metadata
+      - name: Retain complete source qualification including scientific no-go
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gcev-biov8-evidence-qualification-no-outcomes
+          path: results/biov8/
+          if-no-files-found: warn
+          retention-days: 75

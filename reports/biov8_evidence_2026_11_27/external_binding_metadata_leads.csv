@@ -1,0 +1,6 @@
+tf,experiment,alternative,assay,source_url,biosamples,observed_issue,status
+RUNX1,ENCSR414TYY,ENCSR588AKU,TF ChIP-seq,https://www.encodeproject.org/experiments/ENCSR414TYY/,ENCBS207UAM|ENCBS232KKV,Warnings; exact control/file/QC and motif derivation need original records,PUBLIC_METADATA_LEAD_NOT_QUALIFIED
+CUX1,ENCSR000EFO,,TF ChIP-seq,https://www.encodeproject.org/experiments/ENCSR000EFO/,ENCBS039ENC|ENCBS039ENC,Both listed replicate numbers share one biosample ID; distinct-biosample gate not established,PUBLIC_METADATA_LEAD_REPLICATION_GATE_UNMET
+HMBOX1,ENCSR757IIU,,TF ChIP-seq,https://www.encodeproject.org/experiments/ENCSR757IIU/,ENCBS316CKF|ENCBS577JGM,Controls ENCSR129NAJ|ENCSR962APM; original file/QC needed; biosample shared with alternative RUNX1 assay,PUBLIC_METADATA_LEAD_NOT_QUALIFIED
+ATF6,ENCSR125RFR,,TF ChIP-seq,https://www.encodeproject.org/experiments/ENCSR125RFR/,ENCBS716QFX|ENCBS179GIU,Genetically modified tagged K562; control ENCSR953NJZ; original files and condition/QC required,PUBLIC_METADATA_LEAD_NOT_QUALIFIED
+SOX6,ENCSR788RSW,,TF ChIP-seq,https://www.encodeproject.org/experiments/ENCSR788RSW/,ENCBS603CUX|ENCBS543YEP,Control/file/QC and exact mouse-derived motif lineage unresolved,PUBLIC_METADATA_LEAD_NOT_QUALIFIED

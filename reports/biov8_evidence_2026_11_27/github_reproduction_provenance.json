@@ -1,0 +1,26 @@
+{
+  "workflow_run_id": 46011226484,
+  "workflow_url": "https://github.com/TshepoGobonamang/bio-rl-grn/actions/runs/46011226484",
+  "commit": "eb3ca377bbbf02e7577c3f0aab6eca31cd61085f",
+  "computational_conclusion": "success",
+  "biological_scoring_decision": "NO_GO_FOR_BIOLOGICAL_SCORING",
+  "qualification_search_complete": false,
+  "metadata_http_403_requests": 6,
+  "artifact_id": 15204377155,
+  "artifact_sha256": "af9379cd90e55ac42a27c791aca805ccfe285045375e32c6d56c3a2f8dd99d0f",
+  "pre_metadata_freeze_artifact_id": 15203183616,
+  "pre_metadata_freeze_artifact_sha256": "b40ce4e3bb93d2a1cfeb258e8e1212566f9b0fed0610bdbf7796d686fa9e5977",
+  "all_eight_output_tables_byte_identical": true,
+  "table_verification": {
+    "accessibility_permutation.csv": true,
+    "candidate_eligibility.csv": true,
+    "frozen_biov7_candidate_scores.csv": true,
+    "frozen_biov7_graph_selections.csv": true,
+    "frozen_probe_selections.csv": true,
+    "source_action_diagnostics.csv": true,
+    "source_action_summary.csv": true,
+    "tf_candidate_coverage.csv": true
+  },
+  "independent_biological_replication": false,
+  "test_expression_cells_used": 0
+}

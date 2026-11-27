@@ -1,0 +1,143 @@
+{
+  "biological_validation_performed": false,
+  "biov7_freeze_manifest_sha256": "50b23a11a04927a1ff367a1ca42ef9dd5757a6a9639950f128d6d78da8d27c93",
+  "conditions": 56,
+  "created_utc": "2026-11-27T13:53:44.215958+00:00",
+  "diagnostic_permutation_seed": 20261128,
+  "expression_matrices_read": 0,
+  "external_across_target_ranking_is_exploratory": true,
+  "fit_expression_cells_accessed": 0,
+  "frozen_graph_decisions": 3584,
+  "frozen_score_rows": 49280,
+  "genes": 64,
+  "implementation_sha256": "2862d4de40cbead110c5cf5d3f94606eb3bb9fd4e1aa94763dda362db23fe182",
+  "input_sha256": {
+    "biov6/pipeline_sensitivity/k562_dnase_v1_matched_joint_context_1008.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/inputs/biov6/pipeline_sensitivity/k562_dnase_v1_matched_joint_context_1008.csv",
+      "sha256": "fa8d85d837cab530e5fd8214c22b5f94e2c6b7bffbf32c2eb13e067f88d5c9cc"
+    },
+    "biov6/pipeline_sensitivity/k562_dnase_v2_matched_joint_context_1008.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/inputs/biov6/pipeline_sensitivity/k562_dnase_v2_matched_joint_context_1008.csv",
+      "sha256": "0a7871079188ed148deed0b2d5aaa182f9ed8bb7ee9b6154fedd94633e78d951"
+    },
+    "biov6/primary/k562_tf_target_accessibility_and_motif_context_1008.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/inputs/biov6/primary/k562_tf_target_accessibility_and_motif_context_1008.csv",
+      "sha256": "1d6ab9b17a0ee8d535481451a8688eedb74916675e0c29e247f0bdf06784e5ca"
+    },
+    "biov7/freeze_manifest.json": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/freeze_manifest.json",
+      "sha256": "50b23a11a04927a1ff367a1ca42ef9dd5757a6a9639950f128d6d78da8d27c93"
+    },
+    "biov7/log1p_cp10k/candidate_contexts.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/candidate_contexts.csv",
+      "sha256": "89e3627c878ee895757e662cc1e8b5e86b283ff6d31eb808cf8cb245dd6aca35"
+    },
+    "biov7/log1p_cp10k/matched_v1/candidate_scores.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/matched_v1/candidate_scores.csv",
+      "sha256": "721b515f87110668b2634549263651a94392928fb8e6a9f15ed4423b1ac7e250"
+    },
+    "biov7/log1p_cp10k/matched_v1/frozen_selections.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/matched_v1/frozen_selections.csv",
+      "sha256": "71d1f8606d9bbe6ebf44f3f380cb1ffcdefd6b949ec2be8868b0c313897206d5"
+    },
+    "biov7/log1p_cp10k/matched_v2/candidate_scores.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/matched_v2/candidate_scores.csv",
+      "sha256": "14e48e2b8b51e3016b1f24b4e724ed1d316dac5bcc0526f1769b85992320e9ca"
+    },
+    "biov7/log1p_cp10k/matched_v2/frozen_selections.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/matched_v2/frozen_selections.csv",
+      "sha256": "02550959f36498f96d6368f17c632a57c189192eae724ba352b7a61caa5eaec1"
+    },
+    "biov7/log1p_cp10k/motif_only/candidate_scores.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/motif_only/candidate_scores.csv",
+      "sha256": "d5523bb6cda8bdfd55685811071c5e028b1a73a4f9112eaef99291fbe11ad885"
+    },
+    "biov7/log1p_cp10k/motif_only/frozen_selections.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/motif_only/frozen_selections.csv",
+      "sha256": "f8187643ecf4ac1d080e82f520278c999b442aac0534bf0eee401f2865c93472"
+    },
+    "biov7/log1p_cp10k/primary_mixed/candidate_scores.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/primary_mixed/candidate_scores.csv",
+      "sha256": "0c14838c20011db76be4d5d534e6653ed02e90be9362adddbf98ef128816470b"
+    },
+    "biov7/log1p_cp10k/primary_mixed/frozen_selections.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_cp10k/primary_mixed/frozen_selections.csv",
+      "sha256": "f539bbe80f22e0f41442f6bfd1c765d2c9b824dd96f5293e8c219e13177ce8bc"
+    },
+    "biov7/log1p_original/candidate_contexts.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/candidate_contexts.csv",
+      "sha256": "d21555908c7f28a568418f5252c0efcadd57739dc8885cc65acf56b76350d615"
+    },
+    "biov7/log1p_original/matched_v1/candidate_scores.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/matched_v1/candidate_scores.csv",
+      "sha256": "76887a34d2bd9db1852e1257efd7c697b654ca51b344a6c287ee5c95c6427b04"
+    },
+    "biov7/log1p_original/matched_v1/frozen_selections.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/matched_v1/frozen_selections.csv",
+      "sha256": "1371bbf1bc4cd00afdfd312dd333ef3b46f60ba84a75263ba7105492385f7c20"
+    },
+    "biov7/log1p_original/matched_v2/candidate_scores.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/matched_v2/candidate_scores.csv",
+      "sha256": "fe5ec91164e65af414a635b00ba767a1ad823349a7cf1f6f2c29651258bba201"
+    },
+    "biov7/log1p_original/matched_v2/frozen_selections.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/matched_v2/frozen_selections.csv",
+      "sha256": "dbefe23b6d5d7a7b9a367b13467fb42946da38b7984b345b1d125a71ddc9710e"
+    },
+    "biov7/log1p_original/motif_only/candidate_scores.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/motif_only/candidate_scores.csv",
+      "sha256": "c2d8ab2d9a84d8901bab1fc9cfa2ece4bf8d2931c5976e10b023844200c4c210"
+    },
+    "biov7/log1p_original/motif_only/frozen_selections.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/motif_only/frozen_selections.csv",
+      "sha256": "06d450da1ffc617737bdd5f579454c824f6f7b1a50d3e99dde00605752ace67d"
+    },
+    "biov7/log1p_original/primary_mixed/candidate_scores.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/primary_mixed/candidate_scores.csv",
+      "sha256": "3b25b36bc5c7153bf4917f8e49e09062a388afe93f95a6386255bf468416e8e6"
+    },
+    "biov7/log1p_original/primary_mixed/frozen_selections.csv": {
+      "path": "/workspace/scratch/404d3669ff0e/runs/biov7_github/log1p_original/primary_mixed/frozen_selections.csv",
+      "sha256": "7b1b1d97928fa830228f3be934800b82cf18e6a30722e272ddce90383858ae91"
+    },
+    "biov7_protocol": {
+      "path": "/workspace/scratch/0775782d406a/bio-rl-grn/configs/biov7_k562_comparison_2026_11_27.json",
+      "sha256": "f860c2b93e501e2a8c051f674d3daa28b849cedf0e6bfa7a381ab9c3152d3977"
+    },
+    "biov8_protocol": {
+      "path": "/workspace/scratch/0775782d406a/bio-rl-grn/configs/biov8_evidence_qualification_2026_11_27.json",
+      "sha256": "a1b4bfbbd67d2b0b32bb7e0c508d6016cb074632ec74ddfaaff5e0d6a6ee1fd3"
+    }
+  },
+  "internal_score_cells_accessed": 0,
+  "interpretation": "Action changes establish decision influence only, not useful or biologically correct changes.",
+  "legacy_score_preserved_verbatim": true,
+  "new_binding_outcomes_accessed": false,
+  "new_models_fitted": 0,
+  "new_perturbation_outcomes_accessed": false,
+  "output_sha256": {
+    "accessibility_permutation.csv": "dcc5bcc47a6f6f4b5fb0afc80662dbebbeffc99c9fac0bcb8f945996009a44a7",
+    "candidate_eligibility.csv": "562d697e832440120dd1e09a39685b9904b6fe5e26772f0da27779345e922e51",
+    "frozen_biov7_candidate_scores.csv": "c9f872b77f110e78c60f34d96925d0d1c3ad3ad54de2d6a5c71f486c9ca6d1d3",
+    "frozen_biov7_graph_selections.csv": "53b386c40bb8bce9f40e65eed9835d12e0e121b023026efb5b2ec901fb591608",
+    "frozen_probe_selections.csv": "d29f85f7bad44bcbf6c5870ead857a9a57cdcab36c8d7f978c02255b4c5d9fc6",
+    "source_action_diagnostics.csv": "e4b2def19760f901460f0e0421215b6affe4164d5059e17bd90dbfb1791d6ae8",
+    "source_action_summary.csv": "989d8bc573e1216d6a1bdc54454c9a6a5ab9b9b34c2f9ed896e8478df4ec6092",
+    "tf_candidate_coverage.csv": "0bca6fe64e938dc7883c43c46736fbe7a1378786273109555329a2ee548520a6"
+  },
+  "permutation_is_biological_replicate": false,
+  "predictive_usefulness_evaluated": false,
+  "prior_edges": 1008,
+  "product_is_independent_third_source": false,
+  "protocol": "GCEV-BIOV8-K562-EVIDENCE-QUALIFICATION-2026-11-27-001",
+  "protocol_sha256": "a1b4bfbbd67d2b0b32bb7e0c508d6016cb074632ec74ddfaaff5e0d6a6ee1fd3",
+  "residual_candidates_per_condition": 880,
+  "scaffold_insertion_scores_fabricated": false,
+  "scores_are_probabilities": false,
+  "source_action_diagnostic_rows": 2688,
+  "source_action_summary_rows": 42,
+  "stage": "BIOV8_FROZEN_EXISTING_SCORES_AND_SOURCE_ACTION_QUALIFICATION_NO_OUTCOMES",
+  "tfs": 16,
+  "untouched_test_cells_accessed": 0,
+  "untouched_test_cells_still_reserved": 133
+}

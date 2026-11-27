@@ -1,0 +1,145 @@
+{
+  "binding_metadata_candidate_tfs": [],
+  "completed_at_utc": "2026-11-27T13:55:22.579516+00:00",
+  "decision": "NO_GO_FOR_BIOLOGICAL_SCORING",
+  "errors": [],
+  "exact_regulators": [
+    "TRPS1",
+    "PAX5",
+    "HES1",
+    "RUNX1",
+    "CUX1",
+    "ZIC1",
+    "HMBOX1",
+    "NFIA",
+    "BACH2",
+    "MEF2C",
+    "TCF4",
+    "ZNF423",
+    "EBF4",
+    "EBF1",
+    "ATF6",
+    "SOX6"
+  ],
+  "failed_requests": 6,
+  "independent_biological_validation_completed": false,
+  "interpretation": "Metadata eligibility only. Search absence is scoped to recorded queries. Uninspected outcomes remain sealed; binding metadata are not complete regulatory truth.",
+  "min_panel_tfs": 6,
+  "min_targets_per_tf": 20,
+  "new_assay_outcome_payloads_retrieved": 0,
+  "phase": "BIO-V8 metadata-only qualification",
+  "protocol_id": "GCEV-BIOV8-K562-EVIDENCE-QUALIFICATION-2026-11-27-001",
+  "request_count": 6,
+  "response_metadata_pass_tfs": [],
+  "response_panel_metadata_threshold_pass": false,
+  "search_complete": false,
+  "searches": [
+    {
+      "complete": false,
+      "errors": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ],
+      "query": {
+        "assay_title": "CRISPRi RNA-seq",
+        "biosample_ontology.term_name": "K562",
+        "status": "released",
+        "type": "Experiment"
+      },
+      "reported_total": null,
+      "unique_returned": 0,
+      "urls": [
+        "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_title=CRISPRi+RNA-seq&limit=100&from=0&format=json&frame=embedded"
+      ]
+    },
+    {
+      "complete": false,
+      "errors": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ],
+      "query": {
+        "assay_title": "shRNA RNA-seq",
+        "biosample_ontology.term_name": "K562",
+        "status": "released",
+        "type": "Experiment"
+      },
+      "reported_total": null,
+      "unique_returned": 0,
+      "urls": [
+        "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_title=shRNA+RNA-seq&limit=100&from=0&format=json&frame=embedded"
+      ]
+    },
+    {
+      "complete": false,
+      "errors": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ],
+      "query": {
+        "assay_title": "knockdown RNA-seq",
+        "biosample_ontology.term_name": "K562",
+        "status": "released",
+        "type": "Experiment"
+      },
+      "reported_total": null,
+      "unique_returned": 0,
+      "urls": [
+        "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_title=knockdown+RNA-seq&limit=100&from=0&format=json&frame=embedded"
+      ]
+    },
+    {
+      "complete": false,
+      "errors": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ],
+      "query": {
+        "assay_title": "TF ChIP-seq",
+        "biosample_ontology.term_name": "K562",
+        "status": "released",
+        "type": "Experiment"
+      },
+      "reported_total": null,
+      "unique_returned": 0,
+      "urls": [
+        "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_title=TF+ChIP-seq&limit=100&from=0&format=json&frame=embedded"
+      ]
+    },
+    {
+      "complete": false,
+      "errors": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ],
+      "query": {
+        "assay_term_name": "RNA-seq",
+        "biosample_ontology.term_name": "K562",
+        "status": "released",
+        "type": "Experiment"
+      },
+      "reported_total": null,
+      "unique_returned": 0,
+      "urls": [
+        "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_term_name=RNA-seq&limit=100&from=0&format=json&frame=embedded"
+      ]
+    },
+    {
+      "complete": false,
+      "errors": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ],
+      "query": {
+        "assay_term_name": "ChIP-seq",
+        "biosample_ontology.term_name": "K562",
+        "status": "released",
+        "type": "Experiment"
+      },
+      "reported_total": null,
+      "unique_returned": 0,
+      "urls": [
+        "https://www.encodeproject.org/search/?type=Experiment&status=released&biosample_ontology.term_name=K562&assay_term_name=ChIP-seq&limit=100&from=0&format=json&frame=embedded"
+      ]
+    }
+  ],
+  "source_reference_independence_verified": false,
+  "target_coverage_and_knockdown_efficacy_verified": false,
+  "test_cells_accessed": 0,
+  "unique_search_experiments": 0,
+  "unresolved_metadata_present": false
+}

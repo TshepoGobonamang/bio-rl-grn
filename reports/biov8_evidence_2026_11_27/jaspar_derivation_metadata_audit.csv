@@ -1,0 +1,6 @@
+tf,frozen_matrix,species,derivation_assay,declared_source,validation_pmid_not_derivation,overlap_assessment,official_version_url,exact_original_experiment_lineage_complete,new_assay_outcomes_opened
+RUNX1,MA0002.3,Mus musculus,ChIP-seq,unreported,8413232,UNRESOLVED,https://jaspar.elixir.no/matrix/MA0002.3/,False,False
+CUX1,MA0754.3,Homo sapiens,CAP-SELEX,30250250,7799919,DECLARED_DERIVATION_DISTINCT_ASSAY; exact lineage incomplete,https://jaspar.elixir.no/matrix/MA0754.3/,False,False
+HMBOX1,MA0895.2,Homo sapiens,HT-SELEX,23332764,18585359,DECLARED_DERIVATION_DISTINCT_ASSAY; exact lineage incomplete,https://jaspar.elixir.no/matrix/MA0895.2/,False,False
+ATF6,MA1466.2,Homo sapiens,HT-SELEX,28473536,10856300,DECLARED_DERIVATION_DISTINCT_ASSAY; exact lineage incomplete,https://jaspar.elixir.no/matrix/MA1466.2/,False,False
+SOX6,MA0515.1,Mus musculus,ChIP-seq,PAZAR,21985497,UNRESOLVED,https://jaspar.elixir.no/matrix/MA0515.1/,False,False

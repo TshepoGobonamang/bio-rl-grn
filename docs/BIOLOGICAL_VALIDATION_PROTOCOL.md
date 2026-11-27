@@ -30,4 +30,6 @@ Reference links: https://www.encodeproject.org/experiments/ENCSR552HTC/ ; https:
 - Source dependence: If upstream CollecTRI/ENCODE supporting studies overlap ENCODE reference outcomes, do NOT claim source-disjoint validation; use an independent motif source or explicitly report unverified disjointness.
 - Do not reuse GSE216595/GSE133344 sequencing lanes as culture replicates. Norman GSE133344 GEO specifically states its eight GEM groups derive from one pooled experiment.
 
-**Current decision:** The panel is source-identified. The **live original-data audit and downstream biological validation have not yet been executed or qualified**. Keep the prior negative synthetic GCEV results unchanged.
+**Historical decision at the 25 November protocol lock:** The panel was source-identified; the live original-data audit and downstream biological validation had not yet been executed or qualified at that point.
+
+**Current chronology note, 27 November:** BIO-V2 subsequently audited and inspected the six response contrasts; they are exploratory and cannot serve as fresh confirmation. They also have zero TF overlap with the current BIO-V4B 16-TF cohort. The [BIO-V8 qualification protocol](BIOV8_LOCKED_EVIDENCE_QUALIFICATION_2026_11_27.md) governs the fresh external-panel search. That original ENCODE metadata inventory is currently blocked by HTTP 403, with no new outcomes opened. Retain all prior negative synthetic and BIO-V7 findings.

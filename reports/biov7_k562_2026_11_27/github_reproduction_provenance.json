@@ -1,0 +1,12 @@
+{
+  "run_id": 46004482269,
+  "url": "https://github.com/TshepoGobonamang/bio-rl-grn/actions/runs/46004482269",
+  "commit": "77d0552c2a885540e5e665d541dbd4d7f7eafd91",
+  "conclusion": "success",
+  "artifact_id": 15200745975,
+  "artifact_sha256": "61b04282890e9ae0d8950ba89e083720840ffc9b53d3a5f64343df7d4046ac21",
+  "frozen_artifact_id": 15200341162,
+  "frozen_artifact_sha256": "a014a9cd883a9216e2f772b406e0c5318c2e5a8cb43ab3816494d8ab85149410",
+  "same_source_dataset": true,
+  "independent_biological_validation": false
+}

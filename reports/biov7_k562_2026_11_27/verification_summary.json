@@ -1,0 +1,14 @@
+{
+  "BIOV7_targeted_tests_passed": 14,
+  "full_CI_tests_passed": 129,
+  "full_CI_run_id": 46004489861,
+  "full_CI_job_id": 140524108325,
+  "full_CI_test_seconds": 10.52,
+  "independent_environment_run_id": 46004482269,
+  "all_3584_decisions_reproduced": true,
+  "maximum_summary_contrast_difference": 0.0,
+  "numpy_solver_maximum_cell_error_difference": 2.9753977059954195e-14,
+  "primary_models_independently_recomputed": 448,
+  "test_cells_used": 0,
+  "biological_validation_complete": false
+}
