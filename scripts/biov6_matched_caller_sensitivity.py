@@ -76,7 +76,7 @@ def run(biov5:Path,original_primary:Path,out:Path) -> dict:
         "two_matched_peak_callers":{},
         "file_sha256":{}
     }
-    originals={}
+    originals=pd.DataFrame()
     if original_primary.exists():
         p=pd.read_csv(original_primary)
         if len(p)!=64:raise ValueError("Original primary 64-promoter output missing")
@@ -113,7 +113,7 @@ def run(biov5:Path,original_primary:Path,out:Path) -> dict:
                 "positive_joint_motif_dnase_product":int(joint.joint_motif_dnase_product.gt(0).sum()),
                 "mean_joint_motif_dnase_product":float(joint.joint_motif_dnase_product.mean())
             }
-            if originals:
+            if not originals.empty:
                 c=coverage.set_index("gene_symbol")
                 metrics["mean_abs_difference_vs_original_heterogeneous_coverage"]=float(
                     (c.loc[originals.index,"dnase_accessibility_mean"]-originals["dnase_accessibility_mean"]).abs().mean())
