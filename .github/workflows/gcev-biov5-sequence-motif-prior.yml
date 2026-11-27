@@ -55,7 +55,6 @@ jobs:
           curl --fail --location --retry 5 --retry-delay 5 --connect-timeout 30 --max-time 600 --show-error \
             'https://jaspar2026.elixir.no/download/data/2026/CORE/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt' \
             -o "$RUNNER_TEMP/biov5/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt"
-          echo 'e77a9568d8783f432a03f5e49d8f52d89e8b0e795382cfcb1d93bbd279b0c2b9  ' "$RUNNER_TEMP/biov5/gencode.v29.annotation.gtf.gz" | sed 's/  / /g' >/dev/null
           echo "e77a9568d8783f432a03f5e49d8f52d89e8b0e795382cfcb1d93bbd279b0c2b9  $RUNNER_TEMP/biov5/gencode.v29.annotation.gtf.gz" | sha256sum -c -
           echo "ae4f77a17256c7b8b7b73402810c1ecf4fc411e9ad7832cdc87d586dee9a4a15  $RUNNER_TEMP/biov5/JASPAR2026_CORE_vertebrates_non-redundant_pfms_meme.txt" | sha256sum -c -
           gzip -t "$RUNNER_TEMP/biov5/gencode.v29.annotation.gtf.gz"
@@ -79,12 +78,12 @@ jobs:
           root=Path('results/biov5_real_prior')
           x=json.loads((root/'biov5_motif_prior_manifest.json').read_text())
           e=pd.read_csv(root/'k562_tf_to_promoter_motif_prior_1008.csv')
-          g=pd.read_csv(root/'genecode29_promoter_coordinates_and_sources.csv')
+          g=pd.read_csv(root/'gencode29_promoter_coordinates_and_sources.csv')
           assert len(e)==1008 and len(g)==64
           assert not e.duplicated(['tf','target']).any() and not (e.tf==e.target).any()
           assert e.prior_score.between(0,1).all()
-          assert e.empirical_p.between(1/129,1).all()
-          assert e.bh_q.between(1/129,1).all()
+          assert e.empirical_p.between(1/129-1e-12,1+1e-12).all()  # CSV parsing precision
+          assert e.bh_q.between(1/129-1e-12,1+1e-12).all()
           assert (e.null_shuffles==128).all() and e.source_observed.all()
           assert (g.length==1201).all() and g.sequence_pass.all()
           assert x['tested_directed_no_self_edges']==1008
