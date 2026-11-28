@@ -1,0 +1,4 @@
+transform,variant,contrast,primary_contrast,delta_macro_nmse,cell_bootstrap_ci95_low,cell_bootstrap_ci95_high,n_resamples,n_resampled_cells,negative_favors_gcev,interval_conditional_on_this_cell_cohort_and_fitted_models,biological_replicate_confidence_interval,multiple_comparisons_adjusted
+log1p_original,primary_mixed,gcev_minus_no_graph_state,True,-0.0002233622093662,-0.0006358044894829,0.0001752874905063,10000,131,True,True,False,False
+log1p_original,primary_mixed,gcev_minus_fixed_sources,False,0.0004727316216193,-0.0031363568287375,0.0040881695868971,10000,131,True,True,False,False
+log1p_original,primary_mixed,gcev_minus_expression_only,False,0.0010228656246853,-0.0004068357619296,0.0024879308316536,10000,131,True,True,False,False

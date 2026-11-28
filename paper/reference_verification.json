@@ -1,0 +1,1025 @@
+{
+  "retrieved_on": "2026-11-28",
+  "scope": "Focused primary-source review, not a systematic review",
+  "literature": [
+    {
+      "number": 1,
+      "id": "huynh_thu2010_genie3",
+      "title": "Inferring Regulatory Networks from Expression Data Using Tree-Based Methods",
+      "authors": [
+        "Vân Anh Huynh-Thu",
+        "Alexandre Irrthum",
+        "Louis Wehenkel",
+        "Pierre Geurts"
+      ],
+      "year": 2010,
+      "venue": "PLOS ONE",
+      "volume": "5",
+      "issue": "9",
+      "pages": "e12776",
+      "doi": "10.1371/journal.pone.0012776",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0012776",
+      "web_refs": [
+        "turn833353944search0"
+      ],
+      "type": "primary_method",
+      "read_extent": "Primary publisher abstract and method/introduction excerpts.",
+      "claims": [
+        "GENIE3 decomposes GRN inference into target-wise regression and combines tree-ensemble feature importance into regulatory-edge rankings."
+      ],
+      "relevance": "Established expression-based inference family; cite as context, not a completed GCEV comparator.",
+      "caution": "Predictive feature importance does not establish direct causality.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 2,
+      "id": "moerman2019_grnboost2",
+      "title": "GRNBoost2 and Arboreto: efficient and scalable inference of gene regulatory networks",
+      "authors": [
+        "Thomas Moerman",
+        "Sara Aibar Santos",
+        "Carmen Bravo González-Blas",
+        "Jaak Simm",
+        "Yves Moreau",
+        "Jan Aerts",
+        "Stein Aerts"
+      ],
+      "year": 2019,
+      "online_year": 2018,
+      "venue": "Bioinformatics",
+      "volume": "35",
+      "issue": "12",
+      "pages": "2159–2161",
+      "doi": "10.1093/bioinformatics/bty916",
+      "url": "https://academic.oup.com/bioinformatics/article/35/12/2159/5184284",
+      "web_refs": [
+        "turn833353944search1",
+        "turn980001029search0"
+      ],
+      "type": "primary_method",
+      "read_extent": "Publisher abstract and gradient-boosting/scalability method excerpts; PubMed metadata.",
+      "claims": [
+        "GRNBoost2 uses gradient boosting for the target-wise regression strategy; Arboreto provides scalable parallel execution."
+      ],
+      "relevance": "Scalable baseline family for a later standard-method comparison.",
+      "caution": "GCEV's small Ridge-based experiments are not a benchmark against GRNBoost2.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 3,
+      "id": "chan2017_pidc",
+      "title": "Gene Regulatory Network Inference from Single-Cell Data Using Multivariate Information Measures",
+      "authors": [
+        "Thalia E. Chan",
+        "Michael P. H. Stumpf",
+        "Ann C. Babtie"
+      ],
+      "year": 2017,
+      "venue": "Cell Systems",
+      "volume": "5",
+      "issue": "3",
+      "pages": "251–267.e3",
+      "doi": "10.1016/j.cels.2017.08.014",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5624513/",
+      "web_refs": [
+        "turn833353944search2",
+        "turn980001029search1"
+      ],
+      "type": "primary_method",
+      "read_extent": "PMC abstract and multivariate-information method excerpts; PubMed metadata.",
+      "claims": [
+        "PIDC uses partial information decomposition across gene triplets and local network context to infer putative relationships from single-cell expression."
+      ],
+      "relevance": "Shows that established inference extends beyond pairwise correlation.",
+      "caution": "Information-theoretic association is not equivalent to a validated directed regulatory edge.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 4,
+      "id": "aibar2017_scenic",
+      "title": "SCENIC: single-cell regulatory network inference and clustering",
+      "authors": [
+        "Sara Aibar",
+        "Carmen Bravo González-Blas",
+        "Thomas Moerman",
+        "Vân Anh Huynh-Thu",
+        "Hana Imrichova",
+        "Gert Hulselmans",
+        "Florian Rambow",
+        "Jean-Christophe Marine",
+        "Pierre Geurts",
+        "Jan Aerts",
+        "Joost van den Oord",
+        "Zeynep Kalender Atak",
+        "Jasper Wouters",
+        "Stein Aerts"
+      ],
+      "year": 2017,
+      "venue": "Nature Methods",
+      "volume": "14",
+      "pages": "1083–1086",
+      "doi": "10.1038/nmeth.4463",
+      "url": "https://www.nature.com/articles/nmeth.4463",
+      "web_refs": [
+        "turn833353944search3",
+        "turn833353944search4",
+        "turn833353944search5"
+      ],
+      "type": "primary_method",
+      "read_extent": "Publisher/PubMed abstract and PMC pipeline-method excerpts.",
+      "claims": [
+        "SCENIC combines expression-derived coexpression modules, cis-regulatory motif analysis and cell-level regulon activity to characterize cell states."
+      ],
+      "relevance": "Motif-supported GRN construction is established prior art.",
+      "caution": "The GCEV novelty claim cannot be the mere addition of motif information.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 5,
+      "id": "gibbs2022_inferelator",
+      "title": "High-performance single-cell gene regulatory network inference at scale: the Inferelator 3.0",
+      "authors": [
+        "Claudia Skok Gibbs",
+        "Christopher A. Jackson",
+        "Giuseppe-Antonio Saldi",
+        "Andreas Tjärnberg",
+        "Aashna Shah",
+        "Aaron Watters",
+        "Nicholas De Veaux",
+        "Konstantine Tchourine",
+        "Ren Yi",
+        "Tymor Hamamsy",
+        "Dayanne M. Castro",
+        "Nicholas Carriero",
+        "Bram L. Gorissen",
+        "David Gresham",
+        "Emily R. Miraldi",
+        "Richard Bonneau"
+      ],
+      "year": 2022,
+      "venue": "Bioinformatics",
+      "volume": "38",
+      "issue": "9",
+      "pages": "2519–2528",
+      "doi": "10.1093/bioinformatics/btac117",
+      "url": "https://academic.oup.com/bioinformatics/article/38/9/2519/6533443",
+      "web_refs": [
+        "turn465536729search7",
+        "turn860846431search2",
+        "turn860846431search15"
+      ],
+      "type": "primary_method",
+      "read_extent": "Primary abstract and regularized-regression/prior-network method excerpts.",
+      "claims": [
+        "Inferelator 3.0 combines expression with prior regulatory connections using regularized regression, supports motif/chromatin-derived priors, and estimates context-specific and shared networks."
+      ],
+      "relevance": "Direct prior-informed regression comparator; prior use and context specificity are not new in GCEV.",
+      "caution": "Do not attribute every historical Inferelator feature to the exact implementation used in this paper.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 6,
+      "id": "glass2013_panda",
+      "title": "Passing messages between biological networks to refine predicted interactions",
+      "authors": [
+        "Kimberly Glass",
+        "Curtis Huttenhower",
+        "John Quackenbush",
+        "Guo-Cheng Yuan"
+      ],
+      "year": 2013,
+      "venue": "PLOS ONE",
+      "volume": "8",
+      "issue": "5",
+      "pages": "e64832",
+      "doi": "10.1371/journal.pone.0064832",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0064832",
+      "web_refs": [
+        "turn187923045search0"
+      ],
+      "type": "primary_method",
+      "read_extent": "Primary PubMed abstract and method/figure-description excerpts linked to PMC3669401.",
+      "claims": [
+        "PANDA iteratively reconciles motif-derived TF–gene, protein-interaction and coexpression networks by message passing."
+      ],
+      "relevance": "Network-structured heterogeneous evidence integration predates GCEV.",
+      "caution": "Graph context alone is not a defensible novelty claim.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 7,
+      "id": "bravo2023_scenicplus",
+      "title": "SCENIC+: single-cell multiomic inference of enhancers and gene regulatory networks",
+      "authors": [
+        "Carmen Bravo González-Blas",
+        "Seppe De Winter",
+        "Gert Hulselmans",
+        "Nikolai Hecker",
+        "Irina Matetovici",
+        "Valerie Christiaens",
+        "Suresh Poovathingal",
+        "Jasper Wouters",
+        "Sara Aibar",
+        "Stein Aerts"
+      ],
+      "year": 2023,
+      "venue": "Nature Methods",
+      "volume": "20",
+      "pages": "1355–1367",
+      "doi": "10.1038/s41592-023-01938-4",
+      "url": "https://www.nature.com/articles/s41592-023-01938-4",
+      "web_refs": [
+        "turn160007644search4"
+      ],
+      "type": "primary_method",
+      "read_extent": "Publisher abstract, methods and comparison excerpts.",
+      "claims": [
+        "SCENIC+ infers enhancer-centered regulatory networks by integrating accessibility, expression and motif evidence into TF–region and region–gene relationships."
+      ],
+      "relevance": "Modern multiomic comparator and motivation for separating the information carried by different sources.",
+      "caution": "GCEV's separate RNA and DNase sources do not constitute paired single-cell multiome data.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 8,
+      "id": "kamimoto2023_celloracle",
+      "title": "Dissecting cell identity via network inference and in silico gene perturbation",
+      "authors": [
+        "Kenji Kamimoto",
+        "Blerta Stringa",
+        "Christy M. Hoffmann",
+        "Kunal Jindal",
+        "Lilianna Solnica-Krezel",
+        "Samantha A. Morris"
+      ],
+      "year": 2023,
+      "venue": "Nature",
+      "volume": "614",
+      "pages": "742–751",
+      "doi": "10.1038/s41586-022-05688-9",
+      "url": "https://www.nature.com/articles/s41586-022-05688-9",
+      "web_refs": [
+        "turn160007644search5",
+        "turn980001029search2",
+        "turn860846431search0",
+        "turn860846431search37"
+      ],
+      "type": "primary_method",
+      "read_extent": "Primary abstract and base-GRN, accessibility and motif-ablation method excerpts.",
+      "claims": [
+        "CellOracle constructs motif/accessibility-informed base networks, estimates context-specific expression relationships and models in silico TF perturbations.",
+        "The paper tests impaired base networks, including scrambled motifs and no base network."
+      ],
+      "relevance": "Source ablations and motif-supported priors are established practices.",
+      "caution": "In silico perturbations are model predictions, distinct from experimental interventions; do not call GCEV the first source-ablation study.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 9,
+      "id": "yuan2025_linger",
+      "title": "Inferring gene regulatory networks from single-cell multiome data using atlas-scale external data",
+      "authors": [
+        "Qiuyue Yuan",
+        "Zhana Duren"
+      ],
+      "year": 2025,
+      "online_year": 2024,
+      "venue": "Nature Biotechnology",
+      "volume": "43",
+      "pages": "247–257",
+      "doi": "10.1038/s41587-024-02182-7",
+      "url": "https://www.nature.com/articles/s41587-024-02182-7",
+      "web_refs": [
+        "turn187923045search2"
+      ],
+      "type": "primary_method",
+      "read_extent": "Publisher abstract and lifelong-learning/model-method excerpts.",
+      "claims": [
+        "LINGER combines atlas-scale external data, single-cell multiome measurements and motif information through lifelong neural-network learning."
+      ],
+      "relevance": "External priors and adaptive representation learning have substantial prior art.",
+      "caution": "No matched quantitative comparison with this large-data model has been performed in GCEV.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 10,
+      "id": "cassan2024_diogene",
+      "title": "Optimizing data integration improves gene regulatory network inference in Arabidopsis thaliana",
+      "authors": [
+        "Océane Cassan",
+        "Charles-Henri Lecellier",
+        "Antoine Martin",
+        "Laurent Bréhélin",
+        "Sophie Lèbre"
+      ],
+      "year": 2024,
+      "venue": "Bioinformatics",
+      "volume": "40",
+      "issue": "7",
+      "pages": "btae415",
+      "doi": "10.1093/bioinformatics/btae415",
+      "url": "https://academic.oup.com/bioinformatics/article/40/7/btae415/7698029",
+      "alternate_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11227367/",
+      "web_refs": [
+        "turn160007644search0",
+        "turn160007644search1"
+      ],
+      "type": "primary_method",
+      "read_extent": "Primary abstract and extensive prior-integration-strength optimization methods.",
+      "claims": [
+        "DIOgene optimizes gene-specific integration strength for biological priors using expression-prediction error, measures of effective integration and a simulated null.",
+        "The approach addresses tuning when available gold standards are incomplete or related to the prior."
+      ],
+      "relevance": "Closest precedent for adapting prior weight from predictive usefulness.",
+      "caution": "Do not claim first adaptive prior integration, first gene-specific prior weighting, or first predictive-fit-based integration.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 12,
+      "id": "origgi2026_genes2reg",
+      "title": "Genes2Reg: Constructing a biologically-faithful gene coupling prior via deep adaptive fusion of heterogeneous knowledge sources",
+      "authors": [
+        "Juan Manuel Origgi",
+        "Maurice Zeegers",
+        "Siamak Mehrkanoon",
+        "Clara von Moltke",
+        "Anke Wesselius",
+        "Giovanni Nattino"
+      ],
+      "year": 2026,
+      "venue": "BMC Bioinformatics",
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": "10.1186/s12859-026-06655-1",
+      "url": "https://link.springer.com/article/10.1186/s12859-026-06655-1",
+      "publication_status": "Peer-reviewed accepted early version, published 2026-10-17; no volume/article number verified.",
+      "web_refs": [
+        "turn160007644search3",
+        "turn593745074search0"
+      ],
+      "type": "primary_method",
+      "read_extent": "Publisher abstract, author metadata and adaptive-fusion description.",
+      "claims": [
+        "Genes2Reg uses heterogeneous graph attention to fuse heterogeneous biological knowledge into a symmetric gene-coupling prior for downstream use.",
+        "Its motivation and formulation explicitly involve adaptive weighting of knowledge sources."
+      ],
+      "relevance": "Closest precedent for generic adaptive reliability-aware evidence fusion.",
+      "caution": "The narrower proposed GCEV distinction is conditional marginal utility for candidate graph actions, not adaptive fusion itself. Do not invent an article number.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 13,
+      "id": "pratapa2020_beeline",
+      "title": "Benchmarking algorithms for gene regulatory network inference from single-cell transcriptomic data",
+      "authors": [
+        "Aditya Pratapa",
+        "Amogh P. Jalihal",
+        "Jeffrey N. Law",
+        "Aditya Bharadwaj",
+        "T. M. Murali"
+      ],
+      "year": 2020,
+      "venue": "Nature Methods",
+      "volume": "17",
+      "pages": "147–154",
+      "doi": "10.1038/s41592-019-0690-6",
+      "url": "https://www.nature.com/articles/s41592-019-0690-6",
+      "web_refs": [
+        "turn465536729search0",
+        "turn465536729search1"
+      ],
+      "type": "primary_benchmark",
+      "read_extent": "Primary abstract and evaluation/results excerpts.",
+      "claims": [
+        "BEELINE compares single-cell GRN methods across synthetic, Boolean-model and experimental data with edge-recovery metrics.",
+        "Method performance depends on the data and reference-network setting."
+      ],
+      "relevance": "Standard benchmark framework for future comparisons.",
+      "caution": "A predictive NMSE improvement is not interchangeable with improved edge recovery.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 14,
+      "id": "chevalley2025_causalbench",
+      "title": "A large-scale benchmark for network inference from single-cell perturbation data",
+      "authors": [
+        "Mathieu Chevalley",
+        "Yusuf H. Roohani",
+        "Arash Mehrjou",
+        "Jure Leskovec",
+        "Patrick Schwab"
+      ],
+      "year": 2025,
+      "venue": "Communications Biology",
+      "volume": "8",
+      "pages": "412",
+      "doi": "10.1038/s42003-025-07764-y",
+      "url": "https://www.nature.com/articles/s42003-025-07764-y",
+      "web_refs": [
+        "turn689275813search0",
+        "turn689275813search1",
+        "turn465536729search2"
+      ],
+      "type": "primary_benchmark",
+      "read_extent": "Primary abstract and extensive interventional-evaluation methods/results.",
+      "claims": [
+        "CausalBench evaluates methods on large K562 and RPE1 perturbation datasets using complementary biological and intervention-distribution assessments.",
+        "It explicitly works under incomplete knowledge of the true causal network."
+      ],
+      "relevance": "Strong motivation for independent intervention-based evaluation and explicit estimands.",
+      "caution": "Knockdown-associated response and direct TF binding measure different relationships; neither alone recovers a complete causal graph.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 15,
+      "id": "karamveer2026_beargrn",
+      "title": "BEAR-GRN: Systematic assessment of single-cell multi-omics-based gene regulatory network inference methods",
+      "authors": [
+        "Karamveer Karamveer",
+        "Eric Moeller",
+        "Hannah Valensi",
+        "Ewura-Esi Manful",
+        "Yasin Uzun"
+      ],
+      "year": 2026,
+      "venue": "Nature Communications",
+      "volume": "17",
+      "pages": "10971",
+      "doi": "10.1038/s41467-026-77838-w",
+      "url": "https://www.nature.com/articles/s41467-026-77838-w",
+      "web_refs": [
+        "turn465536729search4",
+        "turn689275813search4",
+        "turn526042981search48"
+      ],
+      "type": "primary_benchmark",
+      "read_extent": "Primary abstract and detailed ground-truth, modality-perturbation and metric-method excerpts; publisher supplement author list.",
+      "claims": [
+        "BEAR-GRN evaluates single-cell multiomic methods across multiple reference definitions and investigates modality contribution with controlled perturbations.",
+        "Many evaluated methods are predominantly RNA-driven, with limited independent accessibility contribution under its benchmarks."
+      ],
+      "relevance": "Direct prior art for diagnosing weak modality use; essential current comparison.",
+      "caution": "Do not generalize GCEV's additive target-constant invariance into a claim that accessibility has no biological value. Benchmark rankings depend on reference and negative-sampling conventions.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 16,
+      "id": "xue2023_inference_limits",
+      "title": "Dissecting and improving gene regulatory network inference using single-cell transcriptome data",
+      "authors": [
+        "Lingfeng Xue",
+        "Yan Wu",
+        "Yihan Lin"
+      ],
+      "year": 2023,
+      "venue": "Genome Research",
+      "volume": "33",
+      "issue": "9",
+      "pages": "1609–1621",
+      "doi": "10.1101/gr.277488.122",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10620053/",
+      "web_refs": [
+        "turn689275813search2",
+        "turn689275813search5"
+      ],
+      "type": "primary_method_analysis",
+      "read_extent": "Primary abstract and mechanistic-model introduction/results excerpts.",
+      "claims": [
+        "Mechanistic analysis shows that mature mRNA can be an imperfect proxy for upstream regulatory activity; intronic information can improve some inference settings."
+      ],
+      "relevance": "Explains why expression prediction and regulatory mechanism must remain separate claims.",
+      "caution": "This paper does not validate the distributional suitability of the particular GCEV expression files.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 17,
+      "id": "stock2024_streamline",
+      "title": "Topological benchmarking of algorithms to infer gene regulatory networks from single-cell RNA-seq data",
+      "authors": [
+        "Marco Stock",
+        "Niclas Popp",
+        "Jonathan Fiorentino",
+        "Antonio Scialdone"
+      ],
+      "year": 2024,
+      "venue": "Bioinformatics",
+      "volume": "40",
+      "issue": "5",
+      "pages": "btae267",
+      "doi": "10.1093/bioinformatics/btae267",
+      "url": "https://academic.oup.com/bioinformatics/article/40/5/btae267/7646844",
+      "web_refs": [
+        "turn465536729search6",
+        "turn689275813search3"
+      ],
+      "type": "primary_benchmark",
+      "read_extent": "Primary abstract and topological-evaluation methods; PubMed metadata.",
+      "claims": [
+        "STREAMLINE evaluates inferred-network topology and hub recovery, complementing edge-wise scoring."
+      ],
+      "relevance": "Encourages reporting graph structure as a separate endpoint.",
+      "caution": "Describing graph topology without a suitable reference does not establish topological accuracy.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 18,
+      "id": "baydar2026_jaspar",
+      "title": "JASPAR 2026: expansion of transcription factor binding profiles and integration of deep learning models",
+      "authors": [
+        "Damla Ovek Baydar",
+        "Ieva Rauluseviciute",
+        "Dina R Aronsen",
+        "Romain Blanc-Mathieu",
+        "Ine Bonthuis",
+        "Herman de Beukelaer",
+        "Katalin Ferenc",
+        "Alice Jegou",
+        "Vipin Kumar",
+        "Roza Berhanu Lemma",
+        "Jérémy Lucas",
+        "Mathis Pochon",
+        "Chang M Yun",
+        "Vivekanandan Ramalingam",
+        "Salil Sanjay Deshpande",
+        "Aman Patel",
+        "Georgi K Marinov",
+        "Austin T Wang",
+        "Alejandro Aguirre",
+        "Jaime A Castro-Mondragon",
+        "Damir Baranasic",
+        "Jeanne Chèneby",
+        "Sveinung Gundersen",
+        "Morten Johansen",
+        "Aziz Khan",
+        "Marieke L Kuijjer",
+        "Eivind Hovig",
+        "Boris Lenhard",
+        "Albin Sandelin",
+        "Klaas Vandepoele",
+        "Wyeth W Wasserman",
+        "François Parcy",
+        "Anshul Kundaje",
+        "Anthony Mathelier"
+      ],
+      "year": 2026,
+      "online_year": 2025,
+      "venue": "Nucleic Acids Research",
+      "volume": "54",
+      "issue": "D1",
+      "pages": "D184–D193",
+      "doi": "10.1093/nar/gkaf1209",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12807658/",
+      "web_refs": [
+        "turn187923045search3",
+        "turn980001029search3",
+        "turn980001029search5"
+      ],
+      "type": "primary_resource",
+      "read_extent": "Primary abstract and collection-description excerpts; PubMed full author/issue metadata.",
+      "claims": [
+        "JASPAR 2026 expands curated TF binding profiles and adds a separate deep-learning-model collection."
+      ],
+      "relevance": "Correct resource release for the frozen motif source.",
+      "caution": "GCEV used selected CORE motif matrices; it did not use the new deep learning models. Resource-level citation does not prove independence of a particular motif's experimental derivation.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 19,
+      "id": "encode2020_encyclopaedias",
+      "title": "Expanded encyclopaedias of DNA elements in the human and mouse genomes",
+      "authors": [
+        "ENCODE Project Consortium",
+        "Jill E. Moore",
+        "Michael J. Purcaro",
+        "Henry E. Pratt",
+        "Charles B. Epstein",
+        "Noam Shoresh",
+        "Jessika Adrian",
+        "Trupti Kawli",
+        "Carrie A. Davis",
+        "Alexander Dobin",
+        "Rajinder Kaul",
+        "Jessica Halow",
+        "Eric L. Van Nostrand",
+        "Peter Freese",
+        "David U. Gorkin",
+        "Yin Shen",
+        "Yupeng He",
+        "Mark Mackiewicz",
+        "Florencia Pauli-Behn",
+        "Brian A. Williams",
+        "Ali Mortazavi",
+        "Cheryl A. Keller",
+        "Xiao-Ou Zhang",
+        "Shaimae I. Elhajjajy",
+        "Jack Huey",
+        "Diane E. Dickel",
+        "Valentina Snetkova",
+        "Xintao Wei",
+        "Xiaofeng Wang",
+        "Juan Carlos Rivera-Mulia",
+        "Joel Rozowsky",
+        "Jing Zhang",
+        "Surya B. Chhetri",
+        "Jialing Zhang",
+        "Alec Victorsen",
+        "Kevin P. White",
+        "Axel Visel",
+        "Gene W. Yeo",
+        "Christopher B. Burge",
+        "Eric Lécuyer",
+        "David M. Gilbert",
+        "Job Dekker",
+        "John Rinn",
+        "Eric M. Mendenhall",
+        "Joseph R. Ecker",
+        "Manolis Kellis",
+        "Robert J. Klein",
+        "William S. Noble",
+        "Anshul Kundaje",
+        "Roderic Guigó",
+        "Peggy J. Farnham",
+        "J. Michael Cherry",
+        "Richard M. Myers",
+        "Bing Ren",
+        "Brenton R. Graveley",
+        "Mark B. Gerstein",
+        "Len A. Pennacchio",
+        "Michael P. Snyder",
+        "Bradley E. Bernstein",
+        "Barbara Wold",
+        "Ross C. Hardison",
+        "Thomas R. Gingeras",
+        "John A. Stamatoyannopoulos",
+        "Zhiping Weng"
+      ],
+      "year": 2020,
+      "venue": "Nature",
+      "volume": "583",
+      "issue": "7818",
+      "pages": "699–710",
+      "doi": "10.1038/s41586-020-2493-4",
+      "url": "https://www.nature.com/articles/s41586-020-2493-4",
+      "web_refs": [
+        "turn187923045search4",
+        "turn480076717search2",
+        "turn480076717search5",
+        "turn172254540view0"
+      ],
+      "type": "primary_resource",
+      "read_extent": "Primary publisher abstract and assay/resource-method excerpts; contributor-institution publication metadata. Opened PubMed author roster and abstract.",
+      "claims": [
+        "ENCODE phase III expanded transcript, chromatin and TF-occupancy resources across biological contexts and provides data through its portal."
+      ],
+      "relevance": "Resource provenance for accessibility, binding and perturbation metadata.",
+      "caution": "Different assays represent different biological measurements. Matching the K562 label does not by itself establish matched samples or independent experiments.",
+      "authors_note": "Full named-author roster verified against the opened PubMed article record; consortium collaborators are not expanded.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 20,
+      "id": "frankish2019_gencode",
+      "title": "GENCODE reference annotation for the human and mouse genomes",
+      "authors": [
+        "Frankish A",
+        "Diekhans M",
+        "Ferreira AM",
+        "Johnson R",
+        "Jungreis I",
+        "Loveland J",
+        "Mudge JM",
+        "Sisu C",
+        "Wright J",
+        "Armstrong J",
+        "Barnes I",
+        "Berry A",
+        "Bignell A",
+        "Carbonell Sala S",
+        "Chrast J",
+        "Cunningham F",
+        "Di Domenico T",
+        "Donaldson S",
+        "Fiddes IT",
+        "García Girón C",
+        "Gonzalez JM",
+        "Grego T",
+        "Hardy M",
+        "Hourlier T",
+        "Hunt T",
+        "Izuogu OG",
+        "Lagarde J",
+        "Martin FJ",
+        "Martínez L",
+        "Mohanan S",
+        "Muir P",
+        "Navarro FCP",
+        "Parker A",
+        "Pei B",
+        "Pozo F",
+        "Ruffier M",
+        "Schmitt BM",
+        "Stapleton E",
+        "Suner MM",
+        "Sycheva I",
+        "Uszczynska-Ratajczak B",
+        "Xu J",
+        "Yates A",
+        "Zerbino D",
+        "Zhang Y",
+        "Aken B",
+        "Choudhary JS",
+        "Gerstein M",
+        "Guigó R",
+        "Hubbard TJP",
+        "Kellis M",
+        "Paten B",
+        "Reymond A",
+        "Tress ML",
+        "Flicek P"
+      ],
+      "year": 2019,
+      "online_year": 2018,
+      "venue": "Nucleic Acids Research",
+      "volume": "47",
+      "issue": "D1",
+      "pages": "D766–D773",
+      "doi": "10.1093/nar/gky955",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6323946/",
+      "alternate_url": "https://www.gencodegenes.org/pages/publications",
+      "web_refs": [
+        "turn870374130search0",
+        "turn870374130search4",
+        "turn870374130search6"
+      ],
+      "type": "primary_resource",
+      "read_extent": "Primary resource abstract and official GENCODE publication list.",
+      "claims": [
+        "GENCODE combines manual annotation, computational pipelines and supporting evidence to provide reference human and mouse gene annotations."
+      ],
+      "relevance": "General annotation citation for the frozen GENCODE v29-derived promoters.",
+      "caution": "The paper does not establish the exact GCEV promoter-window convention; cite the actual v29 file and pipeline manifest separately.",
+      "authors_note": "Exact surname/initial roster transcribed from the official GENCODE publication list.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 22,
+      "id": "benjamini1995_fdr",
+      "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+      "authors": [
+        "Yoav Benjamini",
+        "Yosef Hochberg"
+      ],
+      "year": 1995,
+      "venue": "Journal of the Royal Statistical Society: Series B (Methodological)",
+      "volume": "57",
+      "issue": "1",
+      "pages": "289–300",
+      "doi": "10.1111/j.2517-6161.1995.tb02031.x",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/j.2517-6161.1995.tb02031.x",
+      "web_refs": [
+        "turn870374130search2"
+      ],
+      "type": "primary_statistical_method",
+      "read_extent": "Primary publisher summary and bibliographic record.",
+      "claims": [
+        "The paper defines false-discovery-rate control and establishes the BH step-up procedure under the conditions studied."
+      ],
+      "relevance": "Cite for the reported motif multiple-testing adjustment.",
+      "caution": "A result of zero BH discoveries is not proof of no biological signal; validity depends on the p-values and dependence assumptions. Do not claim unconditional FDR control.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 23,
+      "id": "varma2006_nestedcv",
+      "title": "Bias in error estimation when using cross-validation for model selection",
+      "authors": [
+        "Sudhir Varma",
+        "Richard Simon"
+      ],
+      "year": 2006,
+      "venue": "BMC Bioinformatics",
+      "volume": "7",
+      "pages": "91",
+      "doi": "10.1186/1471-2105-7-91",
+      "url": "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-7-91",
+      "alternate_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1397873/",
+      "web_refs": [
+        "turn870374130search5",
+        "turn870374130search8"
+      ],
+      "type": "primary_statistical_analysis",
+      "read_extent": "Primary abstract and nested-CV conclusion; publisher PDF metadata.",
+      "claims": [
+        "Using the same cross-validation results for model selection and error estimation can yield optimistic estimates; nested evaluation reduced that bias in the studied simulations."
+      ],
+      "relevance": "Motivates separation of model/weight selection from final held-out performance.",
+      "caution": "Target-group out-of-fold nuisance estimation is not automatically equivalent to complete nested model selection or causal cross-fitting.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 24,
+      "id": "marbach2012_dream5",
+      "title": "Wisdom of crowds for robust gene network inference",
+      "authors": [
+        "Daniel Marbach",
+        "James C. Costello",
+        "Robert Küffner",
+        "Nicole M. Vega",
+        "Robert J. Prill",
+        "Diogo M. Camacho",
+        "Kyle R. Allison",
+        "DREAM5 Consortium",
+        "Manolis Kellis",
+        "James J. Collins",
+        "Gustavo Stolovitzky"
+      ],
+      "year": 2012,
+      "venue": "Nature Methods",
+      "volume": "9",
+      "pages": "796–804",
+      "doi": "10.1038/nmeth.2016",
+      "url": "https://www.nature.com/articles/nmeth.2016",
+      "web_refs": [
+        "turn860846431search1",
+        "turn480076717search3",
+        "turn480076717search4"
+      ],
+      "type": "primary_benchmark",
+      "read_extent": "Primary abstract and DREAM challenge-design/result excerpts; PubMed author list.",
+      "claims": [
+        "DREAM5 found context-dependent performance among network-inference methods and robust results from community combinations in the evaluated settings."
+      ],
+      "relevance": "Classical evidence for complementary inference biases and consensus integration.",
+      "caution": "Method ensembles differ from evidence-source fusion; the paper is not evidence that every multi-source scheme improves inference.",
+      "retrieved_on": "2026-11-28"
+    },
+    {
+      "number": 25,
+      "id": "gibbs2026_glmprior",
+      "title": "GLM-Prior: a genomic language model for transferable sequence-derived priors in gene regulatory network inference",
+      "authors": [
+        "Claudia Skok Gibbs",
+        "Angelica Chen",
+        "Richard Bonneau",
+        "Kyunghyun Cho"
+      ],
+      "year": 2026,
+      "venue": "Nature Communications",
+      "volume": "17",
+      "pages": "10225",
+      "issue": "1",
+      "doi": "10.1038/s41467-026-77381-8",
+      "url": "https://www.nature.com/articles/s41467-026-77381-8",
+      "alternate_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13614953/",
+      "publication_status": "Published 2026-09-14; full volume/article metadata verified in PubMed. Publisher search text still displays an early-version notice.",
+      "web_refs": [
+        "turn480076717search0",
+        "turn480076717search1",
+        "turn526042981search0",
+        "turn172254540view1"
+      ],
+      "type": "primary_method",
+      "read_extent": "Primary publisher abstract and extensive PMC model, training, prior-conditioning and evaluation-method excerpts.",
+      "claims": [
+        "GLM-Prior fine-tunes a genomic language model to construct TF–gene priors, then conditions expression-based GRN inference on those priors.",
+        "Across its evaluated contexts, prior quality strongly influences downstream benchmark performance."
+      ],
+      "relevance": "Current evidence for evaluating prior construction separately from the downstream inference algorithm.",
+      "caution": "Reference-database classification and unlabeled-negative conventions are not exhaustive causal truth; do not transfer the paper's performance numbers to GCEV.",
+      "retrieved_on": "2026-11-28"
+    }
+  ],
+  "additional_primary_sources": [
+    {
+      "id": "ridge",
+      "type": "article-journal",
+      "title": "Ridge Regression: Biased Estimation for Nonorthogonal Problems",
+      "author": [
+        {
+          "literal": "Arthur E. Hoerl"
+        },
+        {
+          "literal": "Robert W. Kennard"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1970
+          ]
+        ]
+      },
+      "container-title": "Technometrics",
+      "volume": "12",
+      "issue": "1",
+      "page": "55–67",
+      "DOI": "10.1080/00401706.1970.10488634",
+      "URL": "https://www.tandfonline.com/doi/abs/10.1080/00401706.1970.10488634"
+    },
+    {
+      "id": "sklearn",
+      "type": "article-journal",
+      "title": "Scikit-learn: Machine Learning in Python",
+      "author": [
+        {
+          "literal": "Fabian Pedregosa"
+        },
+        {
+          "literal": "Gaël Varoquaux"
+        },
+        {
+          "literal": "Alexandre Gramfort"
+        },
+        {
+          "literal": "Vincent Michel"
+        },
+        {
+          "literal": "Bertrand Thirion"
+        },
+        {
+          "literal": "Olivier Grisel"
+        },
+        {
+          "literal": "Mathieu Blondel"
+        },
+        {
+          "literal": "Peter Prettenhofer"
+        },
+        {
+          "literal": "Ron Weiss"
+        },
+        {
+          "literal": "Vincent Dubourg"
+        },
+        {
+          "literal": "Jake Vanderplas"
+        },
+        {
+          "literal": "Alexandre Passos"
+        },
+        {
+          "literal": "David Cournapeau"
+        },
+        {
+          "literal": "Matthieu Brucher"
+        },
+        {
+          "literal": "Matthieu Perrot"
+        },
+        {
+          "literal": "Édouard Duchesnay"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            2011
+          ]
+        ]
+      },
+      "container-title": "Journal of Machine Learning Research",
+      "volume": "12",
+      "page": "2825–2830",
+      "URL": "https://www.jmlr.org/papers/v12/pedregosa11a.html"
+    },
+    {
+      "id": "ucsc",
+      "type": "webpage",
+      "title": "REST API data interface",
+      "author": [
+        {
+          "literal": "UCSC Genome Browser"
+        }
+      ],
+      "URL": "https://genome.ucsc.edu/goldenPath/help/api.html",
+      "accessed": {
+        "date-parts": [
+          [
+            2026,
+            11,
+            28
+          ]
+        ]
+      }
+    },
+    {
+      "id": "gcevdata",
+      "type": "software",
+      "title": "Bio-RL-GRN research records and software at evidence snapshot 4328d45",
+      "author": [
+        {
+          "literal": "Bio-RL-GRN research repository"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            2026
+          ]
+        ]
+      },
+      "URL": "https://github.com/TshepoGobonamang/bio-rl-grn/tree/4328d45ec196a1dc05d46a6e36dc8480810597cb"
+    }
+  ]
+}

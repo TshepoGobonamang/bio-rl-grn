@@ -1,0 +1,8 @@
+transform,variant,method,primary_case,macro_nmse_64,median_target_nmse_64,macro_nmse_48_target_only,changed_targets_vs_expression,n_fit_cells,n_internal_score_cells,n_targets,total_graph_edges,test_used
+log1p_original,primary_mixed,expression_only,True,0.4015752815954645,0.4104548598765574,0.3681956979474243,0,394,131,64,192,False
+log1p_original,primary_mixed,fixed_sources,True,0.4021254155985305,0.4097976547289254,0.3660893325164399,33,394,131,64,192,False
+log1p_original,primary_mixed,global_source,True,0.4015752815954645,0.4104548598765574,0.3681956979474243,0,394,131,64,192,False
+log1p_original,primary_mixed,no_graph_state,True,0.4028215094295161,0.4104548598765574,0.3681956979474243,2,394,131,64,192,False
+log1p_original,primary_mixed,no_parent_state,True,0.4025981472201499,0.4096359296369779,0.3678978816682692,3,394,131,64,192,False
+log1p_original,primary_mixed,no_action_state,True,0.4013239410708988,0.4104548598765574,0.3681956979474243,2,394,131,64,192,False
+log1p_original,primary_mixed,gcev,True,0.4025981472201499,0.4096359296369779,0.3678978816682692,3,394,131,64,192,False

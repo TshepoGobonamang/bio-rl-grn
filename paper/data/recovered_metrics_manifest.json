@@ -1,0 +1,138 @@
+[
+  {
+    "study": "S48",
+    "archive_basename": "GCEV_Preregistered_Benchmark_48_Networks_2026_11_25.zip",
+    "member": "results/network_bootstrap_95.csv",
+    "sha256": "7aeb86494a28cb1bb23a245a865b5893dee9fad6f5f8818c41589120d0dc7adf",
+    "bytes": 2663,
+    "path": "paper/data/S48/network_bootstrap_95.csv"
+  },
+  {
+    "study": "S48",
+    "archive_basename": "GCEV_Preregistered_Benchmark_48_Networks_2026_11_25.zip",
+    "member": "results/primary_decision.json",
+    "sha256": "a27960e088475cb2a67aa302d9e04bc9496bee4ca5ef604e789fea49fe217c52",
+    "bytes": 1029,
+    "path": "paper/data/S48/primary_decision.json"
+  },
+  {
+    "study": "S48",
+    "archive_basename": "GCEV_Preregistered_Benchmark_48_Networks_2026_11_25.zip",
+    "member": "results/method_means.csv",
+    "sha256": "bf329bb58a69577ff69be180f5b51bdfbb58b18a270056d9f593faa8dcedd590",
+    "bytes": 3528,
+    "path": "paper/data/S48/method_means.csv"
+  },
+  {
+    "study": "S48",
+    "archive_basename": "GCEV_Preregistered_Benchmark_48_Networks_2026_11_25.zip",
+    "member": "results/network_execution_ledger.json",
+    "sha256": "7bcc41cda81e22a938e4f5d853ed70e5c1c678de8a42399a5764ecbf7bd4bb0b",
+    "bytes": 50011,
+    "path": "paper/data/S48/network_execution_ledger.json"
+  },
+  {
+    "study": "S48",
+    "archive_basename": "GCEV_Preregistered_Benchmark_48_Networks_2026_11_25.zip",
+    "member": "results/per_network_method_metrics.csv",
+    "sha256": "8b851b3987014fdab26f9508e93d091fe460d84be1bdffd1d73b6c6b48b0ca9c",
+    "bytes": 685737,
+    "path": "paper/data/S48/per_network_method_metrics.csv"
+  },
+  {
+    "study": "S48",
+    "archive_basename": "GCEV_Preregistered_Benchmark_48_Networks_2026_11_25.zip",
+    "member": "results/paired_network_effects.csv",
+    "sha256": "5f94f8859bacdb0d9bb485b3af9ee4320c13dc1befb171c1acd7a384ccc215dd",
+    "bytes": 115079,
+    "path": "paper/data/S48/paired_network_effects.csv"
+  },
+  {
+    "study": "S32_parent",
+    "archive_basename": "GCEV_Parent_State_Ablation_32_DAGs_2026_11_25.zip",
+    "member": "results/per_dag_mechanism_comparisons.csv",
+    "sha256": "3ff5f54fc5be68a1374fb01efb06b15776913d8ffb702d212244408d6fcf0651",
+    "bytes": 149069,
+    "path": "paper/data/S32_parent/per_dag_mechanism_comparisons.csv"
+  },
+  {
+    "study": "S32_parent",
+    "archive_basename": "GCEV_Parent_State_Ablation_32_DAGs_2026_11_25.zip",
+    "member": "results/per_dag_parent_effects.csv",
+    "sha256": "4bdf93c7aa775ee4e68e2798e57cbba9d2f0703b45f183ec8dec8956418cd05b",
+    "bytes": 4647,
+    "path": "paper/data/S32_parent/per_dag_parent_effects.csv"
+  },
+  {
+    "study": "S32_parent",
+    "archive_basename": "GCEV_Parent_State_Ablation_32_DAGs_2026_11_25.zip",
+    "member": "results/all_method_metrics.csv",
+    "sha256": "21a705bd1f6b7a343aa9c71ca1f97926b82af9c6e47e3f88c21a00aff58aa819",
+    "bytes": 898267,
+    "path": "paper/data/S32_parent/all_method_metrics.csv"
+  },
+  {
+    "study": "S32_parent",
+    "archive_basename": "GCEV_Parent_State_Ablation_32_DAGs_2026_11_25.zip",
+    "member": "results/execution_ledger.json",
+    "sha256": "81019dad442a4f8f2d32cca413ec125629d63b0bbda3f9aca0c94d3d35fbf954",
+    "bytes": 55470,
+    "path": "paper/data/S32_parent/execution_ledger.json"
+  },
+  {
+    "study": "S32_parent",
+    "archive_basename": "GCEV_Parent_State_Ablation_32_DAGs_2026_11_25.zip",
+    "member": "results/per_condition_source_decisions.csv",
+    "sha256": "a7ea847ba6c5bdce59ba546f983a61701acd47269023045b5c067df6ed690b3d",
+    "bytes": 58579,
+    "path": "paper/data/S32_parent/per_condition_source_decisions.csv"
+  },
+  {
+    "study": "S32_parent",
+    "archive_basename": "GCEV_Parent_State_Ablation_32_DAGs_2026_11_25.zip",
+    "member": "results/parent_state_decision.json",
+    "sha256": "e659b11620677eb0efb3c34910c73f5b1e769329a8a19df1e1e714230bf2a5ce",
+    "bytes": 2329,
+    "path": "paper/data/S32_parent/parent_state_decision.json"
+  },
+  {
+    "study": "S32_mechanism",
+    "archive_basename": "GCEV_Mechanistic_Confirmation_32_DAGs_2026_11_25.zip",
+    "member": "results/per_dag_mechanism_comparisons.csv",
+    "sha256": "b67fe5f6a97277c4318722e6a567ba7d89573196124a3bdb13d81b12ae0dedc6",
+    "bytes": 112958,
+    "path": "paper/data/S32_mechanism/per_dag_mechanism_comparisons.csv"
+  },
+  {
+    "study": "S32_mechanism",
+    "archive_basename": "GCEV_Mechanistic_Confirmation_32_DAGs_2026_11_25.zip",
+    "member": "results/all_method_metrics.csv",
+    "sha256": "3fa98a1179b3a5ac9e12af0f5f95d24ececb8c5bc66777038bf2737813ee30ef",
+    "bytes": 754780,
+    "path": "paper/data/S32_mechanism/all_method_metrics.csv"
+  },
+  {
+    "study": "S32_mechanism",
+    "archive_basename": "GCEV_Mechanistic_Confirmation_32_DAGs_2026_11_25.zip",
+    "member": "results/execution_ledger.json",
+    "sha256": "f59353c6f0ed029ed26b08df4314f3c7bde123391bdb51f99e2346b19088b37c",
+    "bytes": 55613,
+    "path": "paper/data/S32_mechanism/execution_ledger.json"
+  },
+  {
+    "study": "S32_mechanism",
+    "archive_basename": "GCEV_Mechanistic_Confirmation_32_DAGs_2026_11_25.zip",
+    "member": "results/per_condition_source_decisions.csv",
+    "sha256": "a6b18346c96e9212fd2af4b5559975d6e9cf06d12adec3cb730b07fec2b76cb9",
+    "bytes": 31602,
+    "path": "paper/data/S32_mechanism/per_condition_source_decisions.csv"
+  },
+  {
+    "study": "S32_mechanism",
+    "archive_basename": "GCEV_Mechanistic_Confirmation_32_DAGs_2026_11_25.zip",
+    "member": "results/mechanism_decision.json",
+    "sha256": "019a1860d72eb39e052c5584f64e522b7a948ac625063c724ebeac7d48fe1bfb",
+    "bytes": 1229,
+    "path": "paper/data/S32_mechanism/mechanism_decision.json"
+  }
+]

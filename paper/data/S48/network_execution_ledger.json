@@ -1,0 +1,1346 @@
+[
+  {
+    "network_id": "net_2001",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2001/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2001",
+      "seed": 2001,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2001/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "07114ad9032f1827c967e330ccd4dca47ba52485ca783720707eff6bbd5560f0",
+        "n_records": 28
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2001/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "879567692f005b88b481abb9f617f15ad0f89aade319b0e926a17b7f024e5fc7",
+        "n_records": 34
+      }
+    }
+  },
+  {
+    "network_id": "net_2002",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2002/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2002",
+      "seed": 2002,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 7,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2002/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "1a67de38496cc265017e182e4ef0f881b6eb81d034dc0fdbf4cc20ac3b0420ab",
+        "n_records": 34
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2002/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "c2fff66e1c6c0cda4dbb20f5abff6af2a2f5e07d1f1210da4996d419431917c0",
+        "n_records": 29
+      }
+    }
+  },
+  {
+    "network_id": "net_2003",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2003/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2003",
+      "seed": 2003,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 12,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2003/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "0959608b3773dd251bb8f40599e6b87c1928e64699d7a136f73e01e4f5f7885a",
+        "n_records": 63
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2003/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "c1199438ffa88e3e6b9fc905856cd68284cb32940dc5ac08d924bd029952a709",
+        "n_records": 53
+      }
+    }
+  },
+  {
+    "network_id": "net_2004",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2004/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2004",
+      "seed": 2004,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 13,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2004/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "eecbceef529b507362b8d60d20cce8bb4c7e9d4f7b0b3cb28fed3417e3e24eca",
+        "n_records": 44
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2004/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "a1b8c3022751b4293bdd33974c84f0e9d6b414703bc1dcef56e98288e034c726",
+        "n_records": 59
+      }
+    }
+  },
+  {
+    "network_id": "net_2005",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2005/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2005",
+      "seed": 2005,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 5,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2005/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "f2bab3358906bf8aad0a35325a1513042bcd3889ff2a7c30981b8b460f8fb245",
+        "n_records": 35
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2005/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "650f0efeec40aa765d4fa7742faab9f1396655b376b16b6226559753463f2352",
+        "n_records": 31
+      }
+    }
+  },
+  {
+    "network_id": "net_2006",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2006/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2006",
+      "seed": 2006,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 4,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2006/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "85f6989ad225088225ecb2f3ac184c16bc77da9a5447ea5804a94f2f0e1e4253",
+        "n_records": 31
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2006/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "a41723d0e5da9e653216e4180fba76f54075c693d254410f5f8b7b8a73e981ee",
+        "n_records": 33
+      }
+    }
+  },
+  {
+    "network_id": "net_2007",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2007/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2007",
+      "seed": 2007,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 16,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2007/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "7cc1107e61f264f9ecef4495d4c84b21d853e33f7d025f983f54bbc3f7aebcc9",
+        "n_records": 51
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2007/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "ab78d8c31a529ebfddae27e6e73262d9053b957b5f751360c1a13762250b9aad",
+        "n_records": 48
+      }
+    }
+  },
+  {
+    "network_id": "net_2008",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2008/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2008",
+      "seed": 2008,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 11,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2008/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "b997cf98cc6645075f7c3ce5a36def94f9d000d9d3210ad4c9c2b1d0ea74155d",
+        "n_records": 55
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2008/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "e58461e006be37c4ae630daea6a7518c401c3126c5ecd5d35de7e58036a39f12",
+        "n_records": 59
+      }
+    }
+  },
+  {
+    "network_id": "net_2009",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2009/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2009",
+      "seed": 2009,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 5,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2009/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "d490eed3f696b8802eb97759043f6db079fbd58ce599aa27bcb41f55768f76fa",
+        "n_records": 32
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2009/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "382f1c9e10440335deaa2285c6b9d8527e4f7e15830aebc30c75e592e81f9eb0",
+        "n_records": 31
+      }
+    }
+  },
+  {
+    "network_id": "net_2010",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2010/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2010",
+      "seed": 2010,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 6,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2010/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "fc5d61db4e7636f2599dbdad789a9a9fc4c580d9cf4bf606a8b8b15b63fa6d2d",
+        "n_records": 37
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2010/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "369dc6ccd31dc5b3c088afb028df6215acee46740157ebc6e9a88d83418a9f0f",
+        "n_records": 34
+      }
+    }
+  },
+  {
+    "network_id": "net_2011",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2011/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2011",
+      "seed": 2011,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 13,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2011/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "3d0a7bd166499f429148ae7fa738461e9146d9c3ba89bbacbfbabe110d89e4d5",
+        "n_records": 58
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2011/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "f361cd054d0f7bd6f6e68bfdb5c20106298407046399ce8421d08f340a29dac2",
+        "n_records": 51
+      }
+    }
+  },
+  {
+    "network_id": "net_2012",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2012/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2012",
+      "seed": 2012,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 10,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2012/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "c4a4a2849683662a9f65d4f6f783e2622df9738048f67e2a0d303f0b55f160e1",
+        "n_records": 57
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2012/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "ca01bfd65d0726004ec02a0ecd28fd1edad5bf9d5c8e2174fcf0ecda2f266dd4",
+        "n_records": 56
+      }
+    }
+  },
+  {
+    "network_id": "net_2013",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2013/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2013",
+      "seed": 2013,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 4,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2013/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "1b997c1174a2d32af84d43dec5b6eeabfdafae9ec9def71791778c00f984ebe1",
+        "n_records": 31
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2013/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "9aa0feb902bbbf1e540d844a27170c27debc5d3e86ddd1d31934082ffd1d7124",
+        "n_records": 32
+      }
+    }
+  },
+  {
+    "network_id": "net_2014",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2014/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2014",
+      "seed": 2014,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 4,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2014/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "630ec89623d25a13792f9def764943b75eb735d9eefc547b677aec64782294c5",
+        "n_records": 28
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2014/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "584de27f2aa494cc113432211508754063f8c5fa8fc9ce3130b1da07704382da",
+        "n_records": 35
+      }
+    }
+  },
+  {
+    "network_id": "net_2015",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2015/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2015",
+      "seed": 2015,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2015/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "ada85c7ca270a0448b9fbcc68d7842f70297525ed0f9bff32f7c6bfe3d85fd94",
+        "n_records": 55
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2015/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "50ffc0444b27c03ecec5582dbe4ff5fa1c03ecb3d621a0a60a5d0c675f545488",
+        "n_records": 56
+      }
+    }
+  },
+  {
+    "network_id": "net_2016",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2016/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2016",
+      "seed": 2016,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 12,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2016/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "6fcf576ad713d724910fb2ab78344b7672ad5c122c9875aad067be381adddc32",
+        "n_records": 52
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2016/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "165de74a097c2ba0f317f921afe5bbb97c8e00f7488cf03757a65ae8444c64ea",
+        "n_records": 58
+      }
+    }
+  },
+  {
+    "network_id": "net_2017",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2017/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2017",
+      "seed": 2017,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 3,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2017/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "5cb8a88445be3841a8a22dbd906e0b6633f62a80f8d02dccc68be18ef6c918fc",
+        "n_records": 32
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2017/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "ab3f619beeb90d2a3dd65101cf72e48a334adb9af63b3c8b5c8785efacf52eb9",
+        "n_records": 33
+      }
+    }
+  },
+  {
+    "network_id": "net_2018",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2018/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2018",
+      "seed": 2018,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 10,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2018/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "178c513aae81a8f714d337e3778d83334ed32095d31aa6d2d218dc15a4f6bb44",
+        "n_records": 31
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2018/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "b85cc009e1530afdb9a3d5610fc09e5daf43e060a1d39bdab4722f0e638433c8",
+        "n_records": 29
+      }
+    }
+  },
+  {
+    "network_id": "net_2019",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2019/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2019",
+      "seed": 2019,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2019/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "6b36106372e4046c41ac1fa5cb0e091cba3efe5e89ce620d201b5ed73f1d9ae0",
+        "n_records": 53
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2019/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "05d8317786177b3b587b8bdc15cf773b16db06f4752889fcb78b4fea33ac7e54",
+        "n_records": 55
+      }
+    }
+  },
+  {
+    "network_id": "net_2020",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2020/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2020",
+      "seed": 2020,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 7,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2020/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "c04d570799c31702433e6e8402f2412484209f06e7a609616552411d7891fbc2",
+        "n_records": 55
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2020/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "6d98e47be1fa915650256a562c0933fe60d302c7c05949318d77dd751634d340",
+        "n_records": 53
+      }
+    }
+  },
+  {
+    "network_id": "net_2021",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2021/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2021",
+      "seed": 2021,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 5,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2021/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "b627b472a7d133aac9dad2a9bfe39b4109af638a9fc6687c407f4f1070c4c150",
+        "n_records": 30
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2021/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "850ffc4a6702dcd9162bf89c9850b3ddffe53244dabd5d5bcc7cc7eee5306c77",
+        "n_records": 33
+      }
+    }
+  },
+  {
+    "network_id": "net_2022",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2022/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2022",
+      "seed": 2022,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 10,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2022/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "784655dd9bff34208dd523587b80076ed90615dd8632db8604c86fd9cfcd1ab6",
+        "n_records": 30
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2022/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "279b076dfdfefd0193c2c0b896aee0105641ac11caa1dc12263fe78ba4c34e9f",
+        "n_records": 30
+      }
+    }
+  },
+  {
+    "network_id": "net_2023",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2023/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2023",
+      "seed": 2023,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 9,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2023/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "6bd5b3e987eb86f1c19390757ed4c8f92bd7889500398a849b6d327867c46f68",
+        "n_records": 58
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2023/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "f56b4c52c7eaf93463b48f86d992cb3549bbb019f0d19de6d65205c92edbb6be",
+        "n_records": 57
+      }
+    }
+  },
+  {
+    "network_id": "net_2024",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2024/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2024",
+      "seed": 2024,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 16,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2024/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "85b2de98af8ff0dbe909525b2c7ce11927b4c5491a5d7312fa99911b083a92e8",
+        "n_records": 49
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2024/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "d943b10b1742d77593434df989b1aef8d8d2a412e6bc4f25c8358a13377c2f19",
+        "n_records": 57
+      }
+    }
+  },
+  {
+    "network_id": "net_2025",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2025/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2025",
+      "seed": 2025,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 7,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2025/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "ab09ffb1b5ac0e7d4e97318a8cd7aeaf6a4d06da8d37f6f8e51a869912173c60",
+        "n_records": 32
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2025/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "6a7b6c611c525aaa425fb920309b7ffe3fa10a3e3f6a56bf46bec2502604a066",
+        "n_records": 36
+      }
+    }
+  },
+  {
+    "network_id": "net_2026",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2026/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2026",
+      "seed": 2026,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 7,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2026/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "a3413b7e4639585d7fcebffde2f941c6eb70da845fa309fe6bdf74c6dfb6a60f",
+        "n_records": 37
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2026/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "8316f762f547c85057edc178c2832f40d4e96710f7a71fb42a1ccae87bf81b7c",
+        "n_records": 34
+      }
+    }
+  },
+  {
+    "network_id": "net_2027",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2027/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2027",
+      "seed": 2027,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 13,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2027/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "d67c68151e1255946577e6db77c15c70fda648b4527762c9c9a9bf1c9d896d7a",
+        "n_records": 58
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2027/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "19e32c6cd1115aadcd12ec7608c7c545dbf266a5ac99206846ba692342a82fb2",
+        "n_records": 57
+      }
+    }
+  },
+  {
+    "network_id": "net_2028",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2028/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2028",
+      "seed": 2028,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 13,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2028/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "ba25063a93c77fa0e57af0f3b518fb15f37026081110c812de9c1114d1b0f247",
+        "n_records": 50
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2028/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "8e2787edd81f660b3dda8ac73d49f968cc6177c70690aa89b0e1c71ec6f553fb",
+        "n_records": 52
+      }
+    }
+  },
+  {
+    "network_id": "net_2029",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2029/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2029",
+      "seed": 2029,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2029/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "02c88145fccd9fcba1fc49a2bf1b2af34d7284426a20232dc2aa35f12dc02014",
+        "n_records": 32
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2029/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "abc99c7172da5f38a6a1514d8b01d8949b28e563d91f7f4e5d3e295c01eb23b8",
+        "n_records": 35
+      }
+    }
+  },
+  {
+    "network_id": "net_2030",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2030/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2030",
+      "seed": 2030,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 6,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2030/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "00f7aabd85fed84520238878debb1d283297c566c9b1fe329bcd556fe7d8258b",
+        "n_records": 35
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2030/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "b3edf9fecc59301c48fd0c63db4545b61d2183ebd377037848587c11e6e874dd",
+        "n_records": 36
+      }
+    }
+  },
+  {
+    "network_id": "net_2031",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2031/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2031",
+      "seed": 2031,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 11,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2031/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "2d4d180a2828e786309b4439b9db804a0f5bce419f76cac2263f52afb86f07e0",
+        "n_records": 57
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2031/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "d369c9d58b1c74c27a0b77618683504c9457b40c15560501786d6308a003476f",
+        "n_records": 58
+      }
+    }
+  },
+  {
+    "network_id": "net_2032",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2032/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2032",
+      "seed": 2032,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2032/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "b186b4d967d7ad943799579d9fa48fb416237a989339cc69ef10f55ddaead3b9",
+        "n_records": 60
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2032/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "7d3965c67e0370611c886a166f308f4e24d173325cdea705f9c5cb684efdf6ab",
+        "n_records": 51
+      }
+    }
+  },
+  {
+    "network_id": "net_2033",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2033/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2033",
+      "seed": 2033,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 6,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2033/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "34b7d83bd4579b4a77041c42c2dc3e3ba78b14fea6cf260ca095083b825894df",
+        "n_records": 32
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2033/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "2593f3b0e41e5f4491be528cc7ec5f7f857687d5bc2bb707967dc7366f892014",
+        "n_records": 29
+      }
+    }
+  },
+  {
+    "network_id": "net_2034",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2034/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2034",
+      "seed": 2034,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 5,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2034/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "8313993bb6a407a75a6e35388a823c3b0b9dc12f29ae31372f6b0f3ffa8317b3",
+        "n_records": 35
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2034/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "bcaf4a61f75d5e479fc0a7a3cf8aec508eeae480bcda7f0a9a416360366355f2",
+        "n_records": 32
+      }
+    }
+  },
+  {
+    "network_id": "net_2035",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2035/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2035",
+      "seed": 2035,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 9,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2035/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "20892c1ee79a80afc58d06385e2f44a9111a217c67990ae6064c4b20c32b05de",
+        "n_records": 57
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2035/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "4d7f6aef19260a41041915d4adb74b0b181b18b77f56f3595558129574b4974f",
+        "n_records": 64
+      }
+    }
+  },
+  {
+    "network_id": "net_2036",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2036/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2036",
+      "seed": 2036,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 11,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2036/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "83b311e1fe662d5128e52d6fa99a52bed0332f9e93e4b0ee3f8c9aafb08151e5",
+        "n_records": 56
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2036/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "6b975c17605045c494216d2b429a8b55ca842eca4c4e3c58c8581a38c9dc8f46",
+        "n_records": 59
+      }
+    }
+  },
+  {
+    "network_id": "net_2037",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2037/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2037",
+      "seed": 2037,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 5,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2037/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "4a84fa470b7e7a0b3307090ffbde16eb2c8faae9acf8e180df5b1e99b6957587",
+        "n_records": 30
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2037/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "41e569702a9115368f9487b4461fdadeb25550eb435ac58d0d82fbb0343752f8",
+        "n_records": 33
+      }
+    }
+  },
+  {
+    "network_id": "net_2038",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2038/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2038",
+      "seed": 2038,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 9,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2038/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "50e77b632b815fb1acce6246815876e51b53cb2d457ceb5fde0e48a31a184af4",
+        "n_records": 29
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2038/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "adc56c6a58653a284e08f1647beec5f2c174dc37ce19ea13842e1dd239fe245a",
+        "n_records": 25
+      }
+    }
+  },
+  {
+    "network_id": "net_2039",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2039/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2039",
+      "seed": 2039,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2039/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "60c49a82e0a8b7234807bee383462d3efbc9b88310cd47d4d24eb16ffed9ccc1",
+        "n_records": 59
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2039/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "95a9d30b06654c54971b8c366a24db8011f5da7372f86a3baa927f32f3a23313",
+        "n_records": 60
+      }
+    }
+  },
+  {
+    "network_id": "net_2040",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2040/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2040",
+      "seed": 2040,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2040/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "a968e8fa7a366a747d15371dcdf122a8a9eee565704311f65d0a6d3e837e9f5c",
+        "n_records": 53
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2040/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "710cbf17ff9819c5bff8bbdedac50121110ab41dba78bbfa3532789044c6a216",
+        "n_records": 59
+      }
+    }
+  },
+  {
+    "network_id": "net_2041",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2041/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2041",
+      "seed": 2041,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 6,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2041/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "b0cb4a0cbc91bca4968ea125182df36820ed84a2e6daf5994f4b2f5c23c8bb7e",
+        "n_records": 30
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2041/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "1ffa1980bee0f6ddb41766a9c0241689099f6bfb1b2d920df31947329d2992d3",
+        "n_records": 36
+      }
+    }
+  },
+  {
+    "network_id": "net_2042",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2042/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2042",
+      "seed": 2042,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2042/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "8f13bd0d5932bf484c0fad6fdabbd49e6aeed88ec8e92ebf60af2f8b026c0f7e",
+        "n_records": 32
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2042/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "cacad35819e3caf71e23c1b4c1a22668b9a9027461a7cd8da1f0648128efcff9",
+        "n_records": 36
+      }
+    }
+  },
+  {
+    "network_id": "net_2043",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2043/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2043",
+      "seed": 2043,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 15,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2043/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "659c1402eeadef4c4d80c0704dd15c7454a8506203bbd3d5ae707426a088bdb8",
+        "n_records": 56
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2043/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "0796df3fa91acc202f770c873adb9df2e8cdbfdb3528910867b317ec89165e49",
+        "n_records": 51
+      }
+    }
+  },
+  {
+    "network_id": "net_2044",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2044/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2044",
+      "seed": 2044,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 11,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2044/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "7e5f8014f749b4b26006d23a71978fa6dcfbee5dce7963ebd22958381ba4b9eb",
+        "n_records": 56
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2044/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "99b67fab2a1ebc463cc5aa1febfec53dbc800e0b1ed34dc72975845202ed926c",
+        "n_records": 59
+      }
+    }
+  },
+  {
+    "network_id": "net_2045",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2045/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2045",
+      "seed": 2045,
+      "family": "linear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 3,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2045/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "15207b67cc7f5dc63616ea48c6ff519fa66b3d0e5b05dd9055c62be65269f70f",
+        "n_records": 28
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2045/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "3b8abefde3a3a94237a2c9424c196505639e2d105f4e872eb9a77dd4c0605f54",
+        "n_records": 35
+      }
+    }
+  },
+  {
+    "network_id": "net_2046",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2046/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2046",
+      "seed": 2046,
+      "family": "nonlinear",
+      "n_genes": 7,
+      "n_cells": 140,
+      "n_truth_edges": 8,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2046/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "1837a85b03670a7379e5ec9acf0bcf661aa4bbc194935e3fb0f264f3070acfb3",
+        "n_records": 34
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2046/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "af7ee79af15f58f1bbf9466bd717e64b19914f887466efe235e49602fea9ab1d",
+        "n_records": 34
+      }
+    }
+  },
+  {
+    "network_id": "net_2047",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2047/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2047",
+      "seed": 2047,
+      "family": "linear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 6,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2047/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "77be5066765b2791c444de9e44edc7d2069ca0ac7bfef2b71c2bb53ee41a5314",
+        "n_records": 54
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2047/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "9ea59756e093868ba7d67de9aee9599e96a2f8648cc3c1c8a8303da0d49439c3",
+        "n_records": 58
+      }
+    }
+  },
+  {
+    "network_id": "net_2048",
+    "success": true,
+    "metrics_path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2048/network_metrics.csv",
+    "generation": {
+      "network_id": "net_2048",
+      "seed": 2048,
+      "family": "nonlinear",
+      "n_genes": 9,
+      "n_cells": 180,
+      "n_truth_edges": 7,
+      "graph_redraw_attempts": 1,
+      "reference_complete": true,
+      "source_truth_used_only_to_manufacture_synthetic_inputs": true
+    },
+    "source_hashes": {
+      "SIM_A": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2048/data/SYNTHETIC_ONLY_SIM_A_truth_derived.csv",
+        "sha256": "908cdf17fba3460e9802e012cf9e690a6e533bfeca2c74f39b3f2dab67788b0b",
+        "n_records": 54
+      },
+      "SIM_B": {
+        "path": "/mnt/data/GCEV_CONFIRMATORY_SYNTHETIC_2026_11_25/networks/net_2048/data/SYNTHETIC_ONLY_SIM_B_truth_derived.csv",
+        "sha256": "213c2ed782a119441e286e3fcba469b6c7f16dbe4f7a1d92a2118b70e35bf197",
+        "n_records": 54
+      }
+    }
+  }
+]
