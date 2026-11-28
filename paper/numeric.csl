@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US">
+  <info><title>GCEV numeric manuscript references</title><id>https://github.com/TshepoGobonamang/bio-rl-grn/paper/numeric</id><updated>2026-11-28T00:00:00+00:00</updated></info>
+  <citation collapse="citation-number"><sort><key variable="citation-number"/></sort><layout prefix="[" suffix="]" delimiter=", "><text variable="citation-number"/></layout></citation>
+  <bibliography et-al-min="7" et-al-use-first="6" entry-spacing="1" second-field-align="flush">
+    <layout>
+      <text variable="citation-number" suffix=". "/>
+      <group delimiter=". ">
+        <names variable="author"><name delimiter=", "/><et-al/></names>
+        <text variable="title"/>
+        <group delimiter=" "><text variable="container-title" font-style="italic"/><group delimiter=";"><date variable="issued"><date-part name="year"/></date><group delimiter=":"><group><text variable="volume"/><text variable="issue" prefix="(" suffix=")"/></group><text variable="page"/></group></group></group>
+      </group>
+      <choose><if variable="DOI"><text variable="DOI" prefix=". https://doi.org/" suffix="."/></if><else><text variable="URL" prefix=". " suffix="."/></else></choose>
+    </layout>
+  </bibliography>
+</style>

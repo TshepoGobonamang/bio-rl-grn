@@ -1,0 +1,41 @@
+{
+  "protocol_id": "GCEV-MECH-LCK-2026-11-25-001",
+  "independent_dags": 32,
+  "conditions": 256,
+  "method_evaluations": 2816,
+  "primary_interaction_contrast": {
+    "mean": -0.002080400791375647,
+    "low95": -0.0163692746174306,
+    "high95": 0.011090167298727343,
+    "unit": "independent DAG",
+    "n_dag": 32
+  },
+  "interaction_nmse_vs_no_state": {
+    "mean": -0.006975687432682248,
+    "low95": -0.012341994933931469,
+    "high95": -0.001930327573126197,
+    "unit": "independent DAG",
+    "n_dag": 32
+  },
+  "secondary_descriptive": {
+    "saturation": {
+      "mean": 0.001445374958624305,
+      "low95": -0.013283640479672312,
+      "high95": 0.015086330285702882,
+      "unit": "independent DAG",
+      "n_dag": 32
+    },
+    "interaction_by_saturation": {
+      "mean": 0.021704014501432722,
+      "low95": -0.01276637642895002,
+      "high95": 0.05631594153364959,
+      "unit": "independent DAG",
+      "n_dag": 32
+    }
+  },
+  "preregistered_decision": "PRIMARY_CRITERION_NOT_MET",
+  "is_independent_biology": false,
+  "comparison": "GCEV vs same-target no_graph_state, paired DAG factorial",
+  "protocol_sha256": "a5b2cd5fc293bc220aec4df519dcb6ccb8e69bac7a390b23b73f10a665cff701",
+  "elapsed_seconds": 88.31
+}

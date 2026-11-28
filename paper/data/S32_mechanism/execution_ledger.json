@@ -1,0 +1,1378 @@
+[
+  {
+    "network_id": "dag_6101",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6101/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6101/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6101,
+      "n_true_edges": 2,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 0,
+      "fraction_multi_parent_targets": 0.0,
+      "reference_sha256": "79d8f25ae0d56ed78ffffe1a3e22914617433e18ea668242f913744b485a2541",
+      "source_hashes": {
+        "SIM_A": "2ce6e8fb64ec59ffd48dd78c2c63834fe6eae7ce1a45b733bf77c765f6632370",
+        "SIM_B": "a9aef84dd935643059cd6ed4596dbd7f5869bee326589e2b6178e34229a5edf3"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "071a834d2a949117fa5cf6eab8ba9b53decdd8cb5e861bd8063bb691c93d4de0"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "6a1d3f1d95db34c878da85caafedabc5c20f85513112d64947aac516208b995a"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "071a834d2a949117fa5cf6eab8ba9b53decdd8cb5e861bd8063bb691c93d4de0"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "6a1d3f1d95db34c878da85caafedabc5c20f85513112d64947aac516208b995a"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "d9d3e2c3052a8a23af984a6841844ee9acb20ea69b5f169363e014268ca77c32"
+  },
+  {
+    "network_id": "dag_6102",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6102/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6102/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6102,
+      "n_true_edges": 9,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.4444444444444444,
+      "reference_sha256": "dd23324628c75f1bbe30f7f8e8e25442680534652e5d9b3b676ffa4799688e19",
+      "source_hashes": {
+        "SIM_A": "3a4a2f7f048204ba63c18b4cc680093aed8f4e912ace4d82ee6e7d7400fa41e2",
+        "SIM_B": "f1f25b17dd48a99f695d0ab9f307c7e0da5a420729dbd69f016a5f8919b5dbd6"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "b09285db2365da30f627306cee578948875cb01e203dfba2f55a17ee7b621808"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "e13f6def6a9af798308b35df22f872d9c84587baf513e42758ad7cf435fe477c"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "bfba45b93108bc39478e3cbbebdcc00e76139a82791a8c2f4a068915d5f8d7f4"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "d866678ec9d481601bba85a0fa5d7d76f3e96c1731dadcbbcbde32e8a09ca314"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "0867487e4b886ccc5f8ba60a4eb55385d5323953737134c9edf7d42ed0f0570c"
+  },
+  {
+    "network_id": "dag_6103",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6103/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6103/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6103,
+      "n_true_edges": 9,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.42857142857142855,
+      "reference_sha256": "b480e78006e90ca1104b4429894173e85eeb02146e71a86edfacd394683993ad",
+      "source_hashes": {
+        "SIM_A": "89a606b5e6102f6f504a2567a537e67422cfefcaca5da0abcaf624880b7f8262",
+        "SIM_B": "3bf9507de5b54519ddd3afdc942a3163cfc5398a90c362fdfe0274048dd6ebb7"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "2f47e8568f1c062a2c3dcddd352a8c7bbd3accb37390be68ba21705959cf4952"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "c75f3f2e70f7c74d83e790e2d96178e14632ae7e1ee3aa94526a622438665432"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "003d7c4ecd6a9f5b65a452bcf1c394cb4d51838fac546d880573620b80013b71"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "2aef4a9e223a407eba06cd8775b6734a8e76bb82ad650a2346a7862c39e380c7"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "67a5a8446d55fc915eb481a7f5f9d5b563c6a899d34d83fc972323b0b6c4cc90"
+  },
+  {
+    "network_id": "dag_6104",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6104/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6104/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6104,
+      "n_true_edges": 11,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.4444444444444444,
+      "reference_sha256": "c00d36132d565e1cd34395aca0108025995e2793e455a2eee810b2c8d5bf3265",
+      "source_hashes": {
+        "SIM_A": "a54396cfbeb4f3a8cf9aa22bcc5556e8559eaa90f930904ea7ad595fd75c4bed",
+        "SIM_B": "23b2ffd084c452d1919b5954e44bac87326cc2ac07940d2606b94e93e3f85f11"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "16186d2107b8f8a4851cead67b332adad9f8db17e947c48d3b48836182b4d3ed"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "d5db6f1c3590c31fcc299844282c4f63e03cbafdca3924209d30f3917b446bbe"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "7b17bffdc4fe34d86042b7882c015b5a77345d3a6a68f78b4b3adb65d31bcc97"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "7e1b89e82b5b51bd5e17922616017421a1db5924a838c9b72470130d78585ffb"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "1586d9ca78ee0c0d235e5b1a3855080d7cb862b0f1c1a650958754917aea5757"
+  },
+  {
+    "network_id": "dag_6105",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6105/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6105/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6105,
+      "n_true_edges": 6,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 2,
+      "fraction_multi_parent_targets": 0.2857142857142857,
+      "reference_sha256": "95228fd6b5748bf033b4433c8e76070d3959f7930c7085d8f0f0261b06164c90",
+      "source_hashes": {
+        "SIM_A": "b95fa958ef505b0a30fce58736459479d176b6073cf98a1a9448bd6e4248b0a5",
+        "SIM_B": "729197b14ae9dc5c00911f59b5962a87f3a5aa58aac106213b994683da168328"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "5ca0390ba57b0e4b2881cca89780320b469a389009a4e430f3d4a28b0da30b26"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "076968429f0ca227d2e7089f51e28720cd7266e0d07bbbcc6574165b7b7c6c07"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "309a41aca8308651ff0bb69345c16b227baf8b907b7dedce3b0b6ad6a401f65e"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "88ae84d726298034f8941685de7363636a16c1424273c85c586b6aadc6788229"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "ce396660937ed9798aef95c47ba7f055ed407c717323410890540a33c9ee811d"
+  },
+  {
+    "network_id": "dag_6106",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6106/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6106/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6106,
+      "n_true_edges": 13,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 5,
+      "fraction_multi_parent_targets": 0.5555555555555556,
+      "reference_sha256": "862365d6bdaf3df0ea10b1eba26f874e07b18591d3f07b4348a75232145a08c0",
+      "source_hashes": {
+        "SIM_A": "b50811c5973184b85e4744f01a9c7e914bc7ed64d3fb427880620c94bc5fb0c0",
+        "SIM_B": "65c842cdd32fcff496b87cea3e62608de0ac65a7c1ee78028a8fb8d9a1c10243"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "eba32b42dddf06d52996b8f48a77c7eaa91d406d5db59282a3f6779318cec5df"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "d1b8159258a96fd9eb95be28579e55bd001a41fc93a874641dc3edf4321e322f"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "6366edd15d62146b2ae9a62ef90a265ec9b321d1148b0c7197d8624c9def5ab1"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "206b08689576b1921b96020ba3a5d5ec50671d808bfa1e3e4b8522587f61b57b"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "20327c733241772917ae6a3a5dfeffcacf0a420369057d3b944ffcf04538771c"
+  },
+  {
+    "network_id": "dag_6107",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6107/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6107/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6107,
+      "n_true_edges": 4,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 0,
+      "fraction_multi_parent_targets": 0.0,
+      "reference_sha256": "0ea7d9991bf3a951b6fb41ad41ec3facded980d5341668fa835032c2e53b11e8",
+      "source_hashes": {
+        "SIM_A": "7bdc65f626ab1eef1d9f3a3fd6b1f297794967da66d5168201583ae00add320f",
+        "SIM_B": "f6185118dd8cc3f43605b4081336e68641d46533713f426b8ce5e51b07fe82ac"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "08358e423bcb4d5e40431dcabf15161414b6dd598c1ee947d5464af84a63b682"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "12e93de6c1798cd2b8f2ba13685043ae86bbcd164a07faad00ac2606980bd7ed"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "08358e423bcb4d5e40431dcabf15161414b6dd598c1ee947d5464af84a63b682"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "12e93de6c1798cd2b8f2ba13685043ae86bbcd164a07faad00ac2606980bd7ed"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "5110953d0e2d4f98c0a3c2aa4f2bf98a87980fe66418003f9324df2c341e095e"
+  },
+  {
+    "network_id": "dag_6108",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6108/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6108/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6108,
+      "n_true_edges": 10,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.3333333333333333,
+      "reference_sha256": "e0848e78655679f3ba9b1806d23692db7f75d7dbe224cf0c1525353b155c90aa",
+      "source_hashes": {
+        "SIM_A": "17f01f8c396041f5bbe507514c1a2914f03360c9a7db7a5561165614dcacd11b",
+        "SIM_B": "d4c144b3bfa5035368728ddcbfb829795b1767c3757b390d4a9760e0579d9454"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "c2fe3fcc547a3e841b27a5638274d805d55f26da169193c7e0603936410a763d"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "b4e68e74b85bce8d76fe1b9599fc1c0d9b9a5982f67c58c0fa3048cf0e4b436c"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "b74bb43c9092507868d80bae9e06a31e92eb5da4d66278b94d3a39a417c20226"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "c2c267e17bf748c7c7f75f1a805364ec0cef541e955290736ca782590b32255b"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "3e700a00efbe4e2413c12e9df0ece810dfe70e5c9c3e64ad49dba1e6418a80dd"
+  },
+  {
+    "network_id": "dag_6109",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6109/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6109/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6109,
+      "n_true_edges": 10,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.42857142857142855,
+      "reference_sha256": "f4f118e772c6edd4316940170372e06e08e44366abf94a62c8fe71d7cff20c54",
+      "source_hashes": {
+        "SIM_A": "58fb4060f1c90f12068716a14b51436caef49aec7cc96bbacb84b911261c48d8",
+        "SIM_B": "e89b2f5a8826d718ae90bda34cd3c46274bf689cdee151722c187f31eaa039ed"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "eaf27a55aa50c0167186c9ea7672e57b31cf900e347654f5c65c1379d0f7a808"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "77e2fa470e6d0cdf2483419d3a5498476eeb6c753032ed30369aba71838632e6"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "22b2f4f7c43041ec38356af024be245205fcf223dc113d47c9c6e66c698a3416"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "a90a5116dc37ff77f4b21a44b791e745e927419f66afa057614da70d5d664876"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "ea2b93587ea82dd08d14bd7b489e72e0c5a2015c9d07c8d4db7d7dacff923388"
+  },
+  {
+    "network_id": "dag_6110",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6110/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6110/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6110,
+      "n_true_edges": 18,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 5,
+      "fraction_multi_parent_targets": 0.5555555555555556,
+      "reference_sha256": "ca9fae26b8485691b74ac26f8e7582bac4fa9a5a443c13c8de6cf61741ff9f9a",
+      "source_hashes": {
+        "SIM_A": "7ee70f49f46405d03b6638cd50f79931c1b9f475f38b2884a1fdfa9aa4d0a221",
+        "SIM_B": "74149aaf2963771e93dc9a5922c92ebda2e11aedaeb0ef93cdd041f2862bf970"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "13129d97d1d365d0016451f3b69981ee8f0e6196be70e81e8e093d51e0aeab20"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "da97e824de3aa899d72b62b5d9f058ca89fb4e8ab7302b72d0360f1820cd4bc1"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "68a62dbee8dcd7aa504b6dcb503e74fd3ab66192c20b92d2f70a39b9900b319e"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "d7b355e32d168e7353746d7cfa632e48de0050c1ce4b30c8ade4e5f7330011cb"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "a52a88cf69b6fae04d8672cc3ece6ab171c9a847f7a9de5ff1f913027990bb73"
+  },
+  {
+    "network_id": "dag_6111",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6111/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6111/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6111,
+      "n_true_edges": 5,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 1,
+      "fraction_multi_parent_targets": 0.14285714285714285,
+      "reference_sha256": "0356100dd3af6251a560288506c2fb636d84b279660d1b7751c0feec767a54ee",
+      "source_hashes": {
+        "SIM_A": "b3c45f521d58c1bae0f2a644aaefbbf666d8b9e56c8c6594ff262d727bc054db",
+        "SIM_B": "cfbbe41f7c95ad79efa3b6182568a48e761afc479a37d28984049ce509de5be1"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "5f0f35ea4b4c1afd72a1d179c0f133737342ae6ed0e0a8ef5ed7b0a4932a8c2a"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "b621f4033797167cee8bd04e844b6b64c8ab4460f8b5363e2789c790b6f49b0f"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "9be033059e81d7885cabbf358dac453aa1f4f83abbcd5cfe1387ee038c3a43f8"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "5ab6d48fe8c7f82f7bbf925a60b6d82fdc18dee9d74d846c720519457bcb35ea"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "271960ed4088150f679a1f88e6a227c18b2166efc218f44941713b7f88b79c31"
+  },
+  {
+    "network_id": "dag_6112",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6112/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6112/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6112,
+      "n_true_edges": 10,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.4444444444444444,
+      "reference_sha256": "f46d305970ca387037ce7f783164a908de2591b8e41d98e56f5db4522532810a",
+      "source_hashes": {
+        "SIM_A": "ca251588ea574c5421cdc03c4001a13db3501edb93a0906af4de3ccf826e0ed8",
+        "SIM_B": "58bd711333300c15a4e4cefead015f1ec5ac9ea0bd08eb44434d90fda261bb02"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "2ade8401725320c4fdaca398b0c55a77f6e1e0b9e5d8f88e42b2f91723310859"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "cc8bbb29e72d9eb95e11a8f057536c1291c49486d9eb59294b94098f7b53bb49"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "8e603ad50b2327de682c0fea6039cbaf0162fd3b476ffd21c81bac0e75dbdaba"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "f95f83fb984d0eb02a01b192b939f0b479f9ad2838761052650c2c0f2a55d8cd"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "750148ebc9514d41e29bddc5a3a7aeed1d867e90b43f2d6b58dd3de2062658eb"
+  },
+  {
+    "network_id": "dag_6113",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6113/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6113/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6113,
+      "n_true_edges": 8,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.42857142857142855,
+      "reference_sha256": "2cf5f5f4776c1d5dd531e932b2707dc40101d47be6159a0bd5494351157e58f0",
+      "source_hashes": {
+        "SIM_A": "ef7f23a11dd233f685002f966b7d833a8df4023e2380454928ef0839a65c37cc",
+        "SIM_B": "68478945c07a17c8e20d11e57f337d62a1df2e52967398402b4e62dd0bd379bd"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "ec68f9efe3b1be35c0ec0df329b02e84e44c1b212fd15f84c0910764c0c632bf"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "3441a6452b961fc999045dd0f73facdefc5eb0527814eac6f4dbaad21c76dafb"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "a73987871ffdfe7f3e64e0d88295b3e74784f894e01b108fd539e1b7795cfee9"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "591d36c44d8f3d4335e8223d7ca2a7100edb78e735e71b2b0d214b8aa97d8fa3"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "73d25a0c74707865901032908faafcf5351291cc29234cde353effb155659cdc"
+  },
+  {
+    "network_id": "dag_6114",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6114/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6114/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6114,
+      "n_true_edges": 10,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.4444444444444444,
+      "reference_sha256": "0effb023d1d8d270459f4c08b66b20e0b068d031ef6effeca3f65ff7a92c5220",
+      "source_hashes": {
+        "SIM_A": "049900d70b8edd6f6c4023fba1080137a42c774a3df5760f48e99afcae943cc4",
+        "SIM_B": "fa44215786db6ca10eeb867c4d459ff94f7ac1ae5901ff34b1fc21f78c8e5309"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "f527d5c72470824069f9611aad05708db15f6ab9a6f2b3137a9a92e6b214166a"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "2349be962e3a511bd9166aea824c7af2e71a86528b81f0bc2330d51d854b5114"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "6eca536d9fadc8038ad4ed790ba7fea0068db4a0d1b2476490ab118175f50252"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "7793bd9de4b7ddc97567458a8854013d60c8db9ad896e14c5159c34e81bbc349"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "1b375bad47cb82157b8aa2ce80408600025090f09418bd53193aec601846c395"
+  },
+  {
+    "network_id": "dag_6115",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6115/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6115/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6115,
+      "n_true_edges": 5,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 2,
+      "fraction_multi_parent_targets": 0.2857142857142857,
+      "reference_sha256": "ebd59071680df07926c5355397cc420546bcdee4bb857484dbff07b7d31831e0",
+      "source_hashes": {
+        "SIM_A": "ea533bcca6254c318d6bafc3c8eacc370b0a514a0d3958974f46877e52fc3d3b",
+        "SIM_B": "64a7872711b646983bcba62743741399f9e9b172841e6eeb584b16d786302bcf"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "07f6b77e33cf9b8c5a58c94dd1ea36cef9ee71e00b47fe8a53ea1f812490da05"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "0627a337d49b69991c1672d0f27a45bff66941dca1c597c16fbdda7ca5e7a487"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "9537e368a229c7da27d9b29796085b0d9beee2260f859ecb7159b7893ebe76ed"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "fe4149fac9da8be2fb7b7e4329674adb46cc6cc09563ddaa656d578d3523a6df"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "2e3257c0c67ad2ea790520cc2e9e3580fd22a4c443cb14b3ab8f289272e35cd1"
+  },
+  {
+    "network_id": "dag_6116",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6116/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6116/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6116,
+      "n_true_edges": 13,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 5,
+      "fraction_multi_parent_targets": 0.5555555555555556,
+      "reference_sha256": "7049f575315e3bba63d9286e219c12f3c6ad4217d2faa2ea162c9b3492d30fbe",
+      "source_hashes": {
+        "SIM_A": "da827ba79b344a9ebec3fb92360e217a4bab5590ac076f39d385355969f312b7",
+        "SIM_B": "176befceaa4d686e523e7c06df9ff2b083798f3fa79fdd6dad41ec845867d915"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "549ec8c61676364d1f7ffd1c28fc267e8326e2c099781ce511d0aeadc18fc39e"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "14d01d4c9986e23bafee45ef6f8d265ba29da699ef2b465c147d4654f7367ec9"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "038d0b32609c680d6e6ee939f7f7b0708bc42db0edf87ac3e7b82e81488986b3"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "1275ab62a3354022aacc1c29170a77ecb4fb2c9e9de0e65f7761e8befdb59cee"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "a9c764d5b77fbcf88ff3fe3393a41a4747801a7773e6f3a2c7e3e7a5664dcd68"
+  },
+  {
+    "network_id": "dag_6117",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6117/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6117/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6117,
+      "n_true_edges": 12,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.5714285714285714,
+      "reference_sha256": "a72da60639a5e0ec1edc67d57804832ed0e1feda8a0aed5b88729259a5d8d131",
+      "source_hashes": {
+        "SIM_A": "01f1c670c59f8e9a3602b88068ac09a72bff627047098e66a712bc1bc0f2b236",
+        "SIM_B": "9551d75b38925e29ad2e26b2c40b5b01d1a09eb9ac9d52146c7713ef9a71d277"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "ce838e81883c67cd8321c77bd6f9c4785a7450f7beea7bae622e6886f2dc46e5"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "668c293cd899c4d71170949d89fab3602f987d1f7ec807fbc6f271ac3a181eb6"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "975d4f5fa746295c769fd856a5d8a82f75cb1578e438d755c9b0dec283c58c5a"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "5375796d140f62141ca561a54c468a46d35ea9f1590baf322221d227ecb64fc1"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "2cbb794bd7ca621a23da70edea0645a250221ced7cdd2a2f477dcb1cf8024d70"
+  },
+  {
+    "network_id": "dag_6118",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6118/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6118/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6118,
+      "n_true_edges": 9,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 2,
+      "fraction_multi_parent_targets": 0.2222222222222222,
+      "reference_sha256": "07175ab89a0851cca428592b5f15d07f2ce90a12eb703fc62cc340c29d144bfa",
+      "source_hashes": {
+        "SIM_A": "93b4a273ddfa803fcd86aafd76ba61236d1bf6142d030fa7dd41b3f68c313c5f",
+        "SIM_B": "d0557540b84bf23b41e674a77ea3bc61e242a14b1078b03fe96eab5ba9a43d7e"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "3e8f272092f1ef4bf94f4f15cf3922c8036b25cba25a1b99827d4064ee5e4fdb"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "f0c40f7f8df8e6156cf3f5d0c4d17f138ef0a4734860dab34206f6b76248df3c"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "aee2e2ceb189bd96cba719ab3609768522295ffe5654247c812f5c704c877f61"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "8e126adc0ba9036feefd25c2d3385bff074db8aa3973d4f287724fae7151251e"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "6588a5de9d253e135f4e1049bce035847a5e8b8d97a193ede33cb1a63d343ac8"
+  },
+  {
+    "network_id": "dag_6119",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6119/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6119/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6119,
+      "n_true_edges": 5,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 2,
+      "fraction_multi_parent_targets": 0.2857142857142857,
+      "reference_sha256": "9512a812e9e5715df62b9a6de91140c589cd61d269dff3bd084fdd428864e237",
+      "source_hashes": {
+        "SIM_A": "b9de1bbba5d7c08e6a078f6f445844dda88a727dacb704b8428ff640a8d5c52d",
+        "SIM_B": "28841fc6dc564993ac1444345ac772d1a371919ee560f47bfa3f2445845729e5"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "24f9a6bbe68dd2d443ee6210990ffdbddbf44d652d8d07a1e6d19cd1692934c3"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "637ff80d44c12bd27519711bbe3ead523e5c03c2eb4d81c7d4bd63da4efd1e98"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "2da5b91d74585b27f4da1a46fe733ff6a6b3e24c8eb52bd33e24c7cc23d171d7"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "e2970314226e436b266b6db1df945f5d73f9f80c3979d5e13ee75a57007d175e"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "d36df73f43fc30631819cc242f967aacbde33ec1df67dbb62de17e4d1d8d9bde"
+  },
+  {
+    "network_id": "dag_6120",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6120/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6120/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6120,
+      "n_true_edges": 13,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.4444444444444444,
+      "reference_sha256": "209a7eacab3677e5e2b8810a4667e2ad3d8e64d24b5564859b91f65f8c1f807d",
+      "source_hashes": {
+        "SIM_A": "887b269a01828a9b1a0bd0c4c1565d4d7de84c7d6e4396cd786cda5253260ed6",
+        "SIM_B": "9e986ab15bbb1df8b05e0f116f2c990ef2289ca88e39d496c39e75b2521cf47a"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "ffdefae51728ce16f452863b01e898baf0a754ecad9a3f5ea28c46a51cece261"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "a6c48463fc7b3060eb9e8087209a65a5412d166a6bc06772369481834c03c46d"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "8b00cf911a257abadf19871a30e0219bd0506549db8b37967f6389979b727cdc"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "155b89d621d6f61a03fb25824d9aeea57fb26d2fb5ad7abc94f363e7557e74c0"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "b781b4aac538d4018106513d3fb2565870ed9c0d34e8d2f45d7b1c2203bd9dc2"
+  },
+  {
+    "network_id": "dag_6121",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6121/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6121/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6121,
+      "n_true_edges": 3,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 0,
+      "fraction_multi_parent_targets": 0.0,
+      "reference_sha256": "93a2ed9df06a2d145008aad2a3917ed3e8d653c4c737b839ff028db7c3e68bf7",
+      "source_hashes": {
+        "SIM_A": "44cc2beb48d7082b01434e8ef3585c8abaed71425a8b2d0320c8147a787f68a6",
+        "SIM_B": "f24967117ea05b08deb3b29aa554b0ac34f0e27796e403c1b2b74158194889ed"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "dd6f0bfe22550e5963cc3c3157c527813f91d371d38ed33deaf10580e18fc5da"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "56e1ea0a0b52b09d23991e9e58f4d003cadb3a2789d9eabb88298d7111910338"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "dd6f0bfe22550e5963cc3c3157c527813f91d371d38ed33deaf10580e18fc5da"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "56e1ea0a0b52b09d23991e9e58f4d003cadb3a2789d9eabb88298d7111910338"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "f87190c599dfa1150f16f801106c2c35472658a7cd76650063d7abb091a099b8"
+  },
+  {
+    "network_id": "dag_6122",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6122/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6122/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6122,
+      "n_true_edges": 11,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.3333333333333333,
+      "reference_sha256": "d539098e1b80797e3d6f2f01bc84ff586a9f666d69fa1a9dd0fe87334d6431b0",
+      "source_hashes": {
+        "SIM_A": "d0b926dcf74ef07e9af83812d8cd6dd54af321d7c92a9c4e05ac8fcdf349a1b0",
+        "SIM_B": "b7bab00b7ee7f97745fc3689e95c020a7b46696c8e9c183e3b37897c5f1fb729"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "c79bbc2733adebc8677e6d6b3e54d6fc5c081492e2bf173eb2c50a0594635865"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "30d9e8a7a08b0fa5e2975e2f284334b7e2fca1db1cf7d02a1010283ec0b1526b"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "aefcd0a52980433f8765e03b7f3f02d1d7e8a8aefedc84eabac4c970b409628e"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "f5b98c1c5ba77fd5d4f3c8c77ca8f40c35b04a5639e74348ab1bc29b25b0c825"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "1670bad90113d7043bd3dcddec80d5174a9f86137390652025a318b1ab61e3d7"
+  },
+  {
+    "network_id": "dag_6123",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6123/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6123/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6123,
+      "n_true_edges": 5,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 2,
+      "fraction_multi_parent_targets": 0.2857142857142857,
+      "reference_sha256": "adf721917ca67fe7b54c0a6f327be74fc49015fec090a7e9fc0387cae79cb4fd",
+      "source_hashes": {
+        "SIM_A": "c5a89aa27fc0fcaa760f5f35228120c7092deef898e455f6a6baea1537feef69",
+        "SIM_B": "5fb67bc4ad2d183034ddb3c68c10863ba5cb95db55f5f18566a1d4ace38fc908"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "98c6a7803ace100a21e13e6f17dda129e0541912fcc4f10f4deab7ec15d65c96"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "e06c6fc3ec2bd34edc593fd32d44fdc3f38bfb106ceda712010508bb70787acc"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "c89131ca125cb36975df0a063d005fc4409849e6b59470655c501246e7799206"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "e8184a105bf2e6f6b9eadd54876d152008b1ed436869ac7a777af807e0ce33c6"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "cd21c38db1546e62eceabc6de28a84b72fa8a83f1b6b558bab4430da17e5b808"
+  },
+  {
+    "network_id": "dag_6124",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6124/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6124/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6124,
+      "n_true_edges": 15,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.4444444444444444,
+      "reference_sha256": "5c7d361125d5f088dccefd4f93d8f98bbefbf7c35217265d960c1eb9616841c5",
+      "source_hashes": {
+        "SIM_A": "3b0e30541c7b24962fbd44054673f283e76fa2927d506d00c82ee7a4844f66a7",
+        "SIM_B": "d99a0368b9c1f74b4cd9a6fc3c6cbf4e8eaaa0d379a6b268c727ebb2601fb2c2"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "5466da428d19b97bc5957d75d019cdde47757f36232402a893828be8d1f5243d"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "1f1d3cbc37e0b865452b1c692d9e8eacca13255a163bbab0ffbf4a58e561ced4"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "d6478d5ed6ed080f39e1dd5a7566250989560d09643085b2fa9f99a1725150b2"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "49f39e1d8cb7b4784b7a4b05335f26a1044eab9018cfb0c8116c465ea8275dba"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "c5b5c67bbc791b552c369a55716b3dd0cf02a95a602bff39932a1e58df277da5"
+  },
+  {
+    "network_id": "dag_6125",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6125/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6125/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6125,
+      "n_true_edges": 3,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 0,
+      "fraction_multi_parent_targets": 0.0,
+      "reference_sha256": "62784cc78e1be612df5b2a7e95672a3f2a2cf0fca52ad33e08d7a299e362cd54",
+      "source_hashes": {
+        "SIM_A": "8241a55df7e55eba0ccbadc9a5f3c3c537fd8d2ac801e2b5d1a86ce23b58b5ca",
+        "SIM_B": "0b4c0d473397f8cf74ee06f4cc4b5a5df87020bda7326ced9bf107b4dfd2753c"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "cb381a06b0705d6f10e640a587641a146cef07d51991922a58ac361ab4136a3b"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "eda2fd2fd055090f1dacc4d3145d251f8055182f875ddb94bd6131ed4ef92f9f"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "cb381a06b0705d6f10e640a587641a146cef07d51991922a58ac361ab4136a3b"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "eda2fd2fd055090f1dacc4d3145d251f8055182f875ddb94bd6131ed4ef92f9f"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "c5f1f78b5afd5443a69802eaf9e3e87777171c92123cb243a289d6d57b9705e4"
+  },
+  {
+    "network_id": "dag_6126",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6126/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6126/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6126,
+      "n_true_edges": 14,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 5,
+      "fraction_multi_parent_targets": 0.5555555555555556,
+      "reference_sha256": "55e11e90a20b18d3e2d78a39a22425c62b3c1d6b420c7116ca3943dc40d2dfaf",
+      "source_hashes": {
+        "SIM_A": "8f923e320f6d5820308dfe777444d1709311acb9b6fda4d86639e4671b8e9bcc",
+        "SIM_B": "b71b6fdf2c50fac57e9007c6fa64f8e1642f9f97c175f52b06a3f6974cfe3b1b"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "c98ffd079d91a2fda8d0725fe1b9198a9f2881115e62111d8b473e1e02b7ad9a"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "b1cb19095af646c6e37d362ee9c48664e6f040505f4a81173024ba3f8d380452"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "015935a04af108ccfe3edcb921f95abafc1d7ddc47569a8c77d552797d325a9e"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "d8c5621833731a69cf6682dd9fce1045a8c5cad5c55f4fbe23c4558801c1ba8e"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "3ff63263de93aaa2cf751f0abbc63b4f5d5fc61099725aff371c7ec28edfe5a6"
+  },
+  {
+    "network_id": "dag_6127",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6127/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6127/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6127,
+      "n_true_edges": 8,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.42857142857142855,
+      "reference_sha256": "0cfe8078b3e6e96f19bdcd30df176a718917db22d956344069101967817a2b06",
+      "source_hashes": {
+        "SIM_A": "84c33ab43750586233d8a6712b7e15009efa8c499787ffe352fca9d19789d9c9",
+        "SIM_B": "f82a002faa07365cf0c0be80bce88a6154ad77df61442acc2672676998ad8d77"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "249fea4f963ec26ce1ea87d751ffac839c8605d0c98873d60bed05b9ab4239c8"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "83e61a40a5d489c2a3eec73cbcff44c1a3057e157bf75464463df4ec8f584a4e"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "0e72889dfdf9942e8fc84c444a809f1fc861ad0d4e7621e0378d3829f17e3e5d"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "8d6b9cf0e2cd865bd0246f07ec5bfbc15a5534e170746672345a2ecacb3a01af"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "a106448a2c34cf90b1da4ab8e2acec9b6c6c1a5815f679351f4131fc6544592f"
+  },
+  {
+    "network_id": "dag_6128",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6128/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6128/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6128,
+      "n_true_edges": 9,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.3333333333333333,
+      "reference_sha256": "d70db80120ece6cc1eef035e2251f02565f1824b5493a64bf87a6fb1af626eb9",
+      "source_hashes": {
+        "SIM_A": "5b49e3e9798b2d696d4c0d2742bc4558b286ea153d2702ff12c1c0babe51ed98",
+        "SIM_B": "b1be9ad0918aa05c1af3de8ade1484757f48059347de6b6dc57eca592339e4e0"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "22a0d8a362b2651f0a4b292a4a12cb6bccf77b6f10d71a2064c021ee53bc28c8"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "4ecda43ea13ce0469c3846ae8d7101ddb448ffceb2468fa5c36fa3b677885fc6"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "b7ef73fffe2f7bafe3e451db192256f77a4c978d9e2848802572f9f6b9a75043"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "96491e1417a18f9711f59b46cfae50f1e922d78b8e60e7ea9f7f03c658f26a73"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "33d90218b01b39ef399a35030728bacb8e13c7a13f765caf99b2ed997f3e7b5f"
+  },
+  {
+    "network_id": "dag_6129",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6129/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6129/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6129,
+      "n_true_edges": 8,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.42857142857142855,
+      "reference_sha256": "44ddff3711f55261c542b8bef531d35212714a8cdfc4f73e70a40880bb4014be",
+      "source_hashes": {
+        "SIM_A": "a3f26a2abff6cf3df9bca5e35f8c141ae9ced40f315c8354b39c614fe82226d5",
+        "SIM_B": "3a8b9b1bedbf33964a8d192a39469a10a192303c27c45fec6573f9c86d962aa7"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "2737d75413c5c917f4c63d5a8620b351154f6461cf2ea166902f958f96d9a146"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "bb2bc934c8a1e19d207e6d4287d02b83dc51edc7de5030fe09b0c8cf939b67a6"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "554cee26f1e99dd4671b3857ce85c14b73a840c6dfb036db0a67beeaa8f6dd30"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "509fd146488728af5b37854f1cdaccde3d0da0718768ed5f61138e80c680cf2b"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "1a636ad383d8e29bbfca2b39542cbe116aa151112710503b3f155c3d3eb1b4eb"
+  },
+  {
+    "network_id": "dag_6130",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6130/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6130/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6130,
+      "n_true_edges": 12,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.4444444444444444,
+      "reference_sha256": "2719f81912f0a14f6e3a49835946117fb1b42effff59b28f62aaabce8c85f79e",
+      "source_hashes": {
+        "SIM_A": "9cbf9b83052664df0e2227d50f4624bfdb8bd9d70c8c256144a3ce027914ed16",
+        "SIM_B": "d138e73807fb424e8e654e04e6b4abecc3bb9faffa8b7c9c9d2c345bcd7f6a66"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "d12e2ff80d7ac33c04722979b39ffddc89828652424116f7ef0276b2b5d17dec"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "5e2a426fe97f870d9f335126fa03124862d69793d19972fbd67ae5525e3bb714"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "2387b0d447c4f10dcfc855d5819884d879063a7447c2912d82314dbeba758f20"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "b00ab575602d227ced6487f057863f424adc8521fb8a3d3256c5bbbe46347714"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "7e01df71814a04851a20e9d4cb3a5e9671c1ee69f3aca7522fbab24ad77b33d5"
+  },
+  {
+    "network_id": "dag_6131",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6131/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6131/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6131,
+      "n_true_edges": 7,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 3,
+      "fraction_multi_parent_targets": 0.42857142857142855,
+      "reference_sha256": "0f13709a9b1441f2a14f420ecf281446eaf0e94e7a9aace3567fe28900138da0",
+      "source_hashes": {
+        "SIM_A": "4e302c48cd5afdf4833e9f41f0b78fa931ebba68c59a222cf64806ed9a884e33",
+        "SIM_B": "027d9624e0fa4849af3fd430dd46869fad5858061ef1123dfde1d3b74de7a0c5"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "0efa32f5f0fe4de0113fa29a2887d783a579190464a15e6ce2b62b958adc765f"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "d4ffde3916955692d8a480a9e01a645a587db93e5ff3d4a2026d5dc35901a358"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "55392f4074e16444dc256177ebcc4bc8cb181bd5c90c98aada4a8425846c1431"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "b117f1d109cdfee60267390d9e478c9b7e3200c8082c53ee139cb9897caadde2"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "f13ce4cd9f3b3dc01e4385911b570930a0f3fe930b977ae3c57d700bbb9ba695"
+  },
+  {
+    "network_id": "dag_6132",
+    "success": true,
+    "metrics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6132/metrics.csv",
+    "diagnostics": "/mnt/data/GCEV_MECHANISTIC_CONFIRMATION_32_DAGS_2026_11_25/networks/dag_6132/mechanism_diagnostics.csv",
+    "generation": {
+      "seed": 6132,
+      "n_true_edges": 15,
+      "graph_redraw_attempts": 1,
+      "multi_parent_targets": 4,
+      "fraction_multi_parent_targets": 0.4444444444444444,
+      "reference_sha256": "e176f2448e0f13ab903cf6532c8b61f01aacb2e80da5a0c28ab7da2dff7457c7",
+      "source_hashes": {
+        "SIM_A": "9047964dbf031834a142dd3c022b6abd0fd749b528148042e7789e33c2ee6e4a",
+        "SIM_B": "cfb0dac5d9b13f32b6ff20240ac363af364dece0e023392c09075efb1d9d85ac"
+      },
+      "mechanisms": {
+        "linear": {
+          "saturation": 0,
+          "interaction": 0,
+          "expression_sha256": "3d9647275b7513c7f45895e3ffd31180c7c55207ce923dd5b9265eebf9e07830"
+        },
+        "saturation": {
+          "saturation": 1,
+          "interaction": 0,
+          "expression_sha256": "03231e4120c782d3bb87c4c00f6c952047b4bbeafb0f6e8ce14d6112e3db43e9"
+        },
+        "interaction": {
+          "saturation": 0,
+          "interaction": 1,
+          "expression_sha256": "4384fe6490f79c126c6aca1f189876ab01a10657cfb79010a0ec90d944647f7f"
+        },
+        "combined_mechanism": {
+          "saturation": 1,
+          "interaction": 1,
+          "expression_sha256": "027bfde3b2d00011ad299bc5b9342a3fd98a194a30ea2edc73f062cfd9fb43a9"
+        }
+      },
+      "shared_exogenous_noise": true,
+      "shared_dag_and_evidence": true
+    },
+    "partition_hash": "b4708e26c616fbc48b23bc36d40f2125e7dfb2196ebdd502b1f4455ccc5ece26"
+  }
+]

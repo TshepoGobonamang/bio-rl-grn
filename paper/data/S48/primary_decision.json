@@ -1,0 +1,28 @@
+{
+  "protocol_id": "GCEV-LCK-2026-11-25-001",
+  "status": "COMPLETED_SYNTHETIC_ONLY_NOT_BIOLOGICAL",
+  "n_independent_network_realizations": 48,
+  "n_repeated_condition_runs": 192,
+  "primary_ap": {
+    "mean": 0.007715203386861336,
+    "ci95_low": -0.010750495660768291,
+    "ci95_high": 0.026721757363739138,
+    "n_networks": 48,
+    "bootstrap_draws": 4000
+  },
+  "primary_relative_nmse": {
+    "mean": -0.000804423274402178,
+    "ci95_low": -0.007940305528450054,
+    "ci95_high": 0.006036061029450638,
+    "n_networks": 48,
+    "bootstrap_draws": 4000
+  },
+  "preregistered_primary_success": false,
+  "decision": "PRIMARY_CRITERION_NOT_MET",
+  "interpretation": "Even success only establishes these two simulated DAG families with oracle-derived evidence, not independent biology or RL.",
+  "no_network_selected_posthoc": true,
+  "protocol_sha256": "556c6745948cc89b10c9b7ee92a64d4b5637bcefbe180c0c062082b7d2f0272c",
+  "elapsed_wall_seconds": 59.365,
+  "n_failed_networks": 0,
+  "source_ref_accessed_only_post_fit": true
+}

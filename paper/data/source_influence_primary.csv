@@ -1,0 +1,8 @@
+transform,variant,representation,targets,structurally_constant_targets,changed_vs_expression,changed_vs_motif,changed_vs_global_attenuation,median_source_range,median_action_margin,structurally_varying_targets,predictive_usefulness_evaluated,biological_validation_performed
+log1p_original,primary_mixed,expression_only,64,64,0,33,9,0.0,0.0233219567690557,0,False,False
+log1p_original,primary_mixed,motif,64,0,33,0,24,0.7285009375533132,0.0453698625615741,64,False,False
+log1p_original,primary_mixed,global_mean_accessibility_motif,64,0,9,24,0,0.1246471700696346,0.0279167399971683,64,False,False
+log1p_original,primary_mixed,matched_accessibility_motif,64,17,8,26,6,0.133884067889864,0.0233219567690557,47,False,False
+log1p_original,primary_mixed,permuted_accessibility_motif,64,17,8,26,10,0.115863294929642,0.0331181026597881,47,False,False
+log1p_original,primary_mixed,legacy_additive_motif_accessibility,64,0,33,0,24,0.7285009375533132,0.0453698625615741,64,False,False
+log1p_original,primary_mixed,accessibility_only,64,64,0,33,9,0.0,0.0233219567690557,0,False,False

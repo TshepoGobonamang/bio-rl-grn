@@ -1,0 +1,1393 @@
+[
+  {
+    "id": "genie3",
+    "type": "article-journal",
+    "title": "Inferring Regulatory Networks from Expression Data Using Tree-Based Methods",
+    "author": [
+      {
+        "literal": "Vân Anh Huynh-Thu"
+      },
+      {
+        "literal": "Alexandre Irrthum"
+      },
+      {
+        "literal": "Louis Wehenkel"
+      },
+      {
+        "literal": "Pierre Geurts"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    },
+    "container-title": "PLOS ONE",
+    "DOI": "10.1371/journal.pone.0012776",
+    "URL": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0012776",
+    "volume": "5",
+    "issue": "9",
+    "page": "e12776"
+  },
+  {
+    "id": "grnboost2",
+    "type": "article-journal",
+    "title": "GRNBoost2 and Arboreto: efficient and scalable inference of gene regulatory networks",
+    "author": [
+      {
+        "literal": "Thomas Moerman"
+      },
+      {
+        "literal": "Sara Aibar Santos"
+      },
+      {
+        "literal": "Carmen Bravo González-Blas"
+      },
+      {
+        "literal": "Jaak Simm"
+      },
+      {
+        "literal": "Yves Moreau"
+      },
+      {
+        "literal": "Jan Aerts"
+      },
+      {
+        "literal": "Stein Aerts"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "container-title": "Bioinformatics",
+    "DOI": "10.1093/bioinformatics/bty916",
+    "URL": "https://academic.oup.com/bioinformatics/article/35/12/2159/5184284",
+    "volume": "35",
+    "issue": "12",
+    "page": "2159–2161"
+  },
+  {
+    "id": "pidc",
+    "type": "article-journal",
+    "title": "Gene Regulatory Network Inference from Single-Cell Data Using Multivariate Information Measures",
+    "author": [
+      {
+        "literal": "Thalia E. Chan"
+      },
+      {
+        "literal": "Michael P. H. Stumpf"
+      },
+      {
+        "literal": "Ann C. Babtie"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "container-title": "Cell Systems",
+    "DOI": "10.1016/j.cels.2017.08.014",
+    "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5624513/",
+    "volume": "5",
+    "issue": "3",
+    "page": "251–267.e3"
+  },
+  {
+    "id": "scenic",
+    "type": "article-journal",
+    "title": "SCENIC: single-cell regulatory network inference and clustering",
+    "author": [
+      {
+        "literal": "Sara Aibar"
+      },
+      {
+        "literal": "Carmen Bravo González-Blas"
+      },
+      {
+        "literal": "Thomas Moerman"
+      },
+      {
+        "literal": "Vân Anh Huynh-Thu"
+      },
+      {
+        "literal": "Hana Imrichova"
+      },
+      {
+        "literal": "Gert Hulselmans"
+      },
+      {
+        "literal": "Florian Rambow"
+      },
+      {
+        "literal": "Jean-Christophe Marine"
+      },
+      {
+        "literal": "Pierre Geurts"
+      },
+      {
+        "literal": "Jan Aerts"
+      },
+      {
+        "literal": "Joost van den Oord"
+      },
+      {
+        "literal": "Zeynep Kalender Atak"
+      },
+      {
+        "literal": "Jasper Wouters"
+      },
+      {
+        "literal": "Stein Aerts"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "container-title": "Nature Methods",
+    "DOI": "10.1038/nmeth.4463",
+    "URL": "https://www.nature.com/articles/nmeth.4463",
+    "volume": "14",
+    "page": "1083–1086"
+  },
+  {
+    "id": "inferelator",
+    "type": "article-journal",
+    "title": "High-performance single-cell gene regulatory network inference at scale: the Inferelator 3.0",
+    "author": [
+      {
+        "literal": "Claudia Skok Gibbs"
+      },
+      {
+        "literal": "Christopher A. Jackson"
+      },
+      {
+        "literal": "Giuseppe-Antonio Saldi"
+      },
+      {
+        "literal": "Andreas Tjärnberg"
+      },
+      {
+        "literal": "Aashna Shah"
+      },
+      {
+        "literal": "Aaron Watters"
+      },
+      {
+        "literal": "Nicholas De Veaux"
+      },
+      {
+        "literal": "Konstantine Tchourine"
+      },
+      {
+        "literal": "Ren Yi"
+      },
+      {
+        "literal": "Tymor Hamamsy"
+      },
+      {
+        "literal": "Dayanne M. Castro"
+      },
+      {
+        "literal": "Nicholas Carriero"
+      },
+      {
+        "literal": "Bram L. Gorissen"
+      },
+      {
+        "literal": "David Gresham"
+      },
+      {
+        "literal": "Emily R. Miraldi"
+      },
+      {
+        "literal": "Richard Bonneau"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "container-title": "Bioinformatics",
+    "DOI": "10.1093/bioinformatics/btac117",
+    "URL": "https://academic.oup.com/bioinformatics/article/38/9/2519/6533443",
+    "volume": "38",
+    "issue": "9",
+    "page": "2519–2528"
+  },
+  {
+    "id": "panda",
+    "type": "article-journal",
+    "title": "Passing messages between biological networks to refine predicted interactions",
+    "author": [
+      {
+        "literal": "Kimberly Glass"
+      },
+      {
+        "literal": "Curtis Huttenhower"
+      },
+      {
+        "literal": "John Quackenbush"
+      },
+      {
+        "literal": "Guo-Cheng Yuan"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "container-title": "PLOS ONE",
+    "DOI": "10.1371/journal.pone.0064832",
+    "URL": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0064832",
+    "volume": "8",
+    "issue": "5",
+    "page": "e64832"
+  },
+  {
+    "id": "scenicplus",
+    "type": "article-journal",
+    "title": "SCENIC+: single-cell multiomic inference of enhancers and gene regulatory networks",
+    "author": [
+      {
+        "literal": "Carmen Bravo González-Blas"
+      },
+      {
+        "literal": "Seppe De Winter"
+      },
+      {
+        "literal": "Gert Hulselmans"
+      },
+      {
+        "literal": "Nikolai Hecker"
+      },
+      {
+        "literal": "Irina Matetovici"
+      },
+      {
+        "literal": "Valerie Christiaens"
+      },
+      {
+        "literal": "Suresh Poovathingal"
+      },
+      {
+        "literal": "Jasper Wouters"
+      },
+      {
+        "literal": "Sara Aibar"
+      },
+      {
+        "literal": "Stein Aerts"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Nature Methods",
+    "DOI": "10.1038/s41592-023-01938-4",
+    "URL": "https://www.nature.com/articles/s41592-023-01938-4",
+    "volume": "20",
+    "page": "1355–1367"
+  },
+  {
+    "id": "celloracle",
+    "type": "article-journal",
+    "title": "Dissecting cell identity via network inference and in silico gene perturbation",
+    "author": [
+      {
+        "literal": "Kenji Kamimoto"
+      },
+      {
+        "literal": "Blerta Stringa"
+      },
+      {
+        "literal": "Christy M. Hoffmann"
+      },
+      {
+        "literal": "Kunal Jindal"
+      },
+      {
+        "literal": "Lilianna Solnica-Krezel"
+      },
+      {
+        "literal": "Samantha A. Morris"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Nature",
+    "DOI": "10.1038/s41586-022-05688-9",
+    "URL": "https://www.nature.com/articles/s41586-022-05688-9",
+    "volume": "614",
+    "page": "742–751"
+  },
+  {
+    "id": "linger",
+    "type": "article-journal",
+    "title": "Inferring gene regulatory networks from single-cell multiome data using atlas-scale external data",
+    "author": [
+      {
+        "literal": "Qiuyue Yuan"
+      },
+      {
+        "literal": "Zhana Duren"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "container-title": "Nature Biotechnology",
+    "DOI": "10.1038/s41587-024-02182-7",
+    "URL": "https://www.nature.com/articles/s41587-024-02182-7",
+    "volume": "43",
+    "page": "247–257"
+  },
+  {
+    "id": "integration2024",
+    "type": "article-journal",
+    "title": "Optimizing data integration improves gene regulatory network inference in Arabidopsis thaliana",
+    "author": [
+      {
+        "literal": "Océane Cassan"
+      },
+      {
+        "literal": "Charles-Henri Lecellier"
+      },
+      {
+        "literal": "Antoine Martin"
+      },
+      {
+        "literal": "Laurent Bréhélin"
+      },
+      {
+        "literal": "Sophie Lèbre"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "Bioinformatics",
+    "DOI": "10.1093/bioinformatics/btae415",
+    "URL": "https://academic.oup.com/bioinformatics/article/40/7/btae415/7698029",
+    "volume": "40",
+    "issue": "7",
+    "page": "btae415"
+  },
+  {
+    "id": "genes2reg",
+    "type": "article-journal",
+    "title": "Genes2Reg: Constructing a biologically-faithful gene coupling prior via deep adaptive fusion of heterogeneous knowledge sources",
+    "author": [
+      {
+        "literal": "Juan Manuel Origgi"
+      },
+      {
+        "literal": "Maurice Zeegers"
+      },
+      {
+        "literal": "Siamak Mehrkanoon"
+      },
+      {
+        "literal": "Clara von Moltke"
+      },
+      {
+        "literal": "Anke Wesselius"
+      },
+      {
+        "literal": "Giovanni Nattino"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "BMC Bioinformatics",
+    "DOI": "10.1186/s12859-026-06655-1",
+    "URL": "https://link.springer.com/article/10.1186/s12859-026-06655-1"
+  },
+  {
+    "id": "beeline",
+    "type": "article-journal",
+    "title": "Benchmarking algorithms for gene regulatory network inference from single-cell transcriptomic data",
+    "author": [
+      {
+        "literal": "Aditya Pratapa"
+      },
+      {
+        "literal": "Amogh P. Jalihal"
+      },
+      {
+        "literal": "Jeffrey N. Law"
+      },
+      {
+        "literal": "Aditya Bharadwaj"
+      },
+      {
+        "literal": "T. M. Murali"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "container-title": "Nature Methods",
+    "DOI": "10.1038/s41592-019-0690-6",
+    "URL": "https://www.nature.com/articles/s41592-019-0690-6",
+    "volume": "17",
+    "page": "147–154"
+  },
+  {
+    "id": "causalbench",
+    "type": "article-journal",
+    "title": "A large-scale benchmark for network inference from single-cell perturbation data",
+    "author": [
+      {
+        "literal": "Mathieu Chevalley"
+      },
+      {
+        "literal": "Yusuf H. Roohani"
+      },
+      {
+        "literal": "Arash Mehrjou"
+      },
+      {
+        "literal": "Jure Leskovec"
+      },
+      {
+        "literal": "Patrick Schwab"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "container-title": "Communications Biology",
+    "DOI": "10.1038/s42003-025-07764-y",
+    "URL": "https://www.nature.com/articles/s42003-025-07764-y",
+    "volume": "8",
+    "page": "412"
+  },
+  {
+    "id": "beargrn",
+    "type": "article-journal",
+    "title": "BEAR-GRN: Systematic assessment of single-cell multi-omics-based gene regulatory network inference methods",
+    "author": [
+      {
+        "literal": "Karamveer Karamveer"
+      },
+      {
+        "literal": "Eric Moeller"
+      },
+      {
+        "literal": "Hannah Valensi"
+      },
+      {
+        "literal": "Ewura-Esi Manful"
+      },
+      {
+        "literal": "Yasin Uzun"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Nature Communications",
+    "DOI": "10.1038/s41467-026-77838-w",
+    "URL": "https://www.nature.com/articles/s41467-026-77838-w",
+    "volume": "17",
+    "page": "10971"
+  },
+  {
+    "id": "xue2023",
+    "type": "article-journal",
+    "title": "Dissecting and improving gene regulatory network inference using single-cell transcriptome data",
+    "author": [
+      {
+        "literal": "Lingfeng Xue"
+      },
+      {
+        "literal": "Yan Wu"
+      },
+      {
+        "literal": "Yihan Lin"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Genome Research",
+    "DOI": "10.1101/gr.277488.122",
+    "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10620053/",
+    "volume": "33",
+    "issue": "9",
+    "page": "1609–1621"
+  },
+  {
+    "id": "streamline",
+    "type": "article-journal",
+    "title": "Topological benchmarking of algorithms to infer gene regulatory networks from single-cell RNA-seq data",
+    "author": [
+      {
+        "literal": "Marco Stock"
+      },
+      {
+        "literal": "Niclas Popp"
+      },
+      {
+        "literal": "Jonathan Fiorentino"
+      },
+      {
+        "literal": "Antonio Scialdone"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "Bioinformatics",
+    "DOI": "10.1093/bioinformatics/btae267",
+    "URL": "https://academic.oup.com/bioinformatics/article/40/5/btae267/7646844",
+    "volume": "40",
+    "issue": "5",
+    "page": "btae267"
+  },
+  {
+    "id": "jaspar",
+    "type": "article-journal",
+    "title": "JASPAR 2026: expansion of transcription factor binding profiles and integration of deep learning models",
+    "author": [
+      {
+        "literal": "Damla Ovek Baydar"
+      },
+      {
+        "literal": "Ieva Rauluseviciute"
+      },
+      {
+        "literal": "Dina R Aronsen"
+      },
+      {
+        "literal": "Romain Blanc-Mathieu"
+      },
+      {
+        "literal": "Ine Bonthuis"
+      },
+      {
+        "literal": "Herman de Beukelaer"
+      },
+      {
+        "literal": "Katalin Ferenc"
+      },
+      {
+        "literal": "Alice Jegou"
+      },
+      {
+        "literal": "Vipin Kumar"
+      },
+      {
+        "literal": "Roza Berhanu Lemma"
+      },
+      {
+        "literal": "Jérémy Lucas"
+      },
+      {
+        "literal": "Mathis Pochon"
+      },
+      {
+        "literal": "Chang M Yun"
+      },
+      {
+        "literal": "Vivekanandan Ramalingam"
+      },
+      {
+        "literal": "Salil Sanjay Deshpande"
+      },
+      {
+        "literal": "Aman Patel"
+      },
+      {
+        "literal": "Georgi K Marinov"
+      },
+      {
+        "literal": "Austin T Wang"
+      },
+      {
+        "literal": "Alejandro Aguirre"
+      },
+      {
+        "literal": "Jaime A Castro-Mondragon"
+      },
+      {
+        "literal": "Damir Baranasic"
+      },
+      {
+        "literal": "Jeanne Chèneby"
+      },
+      {
+        "literal": "Sveinung Gundersen"
+      },
+      {
+        "literal": "Morten Johansen"
+      },
+      {
+        "literal": "Aziz Khan"
+      },
+      {
+        "literal": "Marieke L Kuijjer"
+      },
+      {
+        "literal": "Eivind Hovig"
+      },
+      {
+        "literal": "Boris Lenhard"
+      },
+      {
+        "literal": "Albin Sandelin"
+      },
+      {
+        "literal": "Klaas Vandepoele"
+      },
+      {
+        "literal": "Wyeth W Wasserman"
+      },
+      {
+        "literal": "François Parcy"
+      },
+      {
+        "literal": "Anshul Kundaje"
+      },
+      {
+        "literal": "Anthony Mathelier"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Nucleic Acids Research",
+    "DOI": "10.1093/nar/gkaf1209",
+    "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12807658/",
+    "volume": "54",
+    "issue": "D1",
+    "page": "D184–D193"
+  },
+  {
+    "id": "encode",
+    "type": "article-journal",
+    "title": "Expanded encyclopaedias of DNA elements in the human and mouse genomes",
+    "author": [
+      {
+        "literal": "ENCODE Project Consortium"
+      },
+      {
+        "literal": "Jill E. Moore"
+      },
+      {
+        "literal": "Michael J. Purcaro"
+      },
+      {
+        "literal": "Henry E. Pratt"
+      },
+      {
+        "literal": "Charles B. Epstein"
+      },
+      {
+        "literal": "Noam Shoresh"
+      },
+      {
+        "literal": "Jessika Adrian"
+      },
+      {
+        "literal": "Trupti Kawli"
+      },
+      {
+        "literal": "Carrie A. Davis"
+      },
+      {
+        "literal": "Alexander Dobin"
+      },
+      {
+        "literal": "Rajinder Kaul"
+      },
+      {
+        "literal": "Jessica Halow"
+      },
+      {
+        "literal": "Eric L. Van Nostrand"
+      },
+      {
+        "literal": "Peter Freese"
+      },
+      {
+        "literal": "David U. Gorkin"
+      },
+      {
+        "literal": "Yin Shen"
+      },
+      {
+        "literal": "Yupeng He"
+      },
+      {
+        "literal": "Mark Mackiewicz"
+      },
+      {
+        "literal": "Florencia Pauli-Behn"
+      },
+      {
+        "literal": "Brian A. Williams"
+      },
+      {
+        "literal": "Ali Mortazavi"
+      },
+      {
+        "literal": "Cheryl A. Keller"
+      },
+      {
+        "literal": "Xiao-Ou Zhang"
+      },
+      {
+        "literal": "Shaimae I. Elhajjajy"
+      },
+      {
+        "literal": "Jack Huey"
+      },
+      {
+        "literal": "Diane E. Dickel"
+      },
+      {
+        "literal": "Valentina Snetkova"
+      },
+      {
+        "literal": "Xintao Wei"
+      },
+      {
+        "literal": "Xiaofeng Wang"
+      },
+      {
+        "literal": "Juan Carlos Rivera-Mulia"
+      },
+      {
+        "literal": "Joel Rozowsky"
+      },
+      {
+        "literal": "Jing Zhang"
+      },
+      {
+        "literal": "Surya B. Chhetri"
+      },
+      {
+        "literal": "Jialing Zhang"
+      },
+      {
+        "literal": "Alec Victorsen"
+      },
+      {
+        "literal": "Kevin P. White"
+      },
+      {
+        "literal": "Axel Visel"
+      },
+      {
+        "literal": "Gene W. Yeo"
+      },
+      {
+        "literal": "Christopher B. Burge"
+      },
+      {
+        "literal": "Eric Lécuyer"
+      },
+      {
+        "literal": "David M. Gilbert"
+      },
+      {
+        "literal": "Job Dekker"
+      },
+      {
+        "literal": "John Rinn"
+      },
+      {
+        "literal": "Eric M. Mendenhall"
+      },
+      {
+        "literal": "Joseph R. Ecker"
+      },
+      {
+        "literal": "Manolis Kellis"
+      },
+      {
+        "literal": "Robert J. Klein"
+      },
+      {
+        "literal": "William S. Noble"
+      },
+      {
+        "literal": "Anshul Kundaje"
+      },
+      {
+        "literal": "Roderic Guigó"
+      },
+      {
+        "literal": "Peggy J. Farnham"
+      },
+      {
+        "literal": "J. Michael Cherry"
+      },
+      {
+        "literal": "Richard M. Myers"
+      },
+      {
+        "literal": "Bing Ren"
+      },
+      {
+        "literal": "Brenton R. Graveley"
+      },
+      {
+        "literal": "Mark B. Gerstein"
+      },
+      {
+        "literal": "Len A. Pennacchio"
+      },
+      {
+        "literal": "Michael P. Snyder"
+      },
+      {
+        "literal": "Bradley E. Bernstein"
+      },
+      {
+        "literal": "Barbara Wold"
+      },
+      {
+        "literal": "Ross C. Hardison"
+      },
+      {
+        "literal": "Thomas R. Gingeras"
+      },
+      {
+        "literal": "John A. Stamatoyannopoulos"
+      },
+      {
+        "literal": "Zhiping Weng"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "container-title": "Nature",
+    "DOI": "10.1038/s41586-020-2493-4",
+    "URL": "https://www.nature.com/articles/s41586-020-2493-4",
+    "volume": "583",
+    "issue": "7818",
+    "page": "699–710"
+  },
+  {
+    "id": "gencode",
+    "type": "article-journal",
+    "title": "GENCODE reference annotation for the human and mouse genomes",
+    "author": [
+      {
+        "literal": "Frankish A"
+      },
+      {
+        "literal": "Diekhans M"
+      },
+      {
+        "literal": "Ferreira AM"
+      },
+      {
+        "literal": "Johnson R"
+      },
+      {
+        "literal": "Jungreis I"
+      },
+      {
+        "literal": "Loveland J"
+      },
+      {
+        "literal": "Mudge JM"
+      },
+      {
+        "literal": "Sisu C"
+      },
+      {
+        "literal": "Wright J"
+      },
+      {
+        "literal": "Armstrong J"
+      },
+      {
+        "literal": "Barnes I"
+      },
+      {
+        "literal": "Berry A"
+      },
+      {
+        "literal": "Bignell A"
+      },
+      {
+        "literal": "Carbonell Sala S"
+      },
+      {
+        "literal": "Chrast J"
+      },
+      {
+        "literal": "Cunningham F"
+      },
+      {
+        "literal": "Di Domenico T"
+      },
+      {
+        "literal": "Donaldson S"
+      },
+      {
+        "literal": "Fiddes IT"
+      },
+      {
+        "literal": "García Girón C"
+      },
+      {
+        "literal": "Gonzalez JM"
+      },
+      {
+        "literal": "Grego T"
+      },
+      {
+        "literal": "Hardy M"
+      },
+      {
+        "literal": "Hourlier T"
+      },
+      {
+        "literal": "Hunt T"
+      },
+      {
+        "literal": "Izuogu OG"
+      },
+      {
+        "literal": "Lagarde J"
+      },
+      {
+        "literal": "Martin FJ"
+      },
+      {
+        "literal": "Martínez L"
+      },
+      {
+        "literal": "Mohanan S"
+      },
+      {
+        "literal": "Muir P"
+      },
+      {
+        "literal": "Navarro FCP"
+      },
+      {
+        "literal": "Parker A"
+      },
+      {
+        "literal": "Pei B"
+      },
+      {
+        "literal": "Pozo F"
+      },
+      {
+        "literal": "Ruffier M"
+      },
+      {
+        "literal": "Schmitt BM"
+      },
+      {
+        "literal": "Stapleton E"
+      },
+      {
+        "literal": "Suner MM"
+      },
+      {
+        "literal": "Sycheva I"
+      },
+      {
+        "literal": "Uszczynska-Ratajczak B"
+      },
+      {
+        "literal": "Xu J"
+      },
+      {
+        "literal": "Yates A"
+      },
+      {
+        "literal": "Zerbino D"
+      },
+      {
+        "literal": "Zhang Y"
+      },
+      {
+        "literal": "Aken B"
+      },
+      {
+        "literal": "Choudhary JS"
+      },
+      {
+        "literal": "Gerstein M"
+      },
+      {
+        "literal": "Guigó R"
+      },
+      {
+        "literal": "Hubbard TJP"
+      },
+      {
+        "literal": "Kellis M"
+      },
+      {
+        "literal": "Paten B"
+      },
+      {
+        "literal": "Reymond A"
+      },
+      {
+        "literal": "Tress ML"
+      },
+      {
+        "literal": "Flicek P"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "container-title": "Nucleic Acids Research",
+    "DOI": "10.1093/nar/gky955",
+    "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6323946/",
+    "volume": "47",
+    "issue": "D1",
+    "page": "D766–D773"
+  },
+  {
+    "id": "bh",
+    "type": "article-journal",
+    "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+    "author": [
+      {
+        "literal": "Yoav Benjamini"
+      },
+      {
+        "literal": "Yosef Hochberg"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1995
+        ]
+      ]
+    },
+    "container-title": "Journal of the Royal Statistical Society: Series B (Methodological)",
+    "DOI": "10.1111/j.2517-6161.1995.tb02031.x",
+    "URL": "https://onlinelibrary.wiley.com/doi/full/10.1111/j.2517-6161.1995.tb02031.x",
+    "volume": "57",
+    "issue": "1",
+    "page": "289–300"
+  },
+  {
+    "id": "varma2006",
+    "type": "article-journal",
+    "title": "Bias in error estimation when using cross-validation for model selection",
+    "author": [
+      {
+        "literal": "Sudhir Varma"
+      },
+      {
+        "literal": "Richard Simon"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "container-title": "BMC Bioinformatics",
+    "DOI": "10.1186/1471-2105-7-91",
+    "URL": "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-7-91",
+    "volume": "7",
+    "page": "91"
+  },
+  {
+    "id": "dream5",
+    "type": "article-journal",
+    "title": "Wisdom of crowds for robust gene network inference",
+    "author": [
+      {
+        "literal": "Daniel Marbach"
+      },
+      {
+        "literal": "James C. Costello"
+      },
+      {
+        "literal": "Robert Küffner"
+      },
+      {
+        "literal": "Nicole M. Vega"
+      },
+      {
+        "literal": "Robert J. Prill"
+      },
+      {
+        "literal": "Diogo M. Camacho"
+      },
+      {
+        "literal": "Kyle R. Allison"
+      },
+      {
+        "literal": "DREAM5 Consortium"
+      },
+      {
+        "literal": "Manolis Kellis"
+      },
+      {
+        "literal": "James J. Collins"
+      },
+      {
+        "literal": "Gustavo Stolovitzky"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
+    },
+    "container-title": "Nature Methods",
+    "DOI": "10.1038/nmeth.2016",
+    "URL": "https://www.nature.com/articles/nmeth.2016",
+    "volume": "9",
+    "page": "796–804"
+  },
+  {
+    "id": "glmprior",
+    "type": "article-journal",
+    "title": "GLM-Prior: a genomic language model for transferable sequence-derived priors in gene regulatory network inference",
+    "author": [
+      {
+        "literal": "Claudia Skok Gibbs"
+      },
+      {
+        "literal": "Angelica Chen"
+      },
+      {
+        "literal": "Richard Bonneau"
+      },
+      {
+        "literal": "Kyunghyun Cho"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "container-title": "Nature Communications",
+    "DOI": "10.1038/s41467-026-77381-8",
+    "URL": "https://www.nature.com/articles/s41467-026-77381-8",
+    "volume": "17",
+    "issue": "1",
+    "page": "10225"
+  },
+  {
+    "id": "ridge",
+    "type": "article-journal",
+    "title": "Ridge Regression: Biased Estimation for Nonorthogonal Problems",
+    "author": [
+      {
+        "literal": "Arthur E. Hoerl"
+      },
+      {
+        "literal": "Robert W. Kennard"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1970
+        ]
+      ]
+    },
+    "container-title": "Technometrics",
+    "volume": "12",
+    "issue": "1",
+    "page": "55–67",
+    "DOI": "10.1080/00401706.1970.10488634",
+    "URL": "https://www.tandfonline.com/doi/abs/10.1080/00401706.1970.10488634"
+  },
+  {
+    "id": "sklearn",
+    "type": "article-journal",
+    "title": "Scikit-learn: Machine Learning in Python",
+    "author": [
+      {
+        "literal": "Fabian Pedregosa"
+      },
+      {
+        "literal": "Gaël Varoquaux"
+      },
+      {
+        "literal": "Alexandre Gramfort"
+      },
+      {
+        "literal": "Vincent Michel"
+      },
+      {
+        "literal": "Bertrand Thirion"
+      },
+      {
+        "literal": "Olivier Grisel"
+      },
+      {
+        "literal": "Mathieu Blondel"
+      },
+      {
+        "literal": "Peter Prettenhofer"
+      },
+      {
+        "literal": "Ron Weiss"
+      },
+      {
+        "literal": "Vincent Dubourg"
+      },
+      {
+        "literal": "Jake Vanderplas"
+      },
+      {
+        "literal": "Alexandre Passos"
+      },
+      {
+        "literal": "David Cournapeau"
+      },
+      {
+        "literal": "Matthieu Brucher"
+      },
+      {
+        "literal": "Matthieu Perrot"
+      },
+      {
+        "literal": "Édouard Duchesnay"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "container-title": "Journal of Machine Learning Research",
+    "volume": "12",
+    "page": "2825–2830",
+    "URL": "https://www.jmlr.org/papers/v12/pedregosa11a.html"
+  },
+  {
+    "id": "ucsc",
+    "type": "webpage",
+    "title": "REST API data interface",
+    "author": [
+      {
+        "literal": "UCSC Genome Browser"
+      }
+    ],
+    "URL": "https://genome.ucsc.edu/goldenPath/help/api.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          28
+        ]
+      ]
+    }
+  },
+  {
+    "id": "gcevdata",
+    "type": "software",
+    "title": "Bio-RL-GRN research records and software at evidence snapshot 4328d45",
+    "author": [
+      {
+        "literal": "Bio-RL-GRN research repository"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://github.com/TshepoGobonamang/bio-rl-grn/tree/4328d45ec196a1dc05d46a6e36dc8480810597cb"
+  }
+]
